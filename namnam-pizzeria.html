@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ñam Ñam — Pizzería Artesanal · Región de Murcia</title>
+<meta name="description" content="Ñam Ñam Pizzería — Pizzas artesanas con alma mediterránea. Cocina a la vista, precios imbatibles. Sedes en Cartagena y Región de Murcia.">
+<meta name="keywords" content="pizzería Cartagena, pizza Cartagena, Ñam Ñam, pizza Región de Murcia, pizza a buen precio Cartagena, pizzería artesanal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════ RESET & BASE ═══════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;color:#1a1a1a;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* ═══════════════ CSS VARIABLES ═══════════════ */
+:root{
+  --red:#C41E1E;
+  --red-dark:#9B1616;
+  --red-light:#E84545;
+  --white:#FFFFFF;
+  --off-white:#FFF8F5;
+  --cream:#FFF1EC;
+  --black:#1A1A1A;
+  --gray:#6B6B6B;
+  --gray-light:#E8E8E8;
+  --shadow:0 8px 40px rgba(196,30,30,.12);
+  --shadow-lg:0 20px 60px rgba(196,30,30,.18);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-back:cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ═══════════════ SPLASH SCREEN ═══════════════ */
+.splash{
+  position:fixed;inset:0;z-index:10000;
+  background:var(--red);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  transition:opacity .6s var(--ease),visibility .6s;
+}
+.splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+.splash-pizza{
+  width:120px;height:120px;
+  animation:spinPizza 2s linear infinite, floatPizza 1.5s ease-in-out infinite alternate;
+}
+.splash-text{
+  color:var(--white);font-family:'Fredoka',sans-serif;
+  font-size:2rem;font-weight:700;margin-top:1.5rem;
+  animation:pulse 1.2s ease-in-out infinite alternate;
+}
+@keyframes spinPizza{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+@keyframes floatPizza{0%{transform:rotateY(0) translateY(0)}100%{transform:rotateY(180deg) translateY(-15px)}}
+@keyframes pulse{0%{opacity:.6;transform:scale(.95)}100%{opacity:1;transform:scale(1)}}
+
+/* ═══════════════ CUSTOM CURSOR ═══════════════ */
+.cursor{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none;opacity:0;transition:opacity .25s var(--ease)}
+.cursor.is-ready{opacity:1}
+@media(hover:hover)and(pointer:fine){.cursor{display:block}}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;will-change:transform;border-radius:50%}
+.cursor-dot{width:6px;height:6px;margin:-3px;background:var(--red)}
+.cursor-ring{width:36px;height:36px;margin:-18px;border:2px solid var(--red);transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s}
+.cursor.is-hover .cursor-ring{width:56px;height:56px;margin:-28px;background:rgba(196,30,30,.1)}
+.has-cursor,.has-cursor a,.has-cursor button{cursor:none!important}
+
+/* ═══════════════ NAVBAR ═══════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:1rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,box-shadow .4s,padding .4s;
+}
+.nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.08);padding:.7rem 2rem}
+.nav-logo{
+  font-family:'Fredoka',sans-serif;font-size:1.8rem;font-weight:700;
+  color:var(--white);transition:color .4s;
+  text-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.nav.scrolled .nav-logo{color:var(--red);text-shadow:none}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{
+  color:var(--white);font-weight:500;font-size:.95rem;
+  transition:color .3s;position:relative;text-shadow:0 1px 8px rgba(0,0,0,.2);
+}
+.nav.scrolled .nav-links a{color:var(--black);text-shadow:none}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+  background:var(--red);transition:width .3s var(--ease);
+}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:var(--white);color:var(--red)!important;
+  padding:.55rem 1.4rem;border-radius:50px;font-weight:600;
+  transition:background .3s,transform .3s,box-shadow .3s;
+  text-shadow:none!important;
+}
+.nav.scrolled .nav-cta{background:var(--red);color:var(--white)!important}
+.nav-cta:hover{transform:scale(1.05);box-shadow:var(--shadow)}
+.nav-cta::after{display:none!important}
+
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:10}
+.menu-toggle span{width:28px;height:2.5px;background:var(--white);transition:all .3s;border-radius:2px}
+.nav.scrolled .menu-toggle span{background:var(--red)}
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  background:#1a1010;
+  overflow:hidden;perspective:1000px;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e3/4d/66/pizza-nam-nam.jpg?w=1200&h=800&s=1');
+  background-size:cover;background-position:center;
+  filter:brightness(.45) saturate(1.1);
+  transform:scale(1.05);
+  animation:heroBgZoom 20s ease-in-out infinite alternate;
+}
+@keyframes heroBgZoom{
+  0%{transform:scale(1.05) translate(0,0)}
+  50%{transform:scale(1.12) translate(-1%,-1%)}
+  100%{transform:scale(1.08) translate(1%,0)}
+}
+.hero-bg-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg,rgba(196,30,30,.55) 0%,rgba(26,10,10,.7) 50%,rgba(196,30,30,.4) 100%),
+    radial-gradient(ellipse at 50% 30%,rgba(196,30,30,.3) 0%,transparent 70%);
+}
+/* hero grain overlay */
+.hero-grain{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+  opacity:.4;pointer-events:none;
+}
+
+.hero-content{
+  position:relative;z-index:2;text-align:center;
+  color:var(--white);padding:2rem;
+  animation:heroIn 1.2s var(--ease) both;
+  animation-delay:.5s;
+}
+@keyframes heroIn{0%{opacity:0;transform:translateY(50px) scale(.95)}100%{opacity:1;transform:translateY(0) scale(1)}}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.15);backdrop-filter:blur(10px);
+  padding:.5rem 1.2rem;border-radius:50px;margin-bottom:1.5rem;
+  font-size:.85rem;font-weight:500;
+  border:1px solid rgba(255,255,255,.2);
+}
+.hero-badge .dot{width:8px;height:8px;background:#4ADE80;border-radius:50%;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{
+  font-family:'Fredoka',sans-serif;
+  font-size:clamp(3rem,8vw,7rem);font-weight:700;
+  line-height:1.05;margin-bottom:1rem;
+  text-shadow:0 4px 30px rgba(0,0,0,.3);
+}
+.hero h1 em{font-style:italic;color:var(--cream);font-weight:400}
+.hero-sub{
+  font-size:clamp(1.1rem,2.5vw,1.5rem);
+  opacity:.85;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto;
+  font-weight:300;line-height:1.6;
+}
+.hero-rating{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+  padding:.6rem 1.4rem;border-radius:50px;margin-bottom:2.5rem;
+  font-size:.95rem;border:1px solid rgba(255,255,255,.15);
+}
+.hero-stars{color:#FFD700;font-size:1.1rem}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.9rem 2rem;border-radius:50px;font-weight:600;
+  font-size:1rem;transition:all .35s var(--ease);
+  border:none;font-family:inherit;
+}
+.btn-white{background:var(--white);color:var(--red);box-shadow:var(--shadow)}
+.btn-white:hover{transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-lg)}
+.btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.15);border-color:var(--white)}
+.btn-red{background:var(--red);color:var(--white);box-shadow:0 4px 20px rgba(196,30,30,.3)}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-3px);box-shadow:0 8px 30px rgba(196,30,30,.4)}
+
+/* Hero image caption */
+.hero-img-credit{
+  position:absolute;bottom:1rem;right:1.5rem;z-index:3;
+  font-size:.7rem;color:rgba(255,255,255,.35);
+  font-style:italic;
+}
+
+/* ═══════════════ MARQUEE ═══════════════ */
+.marquee{
+  background:var(--red);color:var(--white);
+  padding:.8rem 0;overflow:hidden;white-space:nowrap;
+}
+.marquee-inner{
+  display:flex;gap:3rem;
+  animation:marqueeScroll 20s linear infinite;
+  font-family:'Fredoka',sans-serif;font-size:1.1rem;font-weight:500;
+}
+.marquee-inner span{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══════════════ SECTIONS GENERAL ═══════════════ */
+section{padding:6rem 2rem}
+.container{max-width:1200px;margin:0 auto}
+.section-badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--cream);color:var(--red);
+  padding:.4rem 1rem;border-radius:50px;
+  font-size:.8rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:.05em;margin-bottom:1rem;
+}
+.section-title{
+  font-family:'Fredoka',sans-serif;
+  font-size:clamp(2rem,5vw,3.2rem);font-weight:700;
+  color:var(--black);line-height:1.15;margin-bottom:1rem;
+}
+.section-title span{color:var(--red)}
+.section-desc{
+  color:var(--gray);font-size:1.1rem;line-height:1.7;
+  max-width:650px;margin-bottom:3rem;
+}
+
+/* ═══════════════ REVEAL ANIMATION ═══════════════ */
+.reveal{
+  opacity:0;transform:translateY(40px);
+  transition:opacity .8s var(--ease),transform .8s var(--ease);
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ═══════════════ ABOUT ═══════════════ */
+.about{background:var(--off-white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-visual{position:relative;perspective:800px}
+.about-card{
+  background:var(--white);border-radius:24px;padding:2.5rem;
+  box-shadow:var(--shadow);
+  transform-style:preserve-3d;
+  transition:transform .6s var(--ease);
+}
+.about-card:hover{transform:rotateY(5deg) rotateX(-3deg)}
+.about-card-emoji{font-size:4rem;margin-bottom:1rem;display:block}
+.about-card-title{font-family:'Fredoka',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.8rem;color:var(--red)}
+.about-card-text{color:var(--gray);line-height:1.7}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.stat{
+  background:var(--white);border-radius:16px;padding:1.5rem;text-align:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.05);
+  transition:transform .4s var(--ease-back);
+}
+.stat:hover{transform:translateY(-5px) scale(1.03)}
+.stat-num{font-family:'Fredoka',sans-serif;font-size:2rem;font-weight:700;color:var(--red)}
+.stat-label{font-size:.8rem;color:var(--gray);margin-top:.3rem}
+.about-text h3{font-family:'Fredoka',sans-serif;font-size:1.6rem;margin-bottom:1rem;color:var(--black)}
+.about-text p{color:var(--gray);line-height:1.8;margin-bottom:1.2rem}
+.about-features{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.about-feature{
+  display:flex;align-items:center;gap:1rem;
+  padding:.8rem 1rem;border-radius:12px;
+  background:var(--white);box-shadow:0 2px 10px rgba(0,0,0,.04);
+  transition:transform .3s var(--ease),box-shadow .3s;
+}
+.about-feature:hover{transform:translateX(8px);box-shadow:var(--shadow)}
+.about-feature-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--cream);display:flex;align-items:center;
+  justify-content:center;font-size:1.3rem;flex-shrink:0;
+}
+.about-feature-text{font-weight:500;font-size:.95rem}
+
+/* ═══════════════ MENU ═══════════════ */
+.menu{background:var(--white)}
+.menu-cats{
+  display:flex;gap:.8rem;flex-wrap:wrap;
+  margin-bottom:3rem;justify-content:center;
+}
+.menu-cat{
+  padding:.7rem 1.5rem;border-radius:50px;
+  font-weight:600;font-size:.9rem;
+  background:var(--cream);color:var(--red);
+  border:2px solid transparent;
+  transition:all .3s var(--ease);cursor:pointer;
+}
+.menu-cat.active,.menu-cat:hover{
+  background:var(--red);color:var(--white);
+  box-shadow:0 4px 20px rgba(196,30,30,.3);
+  transform:scale(1.05);
+}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem}
+.menu-item{
+  background:var(--off-white);border-radius:20px;
+  overflow:hidden;position:relative;
+  transition:transform .4s var(--ease),box-shadow .4s;
+  transform-style:preserve-3d;
+}
+.menu-item:hover{transform:translateY(-8px) rotateX(2deg);box-shadow:var(--shadow-lg)}
+.menu-item-img{
+  height:200px;background:linear-gradient(135deg,var(--cream) 0%,#ffe4d6 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-size:5rem;position:relative;overflow:hidden;
+}
+.menu-item-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(0deg,var(--off-white) 0%,transparent 40%);
+}
+.menu-item-body{padding:1.5rem}
+.menu-item-name{font-family:'Fredoka',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:.4rem}
+.menu-item-desc{color:var(--gray);font-size:.85rem;line-height:1.6}
+.menu-item-tag{
+  position:absolute;top:1rem;right:1rem;
+  background:var(--red);color:var(--white);
+  padding:.3rem .8rem;border-radius:50px;
+  font-size:.75rem;font-weight:600;z-index:2;
+}
+.menu-note{
+  text-align:center;margin-top:3rem;padding:2rem;
+  background:var(--cream);border-radius:16px;
+  color:var(--gray);font-size:.95rem;line-height:1.6;
+}
+.menu-note strong{color:var(--red)}
+
+/* ═══════════════ 3D PIZZA SCENE ═══════════════ */
+.pizza-scene{
+  background:linear-gradient(180deg,var(--red) 0%,var(--red-dark) 100%);
+  padding:5rem 2rem;position:relative;overflow:hidden;
+}
+.pizza-scene-inner{max-width:1000px;margin:0 auto;text-align:center;color:var(--white)}
+.pizza-3d-container{
+  width:300px;height:300px;margin:3rem auto;
+  perspective:600px;
+}
+.pizza-3d{
+  width:100%;height:100%;position:relative;
+  transform-style:preserve-3d;
+  animation:rotatePizza3d 12s ease-in-out infinite;
+}
+@keyframes rotatePizza3d{
+  0%{transform:rotateX(25deg) rotateY(0deg) rotateZ(0deg)}
+  25%{transform:rotateX(15deg) rotateY(90deg) rotateZ(5deg)}
+  50%{transform:rotateX(30deg) rotateY(180deg) rotateZ(0deg)}
+  75%{transform:rotateX(20deg) rotateY(270deg) rotateZ(-5deg)}
+  100%{transform:rotateX(25deg) rotateY(360deg) rotateZ(0deg)}
+}
+.pizza-disc{
+  position:absolute;width:100%;height:100%;border-radius:50%;
+  transform-style:preserve-3d;
+}
+.pizza-top{
+  background:radial-gradient(circle at 40% 35%,#F5C462 0%,#E8A830 30%,#D4912A 60%,#C47A22 100%);
+  box-shadow:0 0 60px rgba(244,196,98,.4),inset 0 0 80px rgba(0,0,0,.15);
+  transform:translateZ(10px);
+}
+.pizza-top::before{
+  content:'';position:absolute;inset:8%;border-radius:50%;
+  background:radial-gradient(circle at 35% 40%,#E84545 0%,#C41E1E 40%,#9B1616 100%);
+  box-shadow:inset 0 0 30px rgba(0,0,0,.2);
+}
+.pizza-top::after{
+  content:'🧀';position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:6rem;opacity:.3;
+  text-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+.pizza-bottom{
+  background:radial-gradient(circle,#C47A22 0%,#A86420 60%,#8B5019 100%);
+  transform:translateZ(-10px);
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+.pizza-edge{
+  position:absolute;top:50%;left:50%;
+  width:280px;height:20px;margin-left:-140px;margin-top:-10px;
+  background:linear-gradient(180deg,#D4912A,#A86420);
+  border-radius:50%;
+  transform:rotateX(90deg) translateZ(0px);
+}
+.pizza-toppings{
+  position:absolute;inset:15%;transform:translateZ(14px);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  place-items:center;
+}
+.pizza-topping{
+  font-size:1.8rem;opacity:.8;
+  animation:toppingBounce 3s ease-in-out infinite alternate;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));
+}
+.pizza-topping:nth-child(odd){animation-delay:-.5s}
+.pizza-topping:nth-child(3n){animation-delay:-1s}
+@keyframes toppingBounce{0%{transform:translateZ(0) scale(1)}100%{transform:translateZ(8px) scale(1.1)}}
+
+.pizza-scene-features{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+  margin-top:3rem;text-align:center;
+}
+.pizza-feat{
+  padding:1.5rem;border-radius:16px;
+  background:rgba(255,255,255,.1);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.15);
+  transition:transform .4s var(--ease-back),background .3s;
+}
+.pizza-feat:hover{transform:translateY(-8px) scale(1.03);background:rgba(255,255,255,.18)}
+.pizza-feat-icon{font-size:2.5rem;margin-bottom:.8rem}
+.pizza-feat h4{font-family:'Fredoka',sans-serif;font-size:1.1rem;margin-bottom:.4rem}
+.pizza-feat p{font-size:.85rem;opacity:.8;line-height:1.5}
+
+/* ═══════════════ LOCATIONS ═══════════════ */
+.locations{background:var(--off-white)}
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+.loc-card{
+  background:var(--white);border-radius:20px;padding:2rem;
+  border:2px solid var(--gray-light);
+  transition:all .4s var(--ease);position:relative;overflow:hidden;
+  transform-style:preserve-3d;
+}
+.loc-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--red);transform:scaleX(0);
+  transition:transform .4s var(--ease);transform-origin:left;
+}
+.loc-card:hover{
+  border-color:var(--red);
+  transform:translateY(-6px) rotateX(2deg);
+  box-shadow:var(--shadow-lg);
+}
+.loc-card:hover::before{transform:scaleX(1)}
+.loc-icon{
+  width:50px;height:50px;border-radius:14px;
+  background:var(--cream);display:flex;align-items:center;
+  justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;
+}
+.loc-name{font-family:'Fredoka',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:.5rem}
+.loc-address{color:var(--gray);font-size:.85rem;line-height:1.5;margin-bottom:1rem}
+.loc-phone{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--red);color:var(--white);
+  padding:.6rem 1.2rem;border-radius:50px;
+  font-weight:600;font-size:.9rem;
+  transition:all .3s var(--ease);
+}
+.loc-phone:hover{background:var(--red-dark);transform:scale(1.05)}
+.loc-map{
+  margin-top:3rem;border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow);height:350px;
+}
+.loc-map iframe{width:100%;height:100%;border:0}
+
+/* ═══════════════ REVIEWS ═══════════════ */
+.reviews{background:var(--white)}
+.reviews-header{display:flex;align-items:center;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.reviews-score{
+  background:var(--red);color:var(--white);
+  width:100px;height:100px;border-radius:20px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);
+}
+.reviews-score-num{font-family:'Fredoka',sans-serif;font-size:2.5rem;font-weight:700;line-height:1}
+.reviews-score-stars{font-size:.9rem;margin-top:.3rem}
+.reviews-meta{flex:1}
+.reviews-meta h3{font-family:'Fredoka',sans-serif;font-size:1.3rem;margin-bottom:.3rem}
+.reviews-meta p{color:var(--gray);font-size:.9rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.review-card{
+  background:var(--off-white);border-radius:16px;padding:1.8rem;
+  transition:transform .4s var(--ease),box-shadow .4s;
+  position:relative;
+}
+.review-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.review-card::before{
+  content:'"';position:absolute;top:.5rem;right:1.5rem;
+  font-family:'Fredoka',sans-serif;font-size:5rem;
+  color:var(--red);opacity:.1;line-height:1;
+}
+.review-top{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.review-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--red);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;
+}
+.review-name{font-weight:600;font-size:.95rem}
+.review-stars{color:#FFD700;font-size:.85rem}
+.review-text{color:var(--gray);font-size:.9rem;line-height:1.7;font-style:italic}
+
+/* ═══════════════ GALLERY ═══════════════ */
+.gallery{background:var(--off-white);overflow:hidden}
+.gallery-scroll{
+  display:flex;gap:1rem;
+  animation:gallerySlide 30s linear infinite;
+  width:max-content;
+}
+.gallery-scroll:hover{animation-play-state:paused}
+.gallery-item{
+  width:300px;height:220px;border-radius:16px;overflow:hidden;
+  background:linear-gradient(135deg,var(--cream),#ffe4d6);
+  flex-shrink:0;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  font-size:5rem;
+  transition:transform .4s var(--ease);
+}
+.gallery-item:hover{transform:scale(1.05) rotateZ(1deg)}
+.gallery-item-label{
+  position:absolute;bottom:1rem;left:1rem;
+  background:rgba(0,0,0,.6);backdrop-filter:blur(8px);
+  color:var(--white);padding:.4rem 1rem;border-radius:50px;
+  font-size:.8rem;font-weight:500;
+}
+@keyframes gallerySlide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══════════════ CTA ═══════════════ */
+.cta{
+  background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);
+  color:var(--white);text-align:center;position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 50%,rgba(255,255,255,.1) 0%,transparent 60%);
+}
+.cta h2{font-family:'Fredoka',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:1rem;position:relative}
+.cta p{font-size:1.1rem;opacity:.85;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+.cta-socials{display:flex;gap:1rem;justify-content:center;margin-top:2rem;position:relative}
+.cta-social{
+  width:50px;height:50px;border-radius:50%;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+  transition:all .3s var(--ease-back);
+}
+.cta-social:hover{background:var(--white);color:var(--red);transform:translateY(-5px) scale(1.1)}
+
+/* ═══════════════ FOOTER ═══════════════ */
+.footer{
+  background:var(--black);color:rgba(255,255,255,.7);
+  padding:4rem 2rem 2rem;
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;max-width:1200px;margin:0 auto;
+}
+.footer-brand{font-family:'Fredoka',sans-serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:1rem}
+.footer-text{font-size:.9rem;line-height:1.7;max-width:300px}
+.footer h4{color:var(--white);font-family:'Fredoka',sans-serif;font-weight:600;margin-bottom:1rem;font-size:1.05rem}
+.footer ul li{margin-bottom:.6rem}
+.footer ul li a{font-size:.9rem;transition:color .3s}
+.footer ul li a:hover{color:var(--red-light)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:3rem;padding-top:1.5rem;text-align:center;
+  font-size:.8rem;max-width:1200px;margin-left:auto;margin-right:auto;
+}
+
+/* ═══════════════ SCROLL PROGRESS ═══════════════ */
+.scroll-progress{
+  position:fixed;top:0;left:0;height:3px;
+  background:var(--red);z-index:10001;
+  width:0%;transition:width .1s;
+}
+
+/* ═══════════════ BACK TO TOP ═══════════════ */
+.back-top{
+  position:fixed;bottom:2rem;right:2rem;
+  width:50px;height:50px;border-radius:50%;
+  background:var(--red);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;box-shadow:var(--shadow);
+  opacity:0;transform:translateY(20px);
+  transition:all .4s var(--ease);z-index:100;border:none;cursor:pointer;
+}
+.back-top.visible{opacity:1;transform:translateY(0)}
+.back-top:hover{background:var(--red-dark);transform:translateY(-3px) scale(1.1)}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media(max-width:900px){
+  .nav-links{
+    position:fixed;top:0;right:-100%;width:75%;max-width:320px;
+    height:100vh;background:var(--white);
+    flex-direction:column;padding:5rem 2rem;gap:1.5rem;
+    transition:right .4s var(--ease);box-shadow:-10px 0 40px rgba(0,0,0,.1);
+  }
+  .nav-links.open{right:0}
+  .nav-links a{color:var(--black)!important;font-size:1.2rem;text-shadow:none!important}
+  .nav-cta{background:var(--red)!important;color:var(--white)!important}
+  .menu-toggle{display:flex}
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .about-stats{grid-template-columns:repeat(3,1fr)}
+  .pizza-scene-features{grid-template-columns:1fr;max-width:350px;margin-left:auto;margin-right:auto}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .reviews-header{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+  section{padding:4rem 1.2rem}
+  .hero h1{font-size:2.5rem}
+  .hero-actions{flex-direction:column;align-items:center}
+  .about-stats{grid-template-columns:1fr 1fr 1fr;gap:.8rem}
+  .stat{padding:1rem}
+  .stat-num{font-size:1.5rem}
+  .menu-grid{grid-template-columns:1fr}
+  .loc-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .pizza-3d-container{width:220px;height:220px}
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor">
+  <span class="cursor-dot"></span>
+  <span class="cursor-ring"></span>
+</div>
+
+<!-- Splash Screen -->
+<div class="splash" id="splash">
+  <div class="splash-pizza">🍕</div>
+  <div class="splash-text">Ñam Ñam</div>
+</div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">Ñam Ñam</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#sobre">Nosotros</a>
+    <a href="#menu">Menú</a>
+    <a href="#sedes">Sedes</a>
+    <a href="#opiniones">Opiniones</a>
+    <a href="#contacto" class="nav-cta">📞 Contacto</a>
+  </div>
+  <div class="menu-toggle" id="menuToggle">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Abierto ahora · Hasta las 00:00
+    </div>
+    <h1>Pizzas artesanas<br>con alma <em>mediterránea</em></h1>
+    <p class="hero-sub">Cocina a la vista, ingredientes frescos y los mejores precios de la Región de Murcia. Desde siempre, para todos.</p>
+    <div class="hero-rating">
+      <span class="hero-stars">★★★★☆</span>
+      <span><strong>4.0</strong> · 695+ opiniones en Google</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#menu" class="btn btn-white">🍕 Descubre nuestro menú</a>
+      <a href="#sedes" class="btn btn-ghost">📍 Encuéntranos</a>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+  <div class="marquee-inner" id="marquee">
+    <span>🍕 PIZZAS ARTESANAS</span>
+    <span>🥖 BOCATAS</span>
+    <span>🥗 ENSALADAS</span>
+    <span>🍟 COMPLEMENTOS</span>
+    <span>🍰 POSTRES</span>
+    <span>🎉 MENÚS Y PROMOCIONES</span>
+    <span>👨‍🍳 COCINA A LA VISTA</span>
+    <span>💰 PRECIOS IMBATIBLES</span>
+    <span>🍕 PIZZAS ARTESANAS</span>
+    <span>🥖 BOCATAS</span>
+    <span>🥗 ENSALADAS</span>
+    <span>🍟 COMPLEMENTOS</span>
+    <span>🍰 POSTRES</span>
+    <span>🎉 MENÚS Y PROMOCIONES</span>
+    <span>👨‍🍳 COCINA A LA VISTA</span>
+    <span>💰 PRECIOS IMBATIBLES</span>
+  </div>
+</div>
+
+<!-- About -->
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-card">
+          <span class="about-card-emoji">👨‍🍳</span>
+          <h3 class="about-card-title">Cocina a la vista</h3>
+          <p class="about-card-text">En Ñam Ñam, cada pizza se prepara delante de ti. Ves cómo se estira la masa, cómo se añaden los ingredientes frescos y cómo se hornea hasta quedar perfecta. Sin secretos, sin trucos — solo buena pizza hecha con cariño.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat reveal reveal-delay-1">
+            <div class="stat-num" data-count="695">0</div>
+            <div class="stat-label">Opiniones Google</div>
+          </div>
+          <div class="stat reveal reveal-delay-2">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Sedes</div>
+          </div>
+          <div class="stat reveal reveal-delay-3">
+            <div class="stat-num">4.0★</div>
+            <div class="stat-label">Valoración</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-badge">🍕 Sobre nosotros</div>
+        <h2 class="section-title">Más que una pizzería,<br>un <span>lugar para disfrutar</span></h2>
+        <p>Ñam Ñam nació con una idea sencilla: ofrecer pizzas de calidad a un precio justo, en un ambiente donde todo el mundo se sienta como en casa.</p>
+        <p>Con varias sedes repartidas por la Región de Murcia, nos hemos convertido en el punto de encuentro favorito de familias, amigos y amantes de la buena pizza.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">🔥</div>
+            <span class="about-feature-text">Horno a la vista — Transparencia total</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🌿</div>
+            <span class="about-feature-text">Ingredientes frescos cada día</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">💰</div>
+            <span class="about-feature-text">Los mejores precios de la zona</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">👨‍👩‍👧‍👦</div>
+            <span class="about-feature-text">Ambiente familiar y cercano</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-badge">🍽️ Nuestra carta</div>
+      <h2 class="section-title">Un menú para <span>todos los gustos</span></h2>
+      <p class="section-desc" style="margin-left:auto;margin-right:auto">Desde las clásicas hasta las más atrevidas. Pizzas, bocatas, ensaladas y mucho más, siempre con ingredientes de primera.</p>
+    </div>
+    <div class="menu-cats reveal">
+      <button class="menu-cat active" data-cat="all">Todos</button>
+      <button class="menu-cat" data-cat="pizza">Pizzas</button>
+      <button class="menu-cat" data-cat="bocata">Bocatas</button>
+      <button class="menu-cat" data-cat="ensalada">Ensaladas</button>
+      <button class="menu-cat" data-cat="complemento">Complementos</button>
+      <button class="menu-cat" data-cat="postre">Postres</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <div class="menu-item reveal" data-cat="pizza">
+        <div class="menu-item-img">🍕</div>
+        <div class="menu-item-body">
+          <div class="menu-item-name">Margherita</div>
+          <div class="menu-item-desc">La clásica italiana. Tomate, mozzarella fresca y albahaca.</div>
+        </div>
+        <span class="menu-item-tag">Clásica</span>
+      </div>
+      <div class="menu-item reveal reveal-delay-1" data-cat="pizza">
+        <div class="menu-item-img">🍕</div>
+        <div class="menu-item-body">
+          <div class="menu-item-name">Barbacoa</div>
+          <div class="menu-item-desc">Salsa BBQ, pollo, bacon, cebolla caramelizada y mozzarella.</div>
+        </div>
+        <span class="menu-item-tag">⭐ Popular</span>
+      </div>
+      <div class="menu-item reveal reveal-delay-2" data-cat="pizza">
+        <div class="menu-item-img">🍕</div>
+        <div class="menu-item-body">
+          <div class="menu-item-name">4 Quesos</div>
+          <div class="menu-item-desc">Mozzarella, gorgonzola, parmesano y emmental fundidos.</div>
+        </div>
+      </div>
+      <div class="menu-item reveal reveal-delay-3" data-cat="pizza">
+        <div class="menu-item-img">🍕</div>
+        <div class="menu-item-body">
+          <div class="menu-item-name">Vegetal</div>
+          <div class="menu-item-desc">Pimiento, champiñones, cebolla, aceitunas y tomate natural.</div>
+        </div>
+        <span class="menu-item-tag">🌱 Veggie</span>
+      </div>
+      <div class="menu-item reveal" data-cat="bocata">
+        <div class="menu-item-img">🥖</div>
+        <div class="menu-item-body">
+          <div class="menu-item-name">Bocatas variados</div>
+          <div class="menu-item-desc">Gran variedad de bocadillos con ingredientes frescos y pan crujiente.</div>
+        </div>
+      </div>
+      <div class="menu-item reveal reveal-delay-1" data-cat="ensalada">
+        <div class="menu-item-img">🥗</div>
+        <div class="menu-item-body">
+          <div class="menu-item-name">Ensaladas frescas</div>
+          <div class="menu-item-desc">Ensaladas preparadas al momento con productos de temporada.</div>
+        </div>
+        <span class="menu-item-tag">🌱 Saludable</span>
+      </div>
+      <div class="menu-item reveal reveal-delay-2" data-cat="complemento">
+        <div class="menu-item-img">🍟</div>
+        <div class="menu-item-body">
+          <div class="menu-item-name">Complementos</div>
+          <div class="menu-item-desc">Patatas, nuggets, aros de cebolla y mucho más para compartir.</div>
+        </div>
+      </div>
+      <div class="menu-item reveal reveal-delay-3" data-cat="postre">
+        <div class="menu-item-img">🍰</div>
+        <div class="menu-item-body">
+          <div class="menu-item-name">Postres</div>
+          <div class="menu-item-desc">Dulces tentaciones para cerrar tu comida con broche de oro.</div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-note reveal">
+      <strong>📞 Consulta precios y disponibilidad</strong> en tu sede más cercana. Pregunta por nuestros <strong>menús y promociones</strong> especiales.
+    </div>
+  </div>
+</section>
+
+<!-- 3D Pizza Scene -->
+<section class="pizza-scene" id="pizzaScene">
+  <div class="pizza-scene-inner">
+    <div class="section-badge" style="background:rgba(255,255,255,.15);color:var(--white)">👨‍🍳 Nuestra esencia</div>
+    <h2 style="font-family:'Fredoka',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:.5rem">Pizza hecha con <em style="font-weight:400;color:var(--cream)">pasión</em></h2>
+    <p style="opacity:.8;font-size:1.1rem">Cada pizza es una pequeña obra de arte</p>
+    <div class="pizza-3d-container" id="pizza3d">
+      <div class="pizza-3d">
+        <div class="pizza-disc pizza-bottom"></div>
+        <div class="pizza-edge"></div>
+        <div class="pizza-disc pizza-top"></div>
+        <div class="pizza-toppings">
+          <span class="pizza-topping">🫒</span>
+          <span class="pizza-topping">🍅</span>
+          <span class="pizza-topping">🧀</span>
+          <span class="pizza-topping">🌿</span>
+          <span class="pizza-topping">🫑</span>
+          <span class="pizza-topping">🍄</span>
+          <span class="pizza-topping">🧅</span>
+          <span class="pizza-topping">🌶️</span>
+          <span class="pizza-topping">🫒</span>
+        </div>
+      </div>
+    </div>
+    <div class="pizza-scene-features">
+      <div class="pizza-feat reveal">
+        <div class="pizza-feat-icon">🔥</div>
+        <h4>Horno artesanal</h4>
+        <p>Cocinada a la temperatura perfecta para una masa crujiente y esponjosa.</p>
+      </div>
+      <div class="pizza-feat reveal reveal-delay-1">
+        <div class="pizza-feat-icon">🌿</div>
+        <h4>Ingredientes frescos</h4>
+        <p>Seleccionamos diariamente los mejores productos del mercado local.</p>
+      </div>
+      <div class="pizza-feat reveal reveal-delay-2">
+        <div class="pizza-feat-icon">❤️</div>
+        <h4>Hecha con cariño</h4>
+        <p>Cada pizza se prepara a mano, sin prisas, con la dedicación que merece.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Locations -->
+<section class="locations" id="sedes">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-badge">📍 Nuestras sedes</div>
+      <h2 class="section-title">Encuéntranos en la <span>Región de Murcia</span></h2>
+      <p class="section-desc" style="margin-left:auto;margin-right:auto">Cuatro sedes para que siempre tengas una Ñam Ñam cerca. Llámanos directamente para consultar horarios y disponibilidad.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card reveal">
+        <div class="loc-icon">🏛️</div>
+        <h3 class="loc-name">Puerta de Murcia</h3>
+        <p class="loc-address">C. Puertas de Murcia, 37<br>30201 Cartagena, Murcia</p>
+        <a href="tel:669876499" class="loc-phone">📞 669 87 64 99</a>
+      </div>
+      <div class="loc-card reveal reveal-delay-1">
+        <div class="loc-icon">🛍️</div>
+        <h3 class="loc-name">Espacio Mediterráneo</h3>
+        <p class="loc-address">Centro Comercial<br>Espacio Mediterráneo</p>
+        <a href="tel:669877236" class="loc-phone">📞 669 87 72 36</a>
+      </div>
+      <div class="loc-card reveal reveal-delay-2">
+        <div class="loc-icon">🌳</div>
+        <h3 class="loc-name">La Rambla</h3>
+        <p class="loc-address">Zona de La Rambla<br>Región de Murcia</p>
+        <a href="tel:620020817" class="loc-phone">📞 620 02 08 17</a>
+      </div>
+      <div class="loc-card reveal reveal-delay-3">
+        <div class="loc-icon">🏬</div>
+        <h3 class="loc-name">Centro Comercial Dos Mares</h3>
+        <p class="loc-address">C.C. Dos Mares<br>Región de Murcia</p>
+        <a href="tel:669876499" class="loc-phone">📞 Llámanos</a>
+      </div>
+    </div>
+    <div class="loc-map reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5!2d-0.9862!3d37.5990!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6343b71f5c4a4b%3A0xcf5d7f460bdfd39a!2sC.%20Puertas%20de%20Murcia%2C%2037%2C%2030201%20Cartagena%2C%20Murcia!5e0!3m2!1ses!2ses!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews" id="opiniones">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-badge">⭐ Opiniones</div>
+      <h2 class="section-title">Lo que dicen <span>nuestros clientes</span></h2>
+    </div>
+    <div class="reviews-header reveal">
+      <div class="reviews-score">
+        <div class="reviews-score-num">4.0</div>
+        <div class="reviews-score-stars">★★★★☆</div>
+      </div>
+      <div class="reviews-meta">
+        <h3>Excelente valoración en Google</h3>
+        <p>Más de 695 opiniones de clientes reales · 3.300+ seguidores en Facebook</p>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-top">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Ana García</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">"Las mejores pizzas de Cartagena a precio imbatible. El ambiente es genial y poder ver cómo hacen tu pizza es un plus que encanta a los niños."</p>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-top">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Miguel Rodríguez</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">"Siempre repetimos. La relación calidad-precio es espectacular. Perfecto para ir en familia o con amigos, nunca falla."</p>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-top">
+          <div class="review-avatar">L</div>
+          <div>
+            <div class="review-name">Laura Martínez</div>
+            <div class="review-stars">★★★★☆</div>
+          </div>
+        </div>
+        <p class="review-text">"Gran ambiente y terraza amplia. Las pizzas están muy buenas y la variedad del menú nos encanta. Es nuestro sitio favorito para cenar fuera."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="galeria">
+  <div class="container reveal">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="section-badge">📸 Galería</div>
+      <h2 class="section-title">Nuestro <span>mundo Ñam Ñam</span></h2>
+    </div>
+  </div>
+  <div class="gallery-scroll">
+    <div class="gallery-item">🍕<span class="gallery-item-label">Pizza recién hecha</span></div>
+    <div class="gallery-item">👨‍🍳<span class="gallery-item-label">Nuestro equipo</span></div>
+    <div class="gallery-item">🔥<span class="gallery-item-label">El horno</span></div>
+    <div class="gallery-item">🥗<span class="gallery-item-label">Ensaladas frescas</span></div>
+    <div class="gallery-item">🎉<span class="gallery-item-label">Ambiente familiar</span></div>
+    <div class="gallery-item">🍕<span class="gallery-item-label">Masa artesanal</span></div>
+    <div class="gallery-item">🧀<span class="gallery-item-label">Ingredientes premium</span></div>
+    <div class="gallery-item">☕<span class="gallery-item-label">Terraza</span></div>
+    <!-- Duplicated for seamless loop -->
+    <div class="gallery-item">🍕<span class="gallery-item-label">Pizza recién hecha</span></div>
+    <div class="gallery-item">👨‍🍳<span class="gallery-item-label">Nuestro equipo</span></div>
+    <div class="gallery-item">🔥<span class="gallery-item-label">El horno</span></div>
+    <div class="gallery-item">🥗<span class="gallery-item-label">Ensaladas frescas</span></div>
+    <div class="gallery-item">🎉<span class="gallery-item-label">Ambiente familiar</span></div>
+    <div class="gallery-item">🍕<span class="gallery-item-label">Masa artesanal</span></div>
+    <div class="gallery-item">🧀<span class="gallery-item-label">Ingredientes premium</span></div>
+    <div class="gallery-item">☕<span class="gallery-item-label">Terraza</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contacto">
+  <div class="container reveal">
+    <h2>¿Te apetece una <em style="font-weight:400">Ñam Ñam</em>?</h2>
+    <p>Visítanos en cualquiera de nuestras sedes o llámanos para más información. ¡Te esperamos!</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a href="tel:669876499" class="btn btn-white">📞 Llámanos</a>
+      <a href="#sedes" class="btn btn-ghost">📍 Ver sedes</a>
+    </div>
+    <div class="cta-socials">
+      <a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Instagram">📷</a>
+      <a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Facebook">👍</a>
+      <a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" class="cta-social" title="TripAdvisor">✈️</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Ñam Ñam</div>
+      <p class="footer-text">Pizzería artesanal con cocina a la vista. Pizzas, bocatas, ensaladas, complementos y postres. Los mejores precios de la Región de Murcia.</p>
+    </div>
+    <div>
+      <h4>Sedes</h4>
+      <ul>
+        <li><a href="tel:669876499">Puerta de Murcia</a></li>
+        <li><a href="tel:669877236">Espacio Mediterráneo</a></li>
+        <li><a href="tel:620020817">La Rambla</a></li>
+        <li><a href="#">C.C. Dos Mares</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Menú</h4>
+      <ul>
+        <li><a href="#menu">Pizzas</a></li>
+        <li><a href="#menu">Bocatas</a></li>
+        <li><a href="#menu">Ensaladas</a></li>
+        <li><a href="#menu">Postres</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener">📷 Instagram</a></li>
+        <li><a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener">👍 Facebook</a></li>
+        <li><a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener">✈️ TripAdvisor</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Ñam Ñam Pizzería · Todos los derechos reservados · Región de Murcia, España</p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" aria-label="Volver arriba">↑</button>
+
+<script>
+(function(){
+  'use strict';
+
+  // ——— SPLASH ———
+  function initSplash(){
+    const splash = document.getElementById('splash');
+    if(!splash) return;
+    const hide = () => { splash.classList.add('hide'); };
+    setTimeout(hide, 2200);
+    // Safety net
+    setTimeout(() => { splash.style.display = 'none'; }, 3500);
+  }
+
+  // ——— CUSTOM CURSOR ———
+  function initCursor(){
+    const root = document.getElementById('cursor');
+    if(!root || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    document.documentElement.classList.add('has-cursor');
+    const ring = root.querySelector('.cursor-ring');
+    const dot = root.querySelector('.cursor-dot');
+    let tx=0,ty=0,rx=0,ry=0,first=false;
+    window.addEventListener('mousemove', e => {
+      tx=e.clientX; ty=e.clientY;
+      if(dot) dot.style.transform = `translate3d(${tx}px,${ty}px,0)`;
+      if(!first){ first=true; rx=tx; ry=ty; root.classList.add('is-ready'); }
+    });
+    (function loop(){
+      rx+=(tx-rx)*.12; ry+=(ty-ry)*.12;
+      if(ring) ring.style.transform = `translate3d(${rx}px,${ry}px,0)`;
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a,button,.menu-cat,.menu-item,.loc-card,.review-card,.about-feature').forEach(el=>{
+      el.addEventListener('mouseenter',()=>root.classList.add('is-hover'));
+      el.addEventListener('mouseleave',()=>root.classList.remove('is-hover'));
+    });
+  }
+
+  // ——— NAV SCROLL ———
+  function initNav(){
+    const nav = document.getElementById('nav');
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    if(!nav) return;
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    }, {passive:true});
+    if(toggle && links){
+      toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        links.classList.toggle('open');
+      });
+      links.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          toggle.classList.remove('active');
+          links.classList.remove('open');
+        });
+      });
+    }
+  }
+
+  // ——— SCROLL PROGRESS ———
+  function initProgress(){
+    const bar = document.getElementById('scrollProgress');
+    if(!bar) return;
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
+    }, {passive:true});
+  }
+
+  // ——— REVEAL ON SCROLL ———
+  function initReveal(){
+    const els = document.querySelectorAll('.reveal');
+    if(!els.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, {threshold:0.05});
+    els.forEach(el => obs.observe(el));
+    // Safety: after 6s reveal everything still hidden
+    setTimeout(() => { els.forEach(el => el.classList.add('visible')); }, 6000);
+  }
+
+  // ——— COUNTER ANIMATION ———
+  function initCounters(){
+    const counters = document.querySelectorAll('[data-count]');
+    counters.forEach(c => {
+      const target = parseInt(c.dataset.count);
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            let cur = 0;
+            const step = Math.ceil(target / 60);
+            const timer = setInterval(() => {
+              cur += step;
+              if(cur >= target){ cur = target; clearInterval(timer); }
+              c.textContent = cur + '+';
+            }, 25);
+            obs.unobserve(e.target);
+          }
+        });
+      }, {threshold:0.5});
+      obs.observe(c);
+    });
+  }
+
+  // ——— MENU FILTER ———
+  function initMenuFilter(){
+    const cats = document.querySelectorAll('.menu-cat');
+    const items = document.querySelectorAll('.menu-item');
+    cats.forEach(cat => {
+      cat.addEventListener('click', () => {
+        cats.forEach(c => c.classList.remove('active'));
+        cat.classList.add('active');
+        const val = cat.dataset.cat;
+        items.forEach(item => {
+          if(val === 'all' || item.dataset.cat === val){
+            item.style.display = '';
+            item.style.animation = 'heroIn .5s var(--ease) both';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // ——— 3D PIZZA MOUSE INTERACTION ———
+  function initPizza3D(){
+    const container = document.getElementById('pizza3d');
+    if(!container) return;
+    const pizza = container.querySelector('.pizza-3d');
+    container.addEventListener('mousemove', e => {
+      const rect = container.getBoundingClientRect();
+      const cx = rect.left + rect.width/2;
+      const cy = rect.top + rect.height/2;
+      const dx = (e.clientX - cx) / (rect.width/2);
+      const dy = (e.clientY - cy) / (rect.height/2);
+      pizza.style.animation = 'none';
+      pizza.style.transform = `rotateX(${25 - dy*20}deg) rotateY(${dx*30}deg)`;
+    });
+    container.addEventListener('mouseleave', () => {
+      pizza.style.animation = '';
+      pizza.style.transform = '';
+    });
+  }
+
+  // ——— 3D TILT ON CARDS ———
+  function initTilt(){
+    document.querySelectorAll('.about-card, .loc-card, .review-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5;
+        const y = (e.clientY - r.top) / r.height - .5;
+        card.style.transform = `perspective(600px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // ——— BACK TO TOP ———
+  function initBackTop(){
+    const btn = document.getElementById('backTop');
+    if(!btn) return;
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 600);
+    }, {passive:true});
+    btn.addEventListener('click', () => { window.scrollTo({top:0,behavior:'smooth'}); });
+  }
+
+  // ——— PARALLAX HERO BG ———
+  function initParallax(){
+    const bg = document.querySelector('.hero-bg');
+    if(!bg) return;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if(y < window.innerHeight * 1.5){
+        bg.style.transform = `scale(1.05) translateY(${y * 0.3}px)`;
+      }
+    }, {passive:true});
+  }
+
+  // ——— SAFE INIT ———
+  function safe(fn, name){
+    try{ fn(); } catch(e){ console.warn('Init failed:', name, e); }
+  }
+
+  // ——— BOOT ———
+  document.addEventListener('DOMContentLoaded', () => {
+    safe(initSplash, 'splash');
+    safe(initCursor, 'cursor');
+    safe(initNav, 'nav');
+    safe(initProgress, 'progress');
+    safe(initReveal, 'reveal');
+    safe(initCounters, 'counters');
+    safe(initMenuFilter, 'menuFilter');
+    safe(initPizza3D, 'pizza3d');
+    safe(initTilt, 'tilt');
+    safe(initBackTop, 'backTop');
+    safe(initParallax, 'parallax');
+  });
+})();
+</script>
+
+</body>
+</html>
