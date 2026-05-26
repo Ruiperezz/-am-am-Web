@@ -34,6 +34,8 @@ ul{list-style:none}
 /* ── SPLASH ── */
 .splash{position:fixed;inset:0;z-index:10000;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .7s var(--ease),visibility .7s}
 .splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+@keyframes splashAuto{0%,72%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden;pointer-events:none}}
+.splash{animation:splashAuto 9s ease-in-out 0s both}
 .splash-pizza{font-size:5rem;animation:splashSpin 2s ease-in-out infinite alternate,splashFloat 1.5s ease-in-out infinite alternate;filter:drop-shadow(0 8px 24px rgba(0,0,0,.3))}
 .splash-text{color:#fff;font-family:'Fredoka',sans-serif;font-size:2.2rem;font-weight:700;margin-top:1.5rem;animation:pulse 1.2s ease-in-out infinite alternate}
 .splash-sub{color:rgba(255,255,255,.6);font-size:.88rem;margin-top:.5rem;font-weight:300;letter-spacing:.05em}
@@ -1264,9 +1266,24 @@ function initPromo(){
 function initSplash(){
   var s=document.getElementById('splash');
   if(!s)return;
-  setTimeout(function(){s.classList.add('hide')},2400);
-  setTimeout(function(){s.style.display='none'},3200);
+  setTimeout(function(){
+    s.style.animation='none'; // cancel CSS fallback
+    void s.offsetHeight;       // force reflow
+    s.classList.add('hide');
+  },2200);
+  setTimeout(function(){s.style.display='none'},3000);
 }
+// Run immediately — script is at bottom of body so DOM is ready
+;(function(){
+  var s=document.getElementById('splash');
+  if(!s)return;
+  setTimeout(function(){
+    s.style.animation='none';
+    void s.offsetHeight;
+    s.classList.add('hide');
+  },2200);
+  setTimeout(function(){s.style.display='none'},3000);
+})();
 
 /* ── CURSOR + TRAIL ── */
 function initCursor(){
