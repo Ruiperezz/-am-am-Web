@@ -334,6 +334,25 @@ section{padding:6rem 2rem}
 .mobile-bar-btn.map{background:var(--cream);color:var(--red);border:2px solid rgba(196,30,30,.14)}
 .mobile-bar-btn.map:active{background:var(--red);color:#fff}
 
+/* ── POSTRES ── */
+.postres{background:#fff}
+.postres-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem}
+.postre-card{border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow-soft);border:1px solid rgba(0,0,0,.05);transition:transform .4s var(--ease),box-shadow .4s;display:flex;flex-direction:column}
+.postre-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
+.postre-card-img{height:260px;overflow:hidden;position:relative;flex-shrink:0}
+.postre-card-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .55s var(--ease);display:block}
+.postre-card:hover .postre-card-img img{transform:scale(1.06)}
+.postre-card-badge{position:absolute;top:.8rem;left:.8rem;background:var(--red);color:#fff;padding:.28rem .8rem;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.postre-card-body{padding:1.3rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.postre-card-name{font-family:'Fredoka',sans-serif;font-size:1.35rem;font-weight:700;color:var(--black);margin-bottom:.4rem}
+.postre-card-desc{color:var(--gray);font-size:.85rem;line-height:1.65;flex:1;margin-bottom:1rem}
+.postre-card-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.postre-card-price{font-family:'Fredoka',sans-serif;font-size:1.1rem;font-weight:700;color:var(--red)}
+.postre-card-cta{display:inline-flex;align-items:center;gap:.3rem;background:var(--cream);color:var(--red);padding:.4rem 1rem;border-radius:50px;font-size:.78rem;font-weight:600;border:1px solid rgba(196,30,30,.15);transition:all .3s var(--ease)}
+.postre-card-cta:hover{background:var(--red);color:#fff}
+@media(max-width:700px){.postres-grid{grid-template-columns:repeat(2,1fr);gap:1rem}.postre-card-img{height:200px}}
+@media(max-width:420px){.postres-grid{grid-template-columns:1fr}}
+
 /* ── COOKIE BAR ── */
 .cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:400;background:rgba(20,20,20,.97);backdrop-filter:blur(16px);padding:1rem 2rem;color:rgba(255,255,255,.82);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.07);transform:translateY(100%);transition:transform .5s var(--ease)}
 .cookie-bar.visible{transform:none}
@@ -586,8 +605,11 @@ section{padding:6rem 2rem}
         <div class="menu-item-img bg-postre">🍰</div>
         <div class="menu-item-body">
           <div class="menu-item-name">Postres</div>
-          <div class="menu-item-desc">Dulces tentaciones para cerrar tu comida con el mejor broche.</div>
-          <div class="menu-item-footer"><span class="menu-item-price">desde 2€</span></div>
+          <div class="menu-item-desc">Tortitas, crêpes, gofres, conos y helados. Ver todos nuestros postres con foto real.</div>
+          <div class="menu-item-footer">
+            <span class="menu-item-price">desde 2€</span>
+            <a href="#postres" style="font-size:.78rem;font-weight:600;color:var(--red);text-decoration:underline">Ver postres →</a>
+          </div>
         </div>
         <span class="menu-item-tag tag-new">✨ Nuevo</span>
       </div>
@@ -757,6 +779,92 @@ section{padding:6rem 2rem}
     <div class="gallery-item gi-6">🍕<span class="gallery-item-label">Masa artesanal</span></div>
     <div class="gallery-item gi-7">🧀<span class="gallery-item-label">Ingredientes premium</span></div>
     <div class="gallery-item gi-8">☕<span class="gallery-item-label">Terraza</span></div>
+  </div>
+</section>
+
+<!-- Postres -->
+<section class="postres" id="postres">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-badge">🍰 Postres</div>
+      <h2 class="section-title">Cierra con el <span>mejor sabor</span></h2>
+      <p class="section-desc" style="margin:0 auto 3rem">Tortitas, crêpes, gofres, conos y helados artesanos. El broche dulce perfecto para tu visita a Ñam Ñam.</p>
+    </div>
+    <div class="postres-grid">
+
+      <div class="postre-card reveal">
+        <div class="postre-card-img">
+          <img src="img/postre-tortitas.jpg" alt="Tortitas Ñam Ñam" loading="lazy">
+          <span class="postre-card-badge">⭐ Favorito</span>
+        </div>
+        <div class="postre-card-body">
+          <div class="postre-card-name">Tortitas</div>
+          <div class="postre-card-desc">Tortitas esponjosas apiladas, bañadas en generosa salsa de chocolate y acompañadas de nata montada. Un clásico irresistible.</div>
+          <div class="postre-card-footer">
+            <span class="postre-card-price">desde 3€</span>
+            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="postre-card reveal reveal-delay-1">
+        <div class="postre-card-img">
+          <img src="img/postre-crepe.jpg" alt="Crêpe Ñam Ñam" loading="lazy">
+        </div>
+        <div class="postre-card-body">
+          <div class="postre-card-name">Crêpe</div>
+          <div class="postre-card-desc">Crêpe fino y dorado, relleno y cubierto con salsa de chocolate y crujientes frutos secos picados. Textura y sabor en cada bocado.</div>
+          <div class="postre-card-footer">
+            <span class="postre-card-price">desde 3€</span>
+            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="postre-card reveal reveal-delay-2">
+        <div class="postre-card-img">
+          <img src="img/postre-gofre.jpg" alt="Gofre Ñam Ñam" loading="lazy">
+        </div>
+        <div class="postre-card-body">
+          <div class="postre-card-name">Gofre</div>
+          <div class="postre-card-desc">Gofre crujiente por fuera y tierno por dentro, coronado con abundante nata montada y bañado en chocolate fundido.</div>
+          <div class="postre-card-footer">
+            <span class="postre-card-price">desde 3€</span>
+            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="postre-card reveal reveal-delay-3">
+        <div class="postre-card-img">
+          <img src="img/postre-cono.jpg" alt="Cono Ñam Ñam" loading="lazy">
+          <span class="postre-card-badge" style="background:#7c3aed">✨ Nuevo</span>
+        </div>
+        <div class="postre-card-body">
+          <div class="postre-card-name">Cono</div>
+          <div class="postre-card-desc">Cono de barquillo con helado suave cremoso. Ahora disponible relleno de Nutella en su interior — nuestro nuevo sabor estrella.</div>
+          <div class="postre-card-footer">
+            <span class="postre-card-price">desde 2€</span>
+            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="postre-card reveal reveal-delay-4">
+        <div class="postre-card-img">
+          <img src="img/postre-helado.jpg" alt="Helado Ñam Ñam" loading="lazy">
+        </div>
+        <div class="postre-card-body">
+          <div class="postre-card-name">Helado</div>
+          <div class="postre-card-desc">Copa de helado con capas alternas de crema y chocolate. Rematada con una generosa nube de nata montada. Refrescante y goloso.</div>
+          <div class="postre-card-footer">
+            <span class="postre-card-price">desde 2€</span>
+            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
