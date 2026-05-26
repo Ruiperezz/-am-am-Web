@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -507,10 +507,10 @@ section{padding:6rem 2rem}
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo">Ñam Ñam</a>
   <div class="nav-links" id="navLinks">
-    <a href="#sobre">Nosotros</a>
     <a href="#menu">Menú</a>
+    <a href="#entrantes">Entrantes</a>
+    <a href="#ensaladas">Ensaladas</a>
     <a href="#sedes">Sedes</a>
-    <a href="#faq">FAQ</a>
     <a href="#opiniones">Opiniones</a>
     <a href="#contacto" class="nav-cta">📞 Contacto</a>
   </div>
@@ -560,14 +560,67 @@ section{padding:6rem 2rem}
 <!-- Marquee -->
 <div class="marquee">
   <div class="marquee-inner" id="marquee">
-    <span>🍕 PIZZAS ARTESANAS</span><span>🥖 BOCATAS</span><span>🥗 ENSALADAS</span>
-    <span>🍟 COMPLEMENTOS</span><span>🍰 POSTRES</span><span>🎉 MENÚS Y PROMOCIONES</span>
-    <span>👨‍🍳 COCINA A LA VISTA</span><span>💰 PRECIOS IMBATIBLES</span>
-    <span>🍕 PIZZAS ARTESANAS</span><span>🥖 BOCATAS</span><span>🥗 ENSALADAS</span>
-    <span>🍟 COMPLEMENTOS</span><span>🍰 POSTRES</span><span>🎉 MENÚS Y PROMOCIONES</span>
-    <span>👨‍🍳 COCINA A LA VISTA</span><span>💰 PRECIOS IMBATIBLES</span>
+    <span>🍕 PIZZAS ARTESANAS</span><span>🥖 BOCATAS</span><span>🥗 ENSALADAS FRESCAS</span>
+    <span>🌯 BURRITOS</span><span>🍟 ENTRANTES</span><span>🍰 POSTRES ARTESANOS</span>
+    <span>👨‍🍳 COCINA A LA VISTA</span><span>💰 PRECIOS IMBATIBLES</span><span>📍 4 SEDES EN MURCIA</span>
+    <span>🍕 PIZZAS ARTESANAS</span><span>🥖 BOCATAS</span><span>🥗 ENSALADAS FRESCAS</span>
+    <span>🌯 BURRITOS</span><span>🍟 ENTRANTES</span><span>🍰 POSTRES ARTESANOS</span>
+    <span>👨‍🍳 COCINA A LA VISTA</span><span>💰 PRECIOS IMBATIBLES</span><span>📍 4 SEDES EN MURCIA</span>
   </div>
 </div>
+
+<!-- Reviews -->
+<section class="reviews" id="opiniones">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-badge">⭐ Opiniones</div>
+      <h2 class="section-title">Lo que dicen <span>nuestros clientes</span></h2>
+    </div>
+    <div class="reviews-header reveal">
+      <div class="reviews-score">
+        <div class="reviews-score-num">4.0</div>
+        <div class="reviews-score-stars">★★★★☆</div>
+      </div>
+      <div class="reviews-meta">
+        <h3>Excelente valoración en Google</h3>
+        <p>Más de 695 opiniones de clientes reales · 3.300+ seguidores en Facebook</p>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-top">
+          <div class="review-avatar">A</div>
+          <div><div class="review-name">Ana García</div><div class="review-date">hace 2 semanas</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">"Las mejores pizzas de Cartagena a precio imbatible. El ambiente es genial y poder ver cómo hacen tu pizza es un plus que encanta a los niños."</p>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-top">
+          <div class="review-avatar">M</div>
+          <div><div class="review-name">Miguel Rodríguez</div><div class="review-date">hace 1 mes</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">"Siempre repetimos. La relación calidad-precio es espectacular. Perfecto para ir en familia o con amigos, nunca falla."</p>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-top">
+          <div class="review-avatar">L</div>
+          <div><div class="review-name">Laura Martínez</div><div class="review-date">hace 3 semanas</div><div class="review-stars">★★★★☆</div></div>
+        </div>
+        <p class="review-text">"Gran ambiente y terraza amplia. Las pizzas están muy buenas y la variedad del menú nos encanta. Es nuestro sitio favorito para cenar fuera."</p>
+      </div>
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-top">
+          <div class="review-avatar">J</div>
+          <div><div class="review-name">José Sánchez</div><div class="review-date">hace 1 mes</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">"Fuimos con los niños y quedaron encantados viendo cómo preparaban la pizza. La masa es espectacular, crujiente por fuera y esponjosa por dentro."</p>
+      </div>
+    </div>
+    <div class="reviews-cta reveal">
+      <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena" target="_blank" rel="noopener">Ver todas las opiniones en Google →</a>
+    </div>
+  </div>
+</section>
 
 <!-- About -->
 <section class="about" id="sobre">
@@ -943,165 +996,107 @@ section{padding:6rem 2rem}
   </div>
 </section>
 
-<!-- 3D Pizza Scene -->
-<section class="pizza-scene">
-  <div class="pizza-scene-inner">
-    <div class="section-badge" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)">👨‍🍳 Nuestra esencia</div>
-    <h2 style="font-family:'Fredoka',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:.5rem">Pizza hecha con <em style="font-weight:400;color:var(--gold)">pasión</em></h2>
-    <p style="opacity:.78;font-size:1.05rem">Cada pizza es una pequeña obra de arte · Mueve la pizza con el ratón</p>
-    <div class="pizza-3d-container" id="pizza3d">
-      <div class="pizza-3d">
-        <div class="pizza-disc pizza-bottom"></div>
-        <div class="pizza-edge"></div>
-        <div class="pizza-disc pizza-top"></div>
-        <div class="pizza-toppings">
-          <span class="pizza-topping">🫒</span><span class="pizza-topping">🍅</span><span class="pizza-topping">🧀</span>
-          <span class="pizza-topping">🌿</span><span class="pizza-topping">🫑</span><span class="pizza-topping">🍄</span>
-          <span class="pizza-topping">🧅</span><span class="pizza-topping">🌶️</span><span class="pizza-topping">🫒</span>
-        </div>
-      </div>
-    </div>
-    <div class="pizza-scene-features">
-      <div class="pizza-feat reveal"><div class="pizza-feat-icon">🔥</div><h4>Horno artesanal</h4><p>Cocinada a la temperatura perfecta para una masa crujiente y esponjosa.</p></div>
-      <div class="pizza-feat reveal reveal-delay-1"><div class="pizza-feat-icon">🌿</div><h4>Ingredientes frescos</h4><p>Seleccionamos diariamente los mejores productos del mercado local.</p></div>
-      <div class="pizza-feat reveal reveal-delay-2"><div class="pizza-feat-icon">❤️</div><h4>Hecha con cariño</h4><p>Cada pizza se prepara a mano, sin prisas, con la dedicación que merece.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Locations + Hours -->
-<section class="locations" id="sedes">
+<!-- Entrantes -->
+<section class="entrantes" id="entrantes">
   <div class="container">
     <div style="text-align:center" class="reveal">
-      <div class="section-badge">📍 Nuestras sedes</div>
-      <h2 class="section-title">Encuéntranos en la <span>Región de Murcia</span></h2>
-      <p class="section-desc" style="margin-left:auto;margin-right:auto">Cuatro sedes para que siempre tengas una Ñam Ñam cerca. Llámanos directamente para consultar horarios y disponibilidad.</p>
+      <div class="section-badge">🍟 Entrantes</div>
+      <h2 class="section-title">Para <span>empezar con fuerza</span></h2>
+      <p class="section-desc" style="margin:0 auto 3rem">Seis entrantes crujientes y sabrosos para compartir o disfrutar solos. Haz clic en cualquiera para verlo en detalle.</p>
     </div>
-    <div class="loc-layout">
-      <div>
-        <div class="loc-grid">
-          <div class="loc-card reveal">
-            <div class="loc-icon">🏛️</div>
-            <h3 class="loc-name">Puerta de Murcia</h3>
-            <p class="loc-address">C. Puertas de Murcia, 37<br>30201 Cartagena, Murcia</p>
-            <a href="tel:669876499" class="loc-phone">📞 669 87 64 99</a>
-          </div>
-          <div class="loc-card reveal reveal-delay-1">
-            <div class="loc-icon">🛍️</div>
-            <h3 class="loc-name">Espacio Mediterráneo</h3>
-            <p class="loc-address">Centro Comercial<br>Espacio Mediterráneo, Murcia</p>
-            <a href="tel:669877236" class="loc-phone">📞 669 87 72 36</a>
-          </div>
-          <div class="loc-card reveal reveal-delay-2">
-            <div class="loc-icon">🌳</div>
-            <h3 class="loc-name">La Rambla</h3>
-            <p class="loc-address">Zona de La Rambla<br>Región de Murcia</p>
-            <a href="tel:620020817" class="loc-phone">📞 620 02 08 17</a>
-          </div>
-          <div class="loc-card reveal reveal-delay-3">
-            <div class="loc-icon">🏬</div>
-            <h3 class="loc-name">C.C. Dos Mares</h3>
-            <p class="loc-address">Centro Comercial Dos Mares<br>Región de Murcia</p>
-            <a href="tel:669876499" class="loc-phone">📞 Llámanos</a>
-          </div>
-        </div>
-        <div class="loc-map reveal">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5!2d-0.9862!3d37.5990!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6343b71f5c4a4b%3A0xcf5d7f460bdfd39a!2sC.%20Puertas%20de%20Murcia%2C%2037%2C%2030201%20Cartagena%2C%20Murcia!5e0!3m2!1ses!2ses!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-      <div class="hours-card reveal">
-        <h3 class="hours-title">🕐 Horarios</h3>
-        <div class="hours-row"><span class="hours-day">Lunes — Jueves</span><span class="hours-time">12:00 – 23:00</span></div>
-        <div class="hours-row"><span class="hours-day">Viernes</span><span class="hours-time">12:00 – 00:00</span></div>
-        <div class="hours-row"><span class="hours-day">Sábado</span><span class="hours-time">12:00 – 00:00</span></div>
-        <div class="hours-row"><span class="hours-day">Domingo</span><span class="hours-time">12:00 – 23:00</span></div>
-        <div><span class="hours-status"><span class="hours-dot"></span>Abierto ahora</span></div>
-        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--gray-light)">
-          <p style="font-size:.8rem;color:var(--gray);line-height:1.6">Los horarios pueden variar según sede y festividades. Llama antes para confirmar.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="entrantes-grid" id="entrantesGrid">
 
-<!-- Reviews -->
-<section class="reviews" id="opiniones">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-badge">⭐ Opiniones</div>
-      <h2 class="section-title">Lo que dicen <span>nuestros clientes</span></h2>
-    </div>
-    <div class="reviews-header reveal">
-      <div class="reviews-score">
-        <div class="reviews-score-num">4.0</div>
-        <div class="reviews-score-stars">★★★★☆</div>
-      </div>
-      <div class="reviews-meta">
-        <h3>Excelente valoración en Google</h3>
-        <p>Más de 695 opiniones de clientes reales · 3.300+ seguidores en Facebook</p>
-      </div>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-top">
-          <div class="review-avatar">A</div>
-          <div><div class="review-name">Ana García</div><div class="review-date">hace 2 semanas</div><div class="review-stars">★★★★★</div></div>
+      <div class="entrante-card reveal" data-lb-src="img/entrante-kentucky-chicken.jpg" data-lb-caption="Kentucky Chicken">
+        <div class="entrante-card-img">
+          <img src="img/entrante-kentucky-chicken.jpg" alt="Kentucky Chicken" loading="lazy">
+          <div class="entrante-zoom-icon">🔍</div>
         </div>
-        <p class="review-text">"Las mejores pizzas de Cartagena a precio imbatible. El ambiente es genial y poder ver cómo hacen tu pizza es un plus que encanta a los niños."</p>
-      </div>
-      <div class="review-card reveal reveal-delay-1">
-        <div class="review-top">
-          <div class="review-avatar">M</div>
-          <div><div class="review-name">Miguel Rodríguez</div><div class="review-date">hace 1 mes</div><div class="review-stars">★★★★★</div></div>
+        <div class="entrante-card-body">
+          <div class="entrante-card-name">Kentucky Chicken</div>
+          <div class="entrante-card-ing">Trozos de pollo kentucky crujiente con patatas bravas y salsa ranchera.</div>
+          <div class="entrante-card-footer">
+            <span class="entrante-card-price">desde 5€</span>
+            <span class="entrante-card-tag">🍗 Crujiente</span>
+          </div>
         </div>
-        <p class="review-text">"Siempre repetimos. La relación calidad-precio es espectacular. Perfecto para ir en familia o con amigos, nunca falla."</p>
       </div>
-      <div class="review-card reveal reveal-delay-2">
-        <div class="review-top">
-          <div class="review-avatar">L</div>
-          <div><div class="review-name">Laura Martínez</div><div class="review-date">hace 3 semanas</div><div class="review-stars">★★★★☆</div></div>
-        </div>
-        <p class="review-text">"Gran ambiente y terraza amplia. Las pizzas están muy buenas y la variedad del menú nos encanta. Es nuestro sitio favorito para cenar fuera."</p>
-      </div>
-      <div class="review-card reveal reveal-delay-3">
-        <div class="review-top">
-          <div class="review-avatar">J</div>
-          <div><div class="review-name">José Sánchez</div><div class="review-date">hace 1 mes</div><div class="review-stars">★★★★★</div></div>
-        </div>
-        <p class="review-text">"Fuimos con los niños y quedaron encantados viendo cómo preparaban la pizza. La masa es espectacular, crujiente por fuera y esponjosa por dentro."</p>
-      </div>
-    </div>
-    <div class="reviews-cta reveal">
-      <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena" target="_blank" rel="noopener">Ver todas las opiniones en Google →</a>
-    </div>
-  </div>
-</section>
 
-<!-- Gallery -->
-<section class="gallery" id="galeria">
-  <div class="container reveal">
-    <div style="text-align:center;margin-bottom:1rem">
-      <div class="section-badge">📸 Galería</div>
-      <h2 class="section-title">Nuestro <span>mundo Ñam Ñam</span></h2>
+      <div class="entrante-card reveal reveal-delay-1" data-lb-src="img/entrante-cajun-strips.jpg" data-lb-caption="Cajun Chicken Strips">
+        <div class="entrante-card-img">
+          <img src="img/entrante-cajun-strips.jpg" alt="Cajun Chicken Strips" loading="lazy">
+          <div class="entrante-zoom-icon">🔍</div>
+        </div>
+        <div class="entrante-card-body">
+          <div class="entrante-card-name">Cajun Chicken Strips</div>
+          <div class="entrante-card-ing">Tiras de pollo rebozadas con especias cajun, crujientes y jugosas. Con patatas fritas.</div>
+          <div class="entrante-card-footer">
+            <span class="entrante-card-price">desde 5€</span>
+            <span class="entrante-card-tag">🌶️ Cajun</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entrante-card reveal reveal-delay-2" data-lb-src="img/entrante-alitas-bbq.jpg" data-lb-caption="Alitas y Muslitos BBQ">
+        <div class="entrante-card-img">
+          <img src="img/entrante-alitas-bbq.jpg" alt="Alitas y Muslitos BBQ" loading="lazy">
+          <div class="entrante-zoom-icon">🔍</div>
+        </div>
+        <div class="entrante-card-body">
+          <div class="entrante-card-name">Alitas y Muslitos BBQ</div>
+          <div class="entrante-card-ing">Alitas y muslitos de pollo adobados, marinados en salsa BBQ. Con patatas bravas.</div>
+          <div class="entrante-card-footer">
+            <span class="entrante-card-price">desde 6€</span>
+            <span class="entrante-card-tag">🔥 BBQ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entrante-card reveal reveal-delay-1" data-lb-src="img/entrante-calamares-bravos.jpg" data-lb-caption="Calamares Bravos">
+        <div class="entrante-card-img">
+          <img src="img/entrante-calamares-bravos.jpg" alt="Calamares Bravos" loading="lazy">
+          <div class="entrante-zoom-icon">🔍</div>
+        </div>
+        <div class="entrante-card-body">
+          <div class="entrante-card-name">Calamares Bravos</div>
+          <div class="entrante-card-ing">Calamares rebozados bañados en salsa brava de queso cheddar. Irresistibles.</div>
+          <div class="entrante-card-footer">
+            <span class="entrante-card-price">desde 6€</span>
+            <span class="entrante-card-tag">🦑 Del mar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entrante-card reveal reveal-delay-2" data-lb-src="img/entrante-patatas-bravas.jpg" data-lb-caption="Patatas Bravas">
+        <div class="entrante-card-img">
+          <img src="img/entrante-patatas-bravas.jpg" alt="Patatas Bravas" loading="lazy">
+          <div class="entrante-zoom-icon">🔍</div>
+        </div>
+        <div class="entrante-card-body">
+          <div class="entrante-card-name">Patatas Bravas</div>
+          <div class="entrante-card-ing">Patatas fritas con nuestra salsa brava especial de la casa. El clásico perfecto.</div>
+          <div class="entrante-card-footer">
+            <span class="entrante-card-price">desde 3€</span>
+            <span class="entrante-card-tag">⭐ Clásico</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entrante-card reveal reveal-delay-3" data-lb-src="img/entrante-nuggets.jpg" data-lb-caption="Nuggets">
+        <div class="entrante-card-img">
+          <img src="img/entrante-nuggets.jpg" alt="Nuggets" loading="lazy">
+          <div class="entrante-zoom-icon">🔍</div>
+        </div>
+        <div class="entrante-card-body">
+          <div class="entrante-card-name">Nuggets</div>
+          <div class="entrante-card-ing">Nuggets de pollo crujientes, dorados al punto perfecto. Para mojar y disfrutar.</div>
+          <div class="entrante-card-footer">
+            <span class="entrante-card-price">desde 4€</span>
+            <span class="entrante-card-tag">🍗 Nuggets</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <div class="gallery-scroll">
-    <div class="gallery-item gi-1">🍕<span class="gallery-item-label">Pizza recién hecha</span></div>
-    <div class="gallery-item gi-2">👨‍🍳<span class="gallery-item-label">Nuestro equipo</span></div>
-    <div class="gallery-item gi-3">🔥<span class="gallery-item-label">El horno</span></div>
-    <div class="gallery-item gi-4">🥗<span class="gallery-item-label">Ensaladas frescas</span></div>
-    <div class="gallery-item gi-5">🎉<span class="gallery-item-label">Ambiente familiar</span></div>
-    <div class="gallery-item gi-6">🍕<span class="gallery-item-label">Masa artesanal</span></div>
-    <div class="gallery-item gi-7">🧀<span class="gallery-item-label">Ingredientes premium</span></div>
-    <div class="gallery-item gi-8">☕<span class="gallery-item-label">Terraza</span></div>
-    <div class="gallery-item gi-1">🍕<span class="gallery-item-label">Pizza recién hecha</span></div>
-    <div class="gallery-item gi-2">👨‍🍳<span class="gallery-item-label">Nuestro equipo</span></div>
-    <div class="gallery-item gi-3">🔥<span class="gallery-item-label">El horno</span></div>
-    <div class="gallery-item gi-4">🥗<span class="gallery-item-label">Ensaladas frescas</span></div>
-    <div class="gallery-item gi-5">🎉<span class="gallery-item-label">Ambiente familiar</span></div>
-    <div class="gallery-item gi-6">🍕<span class="gallery-item-label">Masa artesanal</span></div>
-    <div class="gallery-item gi-7">🧀<span class="gallery-item-label">Ingredientes premium</span></div>
-    <div class="gallery-item gi-8">☕<span class="gallery-item-label">Terraza</span></div>
   </div>
 </section>
 
@@ -1209,17 +1204,6 @@ section{padding:6rem 2rem}
   </div>
 </section>
 
-<!-- Lightbox -->
-<div class="lb-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-  <button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
-  <button class="lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
-  <div class="lb-img-wrap">
-    <img id="lbImg" src="" alt="">
-    <div class="lb-caption" id="lbCaption"></div>
-  </div>
-  <button class="lb-next" id="lbNext" aria-label="Siguiente">›</button>
-</div>
-
 <!-- Burritos -->
 <section class="burritos" id="burritos">
   <div class="container">
@@ -1301,110 +1285,6 @@ section{padding:6rem 2rem}
           <div class="burrito-card-footer">
             <span class="burrito-card-price">desde 7.50€</span>
             <span class="burrito-card-tag">🍗 Crujiente</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Entrantes -->
-<section class="entrantes" id="entrantes">
-  <div class="container">
-    <div style="text-align:center" class="reveal">
-      <div class="section-badge">🍟 Entrantes</div>
-      <h2 class="section-title">Para <span>empezar con fuerza</span></h2>
-      <p class="section-desc" style="margin:0 auto 3rem">Seis entrantes crujientes y sabrosos para compartir o disfrutar solos. Haz clic en cualquiera para verlo en detalle.</p>
-    </div>
-    <div class="entrantes-grid" id="entrantesGrid">
-
-      <div class="entrante-card reveal" data-lb-src="img/entrante-kentucky-chicken.jpg" data-lb-caption="Kentucky Chicken">
-        <div class="entrante-card-img">
-          <img src="img/entrante-kentucky-chicken.jpg" alt="Kentucky Chicken" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Kentucky Chicken</div>
-          <div class="entrante-card-ing">Trozos de pollo kentucky crujiente con patatas bravas y salsa ranchera.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 5€</span>
-            <span class="entrante-card-tag">🍗 Crujiente</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-1" data-lb-src="img/entrante-cajun-strips.jpg" data-lb-caption="Cajun Chicken Strips">
-        <div class="entrante-card-img">
-          <img src="img/entrante-cajun-strips.jpg" alt="Cajun Chicken Strips" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Cajun Chicken Strips</div>
-          <div class="entrante-card-ing">Tiras de pollo rebozadas con especias cajun, crujientes y jugosas. Con patatas fritas.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 5€</span>
-            <span class="entrante-card-tag">🌶️ Cajun</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-2" data-lb-src="img/entrante-alitas-bbq.jpg" data-lb-caption="Alitas y Muslitos BBQ">
-        <div class="entrante-card-img">
-          <img src="img/entrante-alitas-bbq.jpg" alt="Alitas y Muslitos BBQ" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Alitas y Muslitos BBQ</div>
-          <div class="entrante-card-ing">Alitas y muslitos de pollo adobados, marinados en salsa BBQ. Con patatas bravas.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 6€</span>
-            <span class="entrante-card-tag">🔥 BBQ</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-1" data-lb-src="img/entrante-calamares-bravos.jpg" data-lb-caption="Calamares Bravos">
-        <div class="entrante-card-img">
-          <img src="img/entrante-calamares-bravos.jpg" alt="Calamares Bravos" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Calamares Bravos</div>
-          <div class="entrante-card-ing">Calamares rebozados bañados en salsa brava de queso cheddar. Irresistibles.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 6€</span>
-            <span class="entrante-card-tag">🦑 Del mar</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-2" data-lb-src="img/entrante-patatas-bravas.jpg" data-lb-caption="Patatas Bravas">
-        <div class="entrante-card-img">
-          <img src="img/entrante-patatas-bravas.jpg" alt="Patatas Bravas" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Patatas Bravas</div>
-          <div class="entrante-card-ing">Patatas fritas con nuestra salsa brava especial de la casa. El clásico perfecto.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 3€</span>
-            <span class="entrante-card-tag">⭐ Clásico</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-3" data-lb-src="img/entrante-nuggets.jpg" data-lb-caption="Nuggets">
-        <div class="entrante-card-img">
-          <img src="img/entrante-nuggets.jpg" alt="Nuggets" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Nuggets</div>
-          <div class="entrante-card-ing">Nuggets de pollo crujientes, dorados al punto perfecto. Para mojar y disfrutar.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 4€</span>
-            <span class="entrante-card-tag">🍗 Nuggets</span>
           </div>
         </div>
       </div>
@@ -1499,6 +1379,98 @@ section{padding:6rem 2rem}
   </div>
 </section>
 
+<!-- Lightbox -->
+<div class="lb-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <div class="lb-img-wrap">
+    <img id="lbImg" src="" alt="">
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+  <button class="lb-next" id="lbNext" aria-label="Siguiente">›</button>
+</div>
+
+<!-- 3D Pizza Scene -->
+<section class="pizza-scene">
+  <div class="pizza-scene-inner">
+    <div class="section-badge" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)">👨‍🍳 Nuestra esencia</div>
+    <h2 style="font-family:'Fredoka',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:.5rem">Pizza hecha con <em style="font-weight:400;color:var(--gold)">pasión</em></h2>
+    <p style="opacity:.78;font-size:1.05rem">Cada pizza es una pequeña obra de arte · Mueve la pizza con el ratón</p>
+    <div class="pizza-3d-container" id="pizza3d">
+      <div class="pizza-3d">
+        <div class="pizza-disc pizza-bottom"></div>
+        <div class="pizza-edge"></div>
+        <div class="pizza-disc pizza-top"></div>
+        <div class="pizza-toppings">
+          <span class="pizza-topping">🫒</span><span class="pizza-topping">🍅</span><span class="pizza-topping">🧀</span>
+          <span class="pizza-topping">🌿</span><span class="pizza-topping">🫑</span><span class="pizza-topping">🍄</span>
+          <span class="pizza-topping">🧅</span><span class="pizza-topping">🌶️</span><span class="pizza-topping">🫒</span>
+        </div>
+      </div>
+    </div>
+    <div class="pizza-scene-features">
+      <div class="pizza-feat reveal"><div class="pizza-feat-icon">🔥</div><h4>Horno artesanal</h4><p>Cocinada a la temperatura perfecta para una masa crujiente y esponjosa.</p></div>
+      <div class="pizza-feat reveal reveal-delay-1"><div class="pizza-feat-icon">🌿</div><h4>Ingredientes frescos</h4><p>Seleccionamos diariamente los mejores productos del mercado local.</p></div>
+      <div class="pizza-feat reveal reveal-delay-2"><div class="pizza-feat-icon">❤️</div><h4>Hecha con cariño</h4><p>Cada pizza se prepara a mano, sin prisas, con la dedicación que merece.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Locations + Hours -->
+<section class="locations" id="sedes">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-badge">📍 Nuestras sedes</div>
+      <h2 class="section-title">Encuéntranos en la <span>Región de Murcia</span></h2>
+      <p class="section-desc" style="margin-left:auto;margin-right:auto">Cuatro sedes para que siempre tengas una Ñam Ñam cerca. Llámanos directamente para consultar horarios y disponibilidad.</p>
+    </div>
+    <div class="loc-layout">
+      <div>
+        <div class="loc-grid">
+          <div class="loc-card reveal">
+            <div class="loc-icon">🏛️</div>
+            <h3 class="loc-name">Puerta de Murcia</h3>
+            <p class="loc-address">C. Puertas de Murcia, 37<br>30201 Cartagena, Murcia</p>
+            <a href="tel:669876499" class="loc-phone">📞 669 87 64 99</a>
+          </div>
+          <div class="loc-card reveal reveal-delay-1">
+            <div class="loc-icon">🛍️</div>
+            <h3 class="loc-name">Espacio Mediterráneo</h3>
+            <p class="loc-address">Centro Comercial<br>Espacio Mediterráneo, Murcia</p>
+            <a href="tel:669877236" class="loc-phone">📞 669 87 72 36</a>
+          </div>
+          <div class="loc-card reveal reveal-delay-2">
+            <div class="loc-icon">🌳</div>
+            <h3 class="loc-name">La Rambla</h3>
+            <p class="loc-address">Zona de La Rambla<br>Región de Murcia</p>
+            <a href="tel:620020817" class="loc-phone">📞 620 02 08 17</a>
+          </div>
+          <div class="loc-card reveal reveal-delay-3">
+            <div class="loc-icon">🏬</div>
+            <h3 class="loc-name">C.C. Dos Mares</h3>
+            <p class="loc-address">Centro Comercial Dos Mares<br>Región de Murcia</p>
+            <a href="tel:669876499" class="loc-phone">📞 Llámanos</a>
+          </div>
+        </div>
+        <div class="loc-map reveal">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5!2d-0.9862!3d37.5990!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6343b71f5c4a4b%3A0xcf5d7f460bdfd39a!2sC.%20Puertas%20de%20Murcia%2C%2037%2C%2030201%20Cartagena%2C%20Murcia!5e0!3m2!1ses!2ses!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="hours-card reveal">
+        <h3 class="hours-title">🕐 Horarios</h3>
+        <div class="hours-row"><span class="hours-day">Lunes — Jueves</span><span class="hours-time">12:00 – 23:00</span></div>
+        <div class="hours-row"><span class="hours-day">Viernes</span><span class="hours-time">12:00 – 00:00</span></div>
+        <div class="hours-row"><span class="hours-day">Sábado</span><span class="hours-time">12:00 – 00:00</span></div>
+        <div class="hours-row"><span class="hours-day">Domingo</span><span class="hours-time">12:00 – 23:00</span></div>
+        <div><span class="hours-status"><span class="hours-dot"></span>Abierto ahora</span></div>
+        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--gray-light)">
+          <p style="font-size:.8rem;color:var(--gray);line-height:1.6">Los horarios pueden variar según sede y festividades. Llama antes para confirmar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container">
@@ -1565,7 +1537,7 @@ section{padding:6rem 2rem}
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Ñam Ñam</div>
-      <p class="footer-text">Pizzería artesanal con cocina a la vista. Pizzas, bocatas, ensaladas, complementos y postres. Los mejores precios de la Región de Murcia.</p>
+      <p class="footer-text">Pizzería artesanal con cocina a la vista. Pizzas, bocatas, burritos, entrantes, ensaladas y postres. Los mejores precios de la Región de Murcia.</p>
       <span class="footer-badge">⭐ 4.0 · 695+ reseñas Google</span>
     </div>
     <div>
@@ -1582,11 +1554,13 @@ section{padding:6rem 2rem}
       <div class="footer-hour"><span class="footer-hour-day">Lun – Jue</span><span class="footer-hour-time">12–23h</span></div>
       <div class="footer-hour"><span class="footer-hour-day">Vie – Sáb</span><span class="footer-hour-time">12–00h</span></div>
       <div class="footer-hour"><span class="footer-hour-day">Domingo</span><span class="footer-hour-time">12–23h</span></div>
-      <div style="margin-top:.8rem"><h4>Menú</h4></div>
+      <div style="margin-top:.8rem"><h4>Carta</h4></div>
       <ul>
-        <li><a href="#menu">Pizzas</a></li>
-        <li><a href="#menu">Bocatas</a></li>
-        <li><a href="#menu">Ensaladas · Postres</a></li>
+        <li><a href="#menu">Pizzas · Bocatas</a></li>
+        <li><a href="#entrantes">Entrantes</a></li>
+        <li><a href="#ensaladas">Ensaladas</a></li>
+        <li><a href="#burritos">Burritos</a></li>
+        <li><a href="#postres">Postres</a></li>
       </ul>
     </div>
     <div>
