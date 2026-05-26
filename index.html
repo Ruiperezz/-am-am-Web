@@ -310,6 +310,15 @@ section{padding:6rem 2rem}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.07);margin-top:3rem;padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.77rem;max-width:1200px;margin-left:auto;margin-right:auto}
 .footer-bottom a{transition:color .3s}.footer-bottom a:hover{color:var(--red-light)}
 
+/* ── PROMO BAR ── */
+.promo-bar{background:var(--red);color:#fff;text-align:center;padding:.52rem 4rem;font-size:.83rem;font-weight:500;position:relative;z-index:1002;letter-spacing:.01em}
+.promo-bar strong{font-weight:700}
+.promo-bar a{color:rgba(255,255,255,.9);font-weight:600;text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+.promo-bar a:hover{color:#fff}
+.promo-close{position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:1.1rem;padding:.2rem .6rem;line-height:1;transition:color .2s;font-family:inherit}
+.promo-close:hover{color:#fff}
+.trust-dot{width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0}
+
 /* ── SCROLL PROGRESS ── */
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--red),var(--red-light));z-index:10001;width:0%;transition:width .1s;box-shadow:0 0 8px rgba(196,30,30,.45)}
 
@@ -334,62 +343,6 @@ section{padding:6rem 2rem}
 .mobile-bar-btn.map{background:var(--cream);color:var(--red);border:2px solid rgba(196,30,30,.14)}
 .mobile-bar-btn.map:active{background:var(--red);color:#fff}
 
-/* ── ENSALADAS ── */
-.ensaladas{background:var(--off-white)}
-.ensaladas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.ensalada-card{border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow-soft);border:1px solid rgba(0,0,0,.05);transition:transform .4s var(--ease),box-shadow .4s;display:flex;flex-direction:column;cursor:pointer}
-.ensalada-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
-.ensalada-card-img{height:240px;overflow:hidden;position:relative;flex-shrink:0}
-.ensalada-card-img img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .55s var(--ease);display:block}
-.ensalada-card:hover .ensalada-card-img img{transform:scale(1.07)}
-.ensalada-zoom-icon{position:absolute;bottom:.75rem;right:.75rem;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;font-size:.85rem;opacity:0;transform:scale(.7);transition:opacity .3s,transform .3s var(--ease-back);box-shadow:0 2px 8px rgba(0,0,0,.15)}
-.ensalada-card:hover .ensalada-zoom-icon{opacity:1;transform:scale(1)}
-.ensalada-card-body{padding:1.2rem 1.4rem 1.4rem;display:flex;flex-direction:column;flex:1}
-.ensalada-card-name{font-family:'Fredoka',sans-serif;font-size:1.25rem;font-weight:700;color:var(--black);margin-bottom:.4rem}
-.ensalada-card-ing{color:var(--gray);font-size:.82rem;line-height:1.6;flex:1;margin-bottom:.9rem}
-.ensalada-card-footer{display:flex;align-items:center;justify-content:space-between}
-.ensalada-card-price{font-family:'Fredoka',sans-serif;font-size:1.05rem;font-weight:700;color:var(--red)}
-.ensalada-card-tag{background:var(--cream);color:var(--red);padding:.25rem .75rem;border-radius:50px;font-size:.72rem;font-weight:600;border:1px solid rgba(196,30,30,.12)}
-@media(max-width:900px){.ensaladas-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.ensaladas-grid{grid-template-columns:1fr;gap:1rem}.ensalada-card-img{height:200px}}
-
-/* ── BURRITOS ── */
-.burritos{background:var(--cream)}
-.burritos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.burrito-card{border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow-soft);border:1px solid rgba(0,0,0,.05);transition:transform .4s var(--ease),box-shadow .4s;display:flex;flex-direction:column;cursor:pointer}
-.burrito-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
-.burrito-card-img{height:240px;overflow:hidden;position:relative;flex-shrink:0}
-.burrito-card-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .55s var(--ease);display:block}
-.burrito-card:hover .burrito-card-img img{transform:scale(1.07)}
-.burrito-zoom-icon{position:absolute;bottom:.75rem;right:.75rem;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;font-size:.85rem;opacity:0;transform:scale(.7);transition:opacity .3s,transform .3s var(--ease-back);box-shadow:0 2px 8px rgba(0,0,0,.15)}
-.burrito-card:hover .burrito-zoom-icon{opacity:1;transform:scale(1)}
-.burrito-card-body{padding:1.2rem 1.4rem 1.4rem;display:flex;flex-direction:column;flex:1}
-.burrito-card-name{font-family:'Fredoka',sans-serif;font-size:1.25rem;font-weight:700;color:var(--black);margin-bottom:.4rem}
-.burrito-card-ing{color:var(--gray);font-size:.82rem;line-height:1.6;flex:1;margin-bottom:.9rem}
-.burrito-card-footer{display:flex;align-items:center;justify-content:space-between}
-.burrito-card-price{font-family:'Fredoka',sans-serif;font-size:1.05rem;font-weight:700;color:var(--red)}
-.burrito-card-tag{background:var(--cream);color:var(--red);padding:.25rem .75rem;border-radius:50px;font-size:.72rem;font-weight:600;border:1px solid rgba(196,30,30,.12)}
-@media(max-width:900px){.burritos-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.burritos-grid{grid-template-columns:1fr;gap:1rem}.burrito-card-img{height:200px}}
-
-/* ── ENTRANTES ── */
-.entrantes{background:var(--off-white)}
-.entrantes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.entrante-card{border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow-soft);border:1px solid rgba(0,0,0,.05);transition:transform .4s var(--ease),box-shadow .4s;display:flex;flex-direction:column;cursor:pointer}
-.entrante-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
-.entrante-card-img{height:240px;overflow:hidden;position:relative;flex-shrink:0}
-.entrante-card-img img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .55s var(--ease);display:block}
-.entrante-card:hover .entrante-card-img img{transform:scale(1.07)}
-.entrante-zoom-icon{position:absolute;bottom:.75rem;right:.75rem;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;font-size:.85rem;opacity:0;transform:scale(.7);transition:opacity .3s,transform .3s var(--ease-back);box-shadow:0 2px 8px rgba(0,0,0,.15)}
-.entrante-card:hover .entrante-zoom-icon{opacity:1;transform:scale(1)}
-.entrante-card-body{padding:1.2rem 1.4rem 1.4rem;display:flex;flex-direction:column;flex:1}
-.entrante-card-name{font-family:'Fredoka',sans-serif;font-size:1.25rem;font-weight:700;color:var(--black);margin-bottom:.4rem}
-.entrante-card-ing{color:var(--gray);font-size:.82rem;line-height:1.6;flex:1;margin-bottom:.9rem}
-.entrante-card-footer{display:flex;align-items:center;justify-content:space-between}
-.entrante-card-price{font-family:'Fredoka',sans-serif;font-size:1.05rem;font-weight:700;color:var(--red)}
-.entrante-card-tag{background:var(--cream);color:var(--red);padding:.25rem .75rem;border-radius:50px;font-size:.72rem;font-weight:600;border:1px solid rgba(196,30,30,.12)}
-@media(max-width:900px){.entrantes-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.entrantes-grid{grid-template-columns:1fr;gap:1rem}.entrante-card-img{height:200px}}
 
 /* ── MENU items con foto real ── */
 .menu-item-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;transition:transform .55s var(--ease)}
@@ -411,24 +364,6 @@ section{padding:6rem 2rem}
 .lb-prev:hover,.lb-next:hover{background:var(--red);border-color:var(--red);transform:translateY(-50%) scale(1.1)}
 @media(max-width:600px){.lb-prev{left:.4rem}.lb-next{right:.4rem}}
 
-/* ── POSTRES ── */
-.postres{background:#fff}
-.postres-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem}
-.postre-card{border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow-soft);border:1px solid rgba(0,0,0,.05);transition:transform .4s var(--ease),box-shadow .4s;display:flex;flex-direction:column}
-.postre-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
-.postre-card-img{height:260px;overflow:hidden;position:relative;flex-shrink:0}
-.postre-card-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .55s var(--ease);display:block}
-.postre-card:hover .postre-card-img img{transform:scale(1.06)}
-.postre-card-badge{position:absolute;top:.8rem;left:.8rem;background:var(--red);color:#fff;padding:.28rem .8rem;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-.postre-card-body{padding:1.3rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
-.postre-card-name{font-family:'Fredoka',sans-serif;font-size:1.35rem;font-weight:700;color:var(--black);margin-bottom:.4rem}
-.postre-card-desc{color:var(--gray);font-size:.85rem;line-height:1.65;flex:1;margin-bottom:1rem}
-.postre-card-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
-.postre-card-price{font-family:'Fredoka',sans-serif;font-size:1.1rem;font-weight:700;color:var(--red)}
-.postre-card-cta{display:inline-flex;align-items:center;gap:.3rem;background:var(--cream);color:var(--red);padding:.4rem 1rem;border-radius:50px;font-size:.78rem;font-weight:600;border:1px solid rgba(196,30,30,.15);transition:all .3s var(--ease)}
-.postre-card-cta:hover{background:var(--red);color:#fff}
-@media(max-width:700px){.postres-grid{grid-template-columns:repeat(2,1fr);gap:1rem}.postre-card-img{height:200px}}
-@media(max-width:420px){.postres-grid{grid-template-columns:1fr}}
 
 /* ── COOKIE BAR ── */
 .cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:400;background:rgba(20,20,20,.97);backdrop-filter:blur(16px);padding:1rem 2rem;color:rgba(255,255,255,.82);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.07);transform:translateY(100%);transition:transform .5s var(--ease)}
@@ -503,16 +438,20 @@ section{padding:6rem 2rem}
   <div class="splash-sub">Pizzería Artesanal · Región de Murcia</div>
 </div>
 
+<!-- Promo Bar -->
+<div class="promo-bar" id="promoBar">
+  Pizzas artesanas desde <strong>7&euro;</strong> &nbsp;&middot;&nbsp; Cocina a la vista &nbsp;&middot;&nbsp; 4 sedes en Murcia &nbsp;&middot;&nbsp; <a href="tel:669876499">Llámanos: 669 876 499</a>
+  <button class="promo-close" id="promoClose" aria-label="Cerrar">&#x2715;</button>
+</div>
+
 <!-- Nav -->
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo">Ñam Ñam</a>
   <div class="nav-links" id="navLinks">
     <a href="#menu">Menú</a>
-    <a href="#entrantes">Entrantes</a>
-    <a href="#ensaladas">Ensaladas</a>
     <a href="#sedes">Sedes</a>
     <a href="#opiniones">Opiniones</a>
-    <a href="#contacto" class="nav-cta">📞 Contacto</a>
+    <a href="#contacto" class="nav-cta">Contacto</a>
   </div>
   <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
 </nav>
@@ -535,8 +474,8 @@ section{padding:6rem 2rem}
       <span><strong>4.0</strong> · 695+ opiniones en Google</span>
     </div>
     <div class="hero-actions">
-      <a href="#menu" class="btn btn-white">🍕 Descubre el menú</a>
-      <a href="#sedes" class="btn btn-ghost">📍 Encuéntranos</a>
+      <a href="#menu" class="btn btn-white">Ver la carta</a>
+      <a href="#sedes" class="btn btn-ghost">Nuestras sedes</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -549,23 +488,23 @@ section{padding:6rem 2rem}
 <div class="trust-bar">
   <div class="trust-bar-inner">
     <div class="trust-item"><span class="trust-icon trust-stars">★★★★☆</span> <span><strong>4.0</strong> en Google</span></div>
-    <div class="trust-item"><span class="trust-icon">📝</span><span><strong>695+</strong> reseñas reales</span></div>
-    <div class="trust-item"><span class="trust-icon">📍</span><span><strong>4 sedes</strong> en Murcia</span></div>
-    <div class="trust-item"><span class="trust-icon">👁️</span><span><strong>Cocina</strong> a la vista</span></div>
-    <div class="trust-item"><span class="trust-icon">💰</span><span><strong>Precios</strong> imbatibles</span></div>
-    <div class="trust-item"><span class="trust-icon">👨‍👩‍👧</span><span><strong>Ambiente</strong> familiar</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>695+</strong> reseñas reales</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>4 sedes</strong> en Murcia</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>Cocina</strong> a la vista</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>Precios</strong> imbatibles</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>Ambiente</strong> familiar</span></div>
   </div>
 </div>
 
 <!-- Marquee -->
 <div class="marquee">
   <div class="marquee-inner" id="marquee">
-    <span>🍕 PIZZAS ARTESANAS</span><span>🥖 BOCATAS</span><span>🥗 ENSALADAS FRESCAS</span>
-    <span>🌯 BURRITOS</span><span>🍟 ENTRANTES</span><span>🍰 POSTRES ARTESANOS</span>
-    <span>👨‍🍳 COCINA A LA VISTA</span><span>💰 PRECIOS IMBATIBLES</span><span>📍 4 SEDES EN MURCIA</span>
-    <span>🍕 PIZZAS ARTESANAS</span><span>🥖 BOCATAS</span><span>🥗 ENSALADAS FRESCAS</span>
-    <span>🌯 BURRITOS</span><span>🍟 ENTRANTES</span><span>🍰 POSTRES ARTESANOS</span>
-    <span>👨‍🍳 COCINA A LA VISTA</span><span>💰 PRECIOS IMBATIBLES</span><span>📍 4 SEDES EN MURCIA</span>
+    <span>PIZZAS ARTESANAS</span><span>BOCATAS</span><span>ENSALADAS FRESCAS</span>
+    <span>BURRITOS</span><span>ENTRANTES</span><span>POSTRES ARTESANOS</span>
+    <span>COCINA A LA VISTA</span><span>PRECIOS IMBATIBLES</span><span>4 SEDES EN MURCIA</span>
+    <span>PIZZAS ARTESANAS</span><span>BOCATAS</span><span>ENSALADAS FRESCAS</span>
+    <span>BURRITOS</span><span>ENTRANTES</span><span>POSTRES ARTESANOS</span>
+    <span>COCINA A LA VISTA</span><span>PRECIOS IMBATIBLES</span><span>4 SEDES EN MURCIA</span>
   </div>
 </div>
 
@@ -573,7 +512,7 @@ section{padding:6rem 2rem}
 <section class="reviews" id="opiniones">
   <div class="container">
     <div class="reveal">
-      <div class="section-badge">⭐ Opiniones</div>
+      <div class="section-badge">Opiniones</div>
       <h2 class="section-title">Lo que dicen <span>nuestros clientes</span></h2>
     </div>
     <div class="reviews-header reveal">
@@ -628,7 +567,7 @@ section{padding:6rem 2rem}
     <div class="about-grid">
       <div class="about-visual reveal">
         <div class="about-card">
-          <span class="about-card-emoji">👨‍🍳</span>
+          <span class="about-card-emoji" style="font-size:2.8rem;color:var(--red);font-family:'Fredoka',sans-serif;letter-spacing:-.02em">Ñam Ñam</span>
           <h3 class="about-card-title">Cocina a la vista</h3>
           <p class="about-card-text">En Ñam Ñam, cada pizza se prepara delante de ti. Ves cómo se estira la masa, cómo se añaden los ingredientes frescos y cómo se hornea hasta quedar perfecta. Sin secretos, solo buena pizza hecha con cariño.</p>
         </div>
@@ -639,15 +578,15 @@ section{padding:6rem 2rem}
         </div>
       </div>
       <div class="about-text reveal">
-        <div class="section-badge">🍕 Sobre nosotros</div>
+        <div class="section-badge">Sobre nosotros</div>
         <h2 class="section-title">Más que una pizzería,<br>un <span>lugar para disfrutar</span></h2>
         <p>Ñam Ñam nació con una idea sencilla: ofrecer pizzas de calidad a un precio justo, en un ambiente donde todo el mundo se sienta como en casa.</p>
         <p>Con varias sedes repartidas por la Región de Murcia, nos hemos convertido en el punto de encuentro favorito de familias, amigos y amantes de la buena pizza.</p>
         <div class="about-features">
-          <div class="about-feature"><div class="about-feature-icon">🔥</div><span class="about-feature-text">Horno a la vista — Transparencia total</span></div>
-          <div class="about-feature"><div class="about-feature-icon">🌿</div><span class="about-feature-text">Ingredientes frescos cada día</span></div>
-          <div class="about-feature"><div class="about-feature-icon">💰</div><span class="about-feature-text">Los mejores precios de la zona</span></div>
-          <div class="about-feature"><div class="about-feature-icon">👨‍👩‍👧‍👦</div><span class="about-feature-text">Ambiente familiar y cercano</span></div>
+          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Horno a la vista — Transparencia total</span></div>
+          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Ingredientes frescos cada día</span></div>
+          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Los mejores precios de la zona</span></div>
+          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Ambiente familiar y cercano</span></div>
         </div>
       </div>
     </div>
@@ -658,18 +597,18 @@ section{padding:6rem 2rem}
 <section class="menu" id="menu">
   <div class="container">
     <div style="text-align:center" class="reveal">
-      <div class="section-badge">🍽️ Nuestra carta</div>
+      <div class="section-badge">Nuestra carta</div>
       <h2 class="section-title">Un menú para <span>todos los gustos</span></h2>
       <p class="section-desc" style="margin-left:auto;margin-right:auto">Pizzas, bocatas, ensaladas, burritos, entrantes y postres. Usa los filtros para explorar nuestra carta completa con foto real de cada producto.</p>
     </div>
     <div class="menu-cats reveal">
       <button class="menu-cat active" data-cat="all">Todos</button>
-      <button class="menu-cat" data-cat="pizza">🍕 Pizzas</button>
-      <button class="menu-cat" data-cat="bocata">🥖 Bocatas</button>
-      <button class="menu-cat" data-cat="ensalada">🥗 Ensaladas</button>
-      <button class="menu-cat" data-cat="burrito">🌯 Burritos</button>
-      <button class="menu-cat" data-cat="entrante">🍟 Entrantes</button>
-      <button class="menu-cat" data-cat="postre">🍰 Postres</button>
+      <button class="menu-cat" data-cat="pizza">Pizzas</button>
+      <button class="menu-cat" data-cat="bocata">Bocatas</button>
+      <button class="menu-cat" data-cat="ensalada">Ensaladas</button>
+      <button class="menu-cat" data-cat="burrito">Burritos</button>
+      <button class="menu-cat" data-cat="entrante">Entrantes</button>
+      <button class="menu-cat" data-cat="postre">Postres</button>
     </div>
     <div class="menu-grid" id="menuGrid">
 
@@ -677,7 +616,7 @@ section{padding:6rem 2rem}
       <div class="menu-item reveal" data-cat="pizza" data-lb-src="img/pizza-campera.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Campera">
         <div class="menu-item-img">
           <img src="img/pizza-campera.jpg" alt="Pizza Campera" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Campera</div>
@@ -688,43 +627,43 @@ section{padding:6rem 2rem}
       <div class="menu-item reveal reveal-delay-1" data-cat="pizza" data-lb-src="img/pizza-barbacoa.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Barbacoa">
         <div class="menu-item-img">
           <img src="img/pizza-barbacoa.jpg" alt="Pizza Barbacoa" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Barbacoa</div>
           <div class="menu-item-desc">Tomate, queso, bacon, carne picada y salsa BBQ.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8€</span></div>
         </div>
-        <span class="menu-item-tag tag-popular">⭐ Popular</span>
+        <span class="menu-item-tag tag-popular">Popular</span>
       </div>
       <div class="menu-item reveal reveal-delay-2" data-cat="pizza" data-lb-src="img/pizza-tejana.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Tejana">
         <div class="menu-item-img">
           <img src="img/pizza-tejana.jpg" alt="Pizza Tejana" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Tejana</div>
           <div class="menu-item-desc">Tomate, queso, bacon, carne picada, cebolla y salsa ranchera.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8€</span></div>
         </div>
-        <span class="menu-item-tag">🤠 Tejana</span>
+        <span class="menu-item-tag">Tejana</span>
       </div>
       <div class="menu-item reveal reveal-delay-3" data-cat="pizza" data-lb-src="img/pizza-pollo.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Pollo">
         <div class="menu-item-img">
           <img src="img/pizza-pollo.jpg" alt="Pizza Pollo" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Pollo</div>
           <div class="menu-item-desc">Tomate, queso, pollo, bacon, salsa BBQ, ranchera y búfalo (picante).</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8.50€</span></div>
         </div>
-        <span class="menu-item-tag">🌶️ Picante</span>
+        <span class="menu-item-tag">Picante</span>
       </div>
       <div class="menu-item reveal" data-cat="pizza" data-lb-src="img/pizza-frankfurt.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Frankfurt">
         <div class="menu-item-img">
           <img src="img/pizza-frankfurt.jpg" alt="Pizza Frankfurt" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Frankfurt</div>
@@ -735,43 +674,43 @@ section{padding:6rem 2rem}
       <div class="menu-item reveal reveal-delay-1" data-cat="pizza" data-lb-src="img/pizza-4quesos.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza 4 Quesos">
         <div class="menu-item-img">
           <img src="img/pizza-4quesos.jpg" alt="Pizza 4 Quesos" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">4 Quesos</div>
           <div class="menu-item-desc">Tomate, roquefort, emmental, holandés y mozzarella.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8€</span></div>
         </div>
-        <span class="menu-item-tag">🧀 Quesos</span>
+        <span class="menu-item-tag">Quesos</span>
       </div>
       <div class="menu-item reveal reveal-delay-2" data-cat="pizza" data-lb-src="img/pizza-vegetal.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Vegetal">
         <div class="menu-item-img">
           <img src="img/pizza-vegetal.jpg" alt="Pizza Vegetal" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Vegetal</div>
           <div class="menu-item-desc">Tomate, queso, pimiento rojo, pimiento verde, alcachofas, cebolla y champiñones.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 7€</span></div>
         </div>
-        <span class="menu-item-tag tag-veggie">🌱 Veggie</span>
+        <span class="menu-item-tag tag-veggie">Veggie</span>
       </div>
       <div class="menu-item reveal reveal-delay-3" data-cat="pizza" data-lb-src="img/pizza-mediterranea.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Mediterránea">
         <div class="menu-item-img">
           <img src="img/pizza-mediterranea.jpg" alt="Pizza Mediterránea" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Mediterránea</div>
           <div class="menu-item-desc">Tomate, queso, atún, gambas y anchoas.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8.50€</span></div>
         </div>
-        <span class="menu-item-tag">🦐 Mar</span>
+        <span class="menu-item-tag">Mar</span>
       </div>
       <div class="menu-item reveal" data-cat="pizza" data-lb-src="img/pizza-carbonara.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Carbonara">
         <div class="menu-item-img">
           <img src="img/pizza-carbonara.jpg" alt="Pizza Carbonara" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Carbonara</div>
@@ -782,19 +721,19 @@ section{padding:6rem 2rem}
       <div class="menu-item reveal reveal-delay-1" data-cat="pizza" data-lb-src="img/pizza-pequenam.jpg" data-lb-group="menu-pizzas" data-lb-caption="Pizza Pequeñam">
         <div class="menu-item-img">
           <img src="img/pizza-pequenam.jpg" alt="Pizza Pequeñam" loading="lazy" style="object-position:center 30%">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Pequeñam</div>
           <div class="menu-item-desc">Tomate, queso y york. La más sencilla y siempre deliciosa.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 5€</span></div>
         </div>
-        <span class="menu-item-tag">👶 Pequeña</span>
+        <span class="menu-item-tag">Pequeña</span>
       </div>
 
       <!-- BOCATAS -->
       <div class="menu-item reveal" data-cat="bocata">
-        <div class="menu-item-img bg-bocata">🥖</div>
+        <div class="menu-item-img bg-bocata" style="font-family:'Fredoka',sans-serif;font-size:1.6rem;color:#c47a22;font-weight:600;letter-spacing:.02em">Bocatas</div>
         <div class="menu-item-body">
           <div class="menu-item-name">Bocatas variados</div>
           <div class="menu-item-desc">Gran variedad de bocadillos con ingredientes frescos y pan crujiente.</div>
@@ -806,229 +745,229 @@ section{padding:6rem 2rem}
       <div class="menu-item reveal" data-cat="ensalada" data-lb-src="img/ensalada-montanesa.jpg" data-lb-group="menu-ensaladas" data-lb-caption="Ensalada Montañesa">
         <div class="menu-item-img">
           <img src="img/ensalada-montanesa.jpg" alt="Ensalada Montañesa" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Montañesa</div>
           <div class="menu-item-desc">Lechuga, bacon crujiente, cebolla caramelizada, frutos secos, queso de cabra y vinagre de frambuesa.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 7€</span></div>
         </div>
-        <span class="menu-item-tag">⭐ Especial</span>
+        <span class="menu-item-tag">Especial</span>
       </div>
       <div class="menu-item reveal reveal-delay-1" data-cat="ensalada" data-lb-src="img/ensalada-especial.jpg" data-lb-group="menu-ensaladas" data-lb-caption="Ensalada Especial">
         <div class="menu-item-img">
           <img src="img/ensalada-especial.jpg" alt="Ensalada Especial" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Especial</div>
           <div class="menu-item-desc">Lechuga gourmet, queso fresco, salmón, nueces con salsa de miel y mostaza.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8€</span></div>
         </div>
-        <span class="menu-item-tag">🐟 Salmón</span>
+        <span class="menu-item-tag">Salmón</span>
       </div>
       <div class="menu-item reveal reveal-delay-2" data-cat="ensalada" data-lb-src="img/ensalada-exquisita.jpg" data-lb-group="menu-ensaladas" data-lb-caption="Ensalada Exquisita">
         <div class="menu-item-img">
           <img src="img/ensalada-exquisita.jpg" alt="Ensalada Exquisita" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Exquisita</div>
           <div class="menu-item-desc">Lechuga, tomate cherry, pollo, bacon, quesos variados, croutons y salsa rosa.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 7€</span></div>
         </div>
-        <span class="menu-item-tag tag-popular">🔥 Popular</span>
+        <span class="menu-item-tag tag-popular">Popular</span>
       </div>
       <div class="menu-item reveal reveal-delay-3" data-cat="ensalada" data-lb-src="img/ensalada-gourmet.jpg" data-lb-group="menu-ensaladas" data-lb-caption="Ensalada Gourmet">
         <div class="menu-item-img">
           <img src="img/ensalada-gourmet.jpg" alt="Ensalada Gourmet" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Gourmet</div>
           <div class="menu-item-desc">Lechuga, tomate cherry, pollo, jamón serrano crujiente, frutos secos y vinagre balsámico.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8€</span></div>
         </div>
-        <span class="menu-item-tag">👑 Gourmet</span>
+        <span class="menu-item-tag">Gourmet</span>
       </div>
       <div class="menu-item reveal" data-cat="ensalada" data-lb-src="img/ensalada-tradicional.jpg" data-lb-group="menu-ensaladas" data-lb-caption="Ensalada Tradicional">
         <div class="menu-item-img">
           <img src="img/ensalada-tradicional.jpg" alt="Ensalada Tradicional" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Tradicional</div>
           <div class="menu-item-desc">Lechuga, tomate, huevo, atún, cebolla, zanahoria y aceitunas.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 6€</span></div>
         </div>
-        <span class="menu-item-tag tag-veggie">🌿 Clásica</span>
+        <span class="menu-item-tag tag-veggie">Clásica</span>
       </div>
       <div class="menu-item reveal reveal-delay-1" data-cat="ensalada" data-lb-src="img/ensalada-kentucky.jpg" data-lb-group="menu-ensaladas" data-lb-caption="Ensalada Kentucky">
         <div class="menu-item-img">
           <img src="img/ensalada-kentucky.jpg" alt="Ensalada Kentucky" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Kentucky</div>
           <div class="menu-item-desc">Lechuga, tomate cherry, pollo kentucky crujiente, mix de quesos y salsa mil islas.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 7€</span></div>
         </div>
-        <span class="menu-item-tag">🍗 Crujiente</span>
+        <span class="menu-item-tag">Crujiente</span>
       </div>
 
       <!-- BURRITOS -->
       <div class="menu-item reveal" data-cat="burrito" data-lb-src="img/burrito-pollo-cheddar.jpg" data-lb-group="menu-burritos" data-lb-caption="Burrito Pollo Cheddar">
         <div class="menu-item-img">
           <img src="img/burrito-pollo-cheddar.jpg" alt="Burrito Pollo Cheddar" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Pollo Cheddar</div>
           <div class="menu-item-desc">Pollo asado, bacon crujiente, tomate, lechuga y salsa de queso cheddar.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 7.50€</span></div>
         </div>
-        <span class="menu-item-tag">🧀 Cheddar</span>
+        <span class="menu-item-tag">Cheddar</span>
       </div>
       <div class="menu-item reveal reveal-delay-1" data-cat="burrito" data-lb-src="img/burrito-3salsas.jpg" data-lb-group="menu-burritos" data-lb-caption="Burrito 3 Salsas">
         <div class="menu-item-img">
           <img src="img/burrito-3salsas.jpg" alt="Burrito 3 Salsas" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">3 Salsas</div>
           <div class="menu-item-desc">Pollo con bacon, tomate, lechuga, salsas barbacoa, ranchera y búfalo, y queso fondue.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8€</span></div>
         </div>
-        <span class="menu-item-tag">🔥 Picante</span>
+        <span class="menu-item-tag">Picante</span>
       </div>
       <div class="menu-item reveal reveal-delay-2" data-cat="burrito" data-lb-src="img/burrito-gourmet.jpg" data-lb-group="menu-burritos" data-lb-caption="Burrito Gourmet">
         <div class="menu-item-img">
           <img src="img/burrito-gourmet.jpg" alt="Burrito Gourmet" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Gourmet</div>
           <div class="menu-item-desc">Pollo asado, rulo de cabra, tomate, lechuga, salsa gourmet de frambuesa y queso fondue.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 8.50€</span></div>
         </div>
-        <span class="menu-item-tag">👑 Gourmet</span>
+        <span class="menu-item-tag">Gourmet</span>
       </div>
       <div class="menu-item reveal reveal-delay-3" data-cat="burrito" data-lb-src="img/burrito-pollo.jpg" data-lb-group="menu-burritos" data-lb-caption="Burrito Pollo">
         <div class="menu-item-img">
           <img src="img/burrito-pollo.jpg" alt="Burrito Pollo" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Pollo</div>
           <div class="menu-item-desc">Pollo con tomate, lechuga, salsa ranchera y queso.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 7€</span></div>
         </div>
-        <span class="menu-item-tag">⭐ Clásico</span>
+        <span class="menu-item-tag">Clásico</span>
       </div>
       <div class="menu-item reveal" data-cat="burrito" data-lb-src="img/burrito-kentucky.jpg" data-lb-group="menu-burritos" data-lb-caption="Burrito Kentucky">
         <div class="menu-item-img">
           <img src="img/burrito-kentucky.jpg" alt="Burrito Kentucky" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Kentucky</div>
           <div class="menu-item-desc">Pollo kentucky con tomate, lechuga, salsa mil islas y queso fondue.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 7.50€</span></div>
         </div>
-        <span class="menu-item-tag">🍗 Crujiente</span>
+        <span class="menu-item-tag">Crujiente</span>
       </div>
 
       <!-- ENTRANTES -->
       <div class="menu-item reveal" data-cat="entrante" data-lb-src="img/entrante-kentucky-chicken.jpg" data-lb-group="menu-entrantes" data-lb-caption="Kentucky Chicken">
         <div class="menu-item-img">
           <img src="img/entrante-kentucky-chicken.jpg" alt="Kentucky Chicken" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Kentucky Chicken</div>
           <div class="menu-item-desc">Pollo kentucky crujiente con patatas bravas y salsa ranchera.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 5€</span></div>
         </div>
-        <span class="menu-item-tag">🍗 Crujiente</span>
+        <span class="menu-item-tag">Crujiente</span>
       </div>
       <div class="menu-item reveal reveal-delay-1" data-cat="entrante" data-lb-src="img/entrante-cajun-strips.jpg" data-lb-group="menu-entrantes" data-lb-caption="Cajun Chicken Strips">
         <div class="menu-item-img">
           <img src="img/entrante-cajun-strips.jpg" alt="Cajun Chicken Strips" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Cajun Chicken Strips</div>
           <div class="menu-item-desc">Tiras de pollo con especias cajun, crujientes y jugosas. Con patatas fritas.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 5€</span></div>
         </div>
-        <span class="menu-item-tag">🌶️ Cajun</span>
+        <span class="menu-item-tag">Cajun</span>
       </div>
       <div class="menu-item reveal reveal-delay-2" data-cat="entrante" data-lb-src="img/entrante-alitas-bbq.jpg" data-lb-group="menu-entrantes" data-lb-caption="Alitas y Muslitos BBQ">
         <div class="menu-item-img">
           <img src="img/entrante-alitas-bbq.jpg" alt="Alitas y Muslitos BBQ" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Alitas y Muslitos BBQ</div>
           <div class="menu-item-desc">Alitas y muslitos de pollo marinados en salsa BBQ con patatas bravas.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 6€</span></div>
         </div>
-        <span class="menu-item-tag">🔥 BBQ</span>
+        <span class="menu-item-tag">BBQ</span>
       </div>
       <div class="menu-item reveal reveal-delay-3" data-cat="entrante" data-lb-src="img/entrante-calamares-bravos.jpg" data-lb-group="menu-entrantes" data-lb-caption="Calamares Bravos">
         <div class="menu-item-img">
           <img src="img/entrante-calamares-bravos.jpg" alt="Calamares Bravos" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Calamares Bravos</div>
           <div class="menu-item-desc">Calamares rebozados bañados en salsa brava de queso cheddar.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 6€</span></div>
         </div>
-        <span class="menu-item-tag">🦑 Del mar</span>
+        <span class="menu-item-tag">Del mar</span>
       </div>
       <div class="menu-item reveal" data-cat="entrante" data-lb-src="img/entrante-patatas-bravas.jpg" data-lb-group="menu-entrantes" data-lb-caption="Patatas Bravas">
         <div class="menu-item-img">
           <img src="img/entrante-patatas-bravas.jpg" alt="Patatas Bravas" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Patatas Bravas</div>
           <div class="menu-item-desc">Patatas fritas con nuestra salsa brava especial de la casa.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 3€</span></div>
         </div>
-        <span class="menu-item-tag">⭐ Clásico</span>
+        <span class="menu-item-tag">Clásico</span>
       </div>
       <div class="menu-item reveal reveal-delay-1" data-cat="entrante" data-lb-src="img/entrante-nuggets.jpg" data-lb-group="menu-entrantes" data-lb-caption="Nuggets">
         <div class="menu-item-img">
           <img src="img/entrante-nuggets.jpg" alt="Nuggets" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Nuggets</div>
           <div class="menu-item-desc">Nuggets de pollo crujientes, dorados al punto perfecto.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 4€</span></div>
         </div>
-        <span class="menu-item-tag">🍗 Nuggets</span>
+        <span class="menu-item-tag">Nuggets</span>
       </div>
 
       <!-- POSTRES -->
       <div class="menu-item reveal" data-cat="postre" data-lb-src="img/postre-tortitas.jpg" data-lb-group="menu-postres" data-lb-caption="Tortitas">
         <div class="menu-item-img">
           <img src="img/postre-tortitas.jpg" alt="Tortitas" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Tortitas</div>
           <div class="menu-item-desc">Tortitas esponjosas bañadas en salsa de chocolate y acompañadas de nata montada.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 3€</span></div>
         </div>
-        <span class="menu-item-tag">⭐ Favorito</span>
+        <span class="menu-item-tag">Favorito</span>
       </div>
       <div class="menu-item reveal reveal-delay-1" data-cat="postre" data-lb-src="img/postre-crepe.jpg" data-lb-group="menu-postres" data-lb-caption="Crêpe">
         <div class="menu-item-img">
           <img src="img/postre-crepe.jpg" alt="Crêpe" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Crêpe</div>
@@ -1039,7 +978,7 @@ section{padding:6rem 2rem}
       <div class="menu-item reveal reveal-delay-2" data-cat="postre" data-lb-src="img/postre-gofre.jpg" data-lb-group="menu-postres" data-lb-caption="Gofre">
         <div class="menu-item-img">
           <img src="img/postre-gofre.jpg" alt="Gofre" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Gofre</div>
@@ -1050,19 +989,19 @@ section{padding:6rem 2rem}
       <div class="menu-item reveal reveal-delay-3" data-cat="postre" data-lb-src="img/postre-cono.jpg" data-lb-group="menu-postres" data-lb-caption="Cono">
         <div class="menu-item-img" style="background:#fff5f0">
           <img src="img/postre-cono.jpg" alt="Cono" loading="lazy" style="object-fit:contain;object-position:center center">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Cono</div>
           <div class="menu-item-desc">Cono de barquillo con helado suave. Relleno de Nutella — nuestro sabor estrella.</div>
           <div class="menu-item-footer"><span class="menu-item-price">desde 2€</span></div>
         </div>
-        <span class="menu-item-tag tag-new">✨ Nuevo</span>
+        <span class="menu-item-tag tag-new">Nuevo</span>
       </div>
       <div class="menu-item reveal" data-cat="postre" data-lb-src="img/postre-helado.jpg" data-lb-group="menu-postres" data-lb-caption="Helado">
         <div class="menu-item-img">
           <img src="img/postre-helado.jpg" alt="Helado" loading="lazy">
-          <div class="menu-item-zoom">🔍</div>
+          <div class="menu-item-zoom">↗</div>
         </div>
         <div class="menu-item-body">
           <div class="menu-item-name">Helado</div>
@@ -1073,390 +1012,7 @@ section{padding:6rem 2rem}
 
     </div>
     <div class="menu-note reveal">
-      <strong>📞 Consulta precios y disponibilidad</strong> en tu sede más cercana. Pregunta por nuestros <strong>menús y promociones</strong> especiales de temporada.
-    </div>
-  </div>
-</section>
-
-<!-- Entrantes -->
-<section class="entrantes" id="entrantes">
-  <div class="container">
-    <div style="text-align:center" class="reveal">
-      <div class="section-badge">🍟 Entrantes</div>
-      <h2 class="section-title">Para <span>empezar con fuerza</span></h2>
-      <p class="section-desc" style="margin:0 auto 3rem">Seis entrantes crujientes y sabrosos para compartir o disfrutar solos. Haz clic en cualquiera para verlo en detalle.</p>
-    </div>
-    <div class="entrantes-grid" id="entrantesGrid">
-
-      <div class="entrante-card reveal" data-lb-src="img/entrante-kentucky-chicken.jpg" data-lb-caption="Kentucky Chicken">
-        <div class="entrante-card-img">
-          <img src="img/entrante-kentucky-chicken.jpg" alt="Kentucky Chicken" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Kentucky Chicken</div>
-          <div class="entrante-card-ing">Trozos de pollo kentucky crujiente con patatas bravas y salsa ranchera.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 5€</span>
-            <span class="entrante-card-tag">🍗 Crujiente</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-1" data-lb-src="img/entrante-cajun-strips.jpg" data-lb-caption="Cajun Chicken Strips">
-        <div class="entrante-card-img">
-          <img src="img/entrante-cajun-strips.jpg" alt="Cajun Chicken Strips" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Cajun Chicken Strips</div>
-          <div class="entrante-card-ing">Tiras de pollo rebozadas con especias cajun, crujientes y jugosas. Con patatas fritas.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 5€</span>
-            <span class="entrante-card-tag">🌶️ Cajun</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-2" data-lb-src="img/entrante-alitas-bbq.jpg" data-lb-caption="Alitas y Muslitos BBQ">
-        <div class="entrante-card-img">
-          <img src="img/entrante-alitas-bbq.jpg" alt="Alitas y Muslitos BBQ" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Alitas y Muslitos BBQ</div>
-          <div class="entrante-card-ing">Alitas y muslitos de pollo adobados, marinados en salsa BBQ. Con patatas bravas.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 6€</span>
-            <span class="entrante-card-tag">🔥 BBQ</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-1" data-lb-src="img/entrante-calamares-bravos.jpg" data-lb-caption="Calamares Bravos">
-        <div class="entrante-card-img">
-          <img src="img/entrante-calamares-bravos.jpg" alt="Calamares Bravos" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Calamares Bravos</div>
-          <div class="entrante-card-ing">Calamares rebozados bañados en salsa brava de queso cheddar. Irresistibles.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 6€</span>
-            <span class="entrante-card-tag">🦑 Del mar</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-2" data-lb-src="img/entrante-patatas-bravas.jpg" data-lb-caption="Patatas Bravas">
-        <div class="entrante-card-img">
-          <img src="img/entrante-patatas-bravas.jpg" alt="Patatas Bravas" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Patatas Bravas</div>
-          <div class="entrante-card-ing">Patatas fritas con nuestra salsa brava especial de la casa. El clásico perfecto.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 3€</span>
-            <span class="entrante-card-tag">⭐ Clásico</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entrante-card reveal reveal-delay-3" data-lb-src="img/entrante-nuggets.jpg" data-lb-caption="Nuggets">
-        <div class="entrante-card-img">
-          <img src="img/entrante-nuggets.jpg" alt="Nuggets" loading="lazy">
-          <div class="entrante-zoom-icon">🔍</div>
-        </div>
-        <div class="entrante-card-body">
-          <div class="entrante-card-name">Nuggets</div>
-          <div class="entrante-card-ing">Nuggets de pollo crujientes, dorados al punto perfecto. Para mojar y disfrutar.</div>
-          <div class="entrante-card-footer">
-            <span class="entrante-card-price">desde 4€</span>
-            <span class="entrante-card-tag">🍗 Nuggets</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Ensaladas -->
-<section class="ensaladas" id="ensaladas">
-  <div class="container">
-    <div style="text-align:center" class="reveal">
-      <div class="section-badge">🥗 Ensaladas</div>
-      <h2 class="section-title">Frescura en cada <span>bocado</span></h2>
-      <p class="section-desc" style="margin:0 auto 3rem">Seis ensaladas únicas preparadas al momento con ingredientes frescos. Haz clic en cualquiera para verla en detalle.</p>
-    </div>
-    <div class="ensaladas-grid" id="ensaladasGrid">
-
-      <div class="ensalada-card reveal" data-lb-src="img/ensalada-montanesa.jpg" data-lb-caption="Ensalada Montañesa">
-        <div class="ensalada-card-img">
-          <img src="img/ensalada-montanesa.jpg" alt="Ensalada Montañesa" loading="lazy">
-          <div class="ensalada-zoom-icon">🔍</div>
-        </div>
-        <div class="ensalada-card-body">
-          <div class="ensalada-card-name">Montañesa</div>
-          <div class="ensalada-card-ing">Lechuga, bacon crujiente, cebolla caramelizada, frutos secos, queso de cabra rebozado y vinagre balsámico de frambuesa.</div>
-          <div class="ensalada-card-footer">
-            <span class="ensalada-card-price">desde 7€</span>
-            <span class="ensalada-card-tag">⭐ Especial</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ensalada-card reveal reveal-delay-1" data-lb-src="img/ensalada-especial.jpg" data-lb-caption="Ensalada Especial">
-        <div class="ensalada-card-img">
-          <img src="img/ensalada-especial.jpg" alt="Ensalada Especial" loading="lazy">
-          <div class="ensalada-zoom-icon">🔍</div>
-        </div>
-        <div class="ensalada-card-body">
-          <div class="ensalada-card-name">Especial</div>
-          <div class="ensalada-card-ing">Lechuga gourmet, queso fresco, salmón, nueces con salsa de miel y mostaza.</div>
-          <div class="ensalada-card-footer">
-            <span class="ensalada-card-price">desde 8€</span>
-            <span class="ensalada-card-tag">🐟 Salmón</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ensalada-card reveal reveal-delay-2" data-lb-src="img/ensalada-exquisita.jpg" data-lb-caption="Ensalada Exquisita">
-        <div class="ensalada-card-img">
-          <img src="img/ensalada-exquisita.jpg" alt="Ensalada Exquisita" loading="lazy">
-          <div class="ensalada-zoom-icon">🔍</div>
-        </div>
-        <div class="ensalada-card-body">
-          <div class="ensalada-card-name">Exquisita</div>
-          <div class="ensalada-card-ing">Lechuga, tomate cherry, pollo, bacon, quesos variados, croutons y salsa rosa.</div>
-          <div class="ensalada-card-footer">
-            <span class="ensalada-card-price">desde 7€</span>
-            <span class="ensalada-card-tag">🔥 Popular</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ensalada-card reveal reveal-delay-1" data-lb-src="img/ensalada-gourmet.jpg" data-lb-caption="Ensalada Gourmet">
-        <div class="ensalada-card-img">
-          <img src="img/ensalada-gourmet.jpg" alt="Ensalada Gourmet" loading="lazy">
-          <div class="ensalada-zoom-icon">🔍</div>
-        </div>
-        <div class="ensalada-card-body">
-          <div class="ensalada-card-name">Gourmet</div>
-          <div class="ensalada-card-ing">Lechuga, tomate cherry, pollo, jamón serrano crujiente, frutos secos y vinagre balsámico de frambuesa.</div>
-          <div class="ensalada-card-footer">
-            <span class="ensalada-card-price">desde 8€</span>
-            <span class="ensalada-card-tag">👑 Gourmet</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ensalada-card reveal reveal-delay-2" data-lb-src="img/ensalada-tradicional.jpg" data-lb-caption="Ensalada Tradicional">
-        <div class="ensalada-card-img">
-          <img src="img/ensalada-tradicional.jpg" alt="Ensalada Tradicional" loading="lazy">
-          <div class="ensalada-zoom-icon">🔍</div>
-        </div>
-        <div class="ensalada-card-body">
-          <div class="ensalada-card-name">Tradicional</div>
-          <div class="ensalada-card-ing">Lechuga, tomate, huevo, atún, cebolla, zanahoria y aceitunas.</div>
-          <div class="ensalada-card-footer">
-            <span class="ensalada-card-price">desde 6€</span>
-            <span class="ensalada-card-tag">🌿 Clásica</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ensalada-card reveal reveal-delay-3" data-lb-src="img/ensalada-kentucky.jpg" data-lb-caption="Ensalada Kentucky">
-        <div class="ensalada-card-img">
-          <img src="img/ensalada-kentucky.jpg" alt="Ensalada Kentucky" loading="lazy">
-          <div class="ensalada-zoom-icon">🔍</div>
-        </div>
-        <div class="ensalada-card-body">
-          <div class="ensalada-card-name">Kentucky</div>
-          <div class="ensalada-card-ing">Lechuga, tomate cherry, pollo kentucky crujiente, mix de quesos y salsa mil islas.</div>
-          <div class="ensalada-card-footer">
-            <span class="ensalada-card-price">desde 7€</span>
-            <span class="ensalada-card-tag">🍗 Crujiente</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Burritos -->
-<section class="burritos" id="burritos">
-  <div class="container">
-    <div style="text-align:center" class="reveal">
-      <div class="section-badge">🌯 Burritos</div>
-      <h2 class="section-title">Envuelto en <span>sabor</span></h2>
-      <p class="section-desc" style="margin:0 auto 3rem">Cinco burritos únicos con ingredientes frescos, salsas artesanas y queso fondue. Haz clic en cualquiera para verlo en detalle.</p>
-    </div>
-    <div class="burritos-grid" id="burritosGrid">
-
-      <div class="burrito-card reveal" data-lb-src="img/burrito-pollo-cheddar.jpg" data-lb-caption="Burrito Pollo Cheddar">
-        <div class="burrito-card-img">
-          <img src="img/burrito-pollo-cheddar.jpg" alt="Burrito Pollo Cheddar" loading="lazy">
-          <div class="burrito-zoom-icon">🔍</div>
-        </div>
-        <div class="burrito-card-body">
-          <div class="burrito-card-name">Pollo Cheddar</div>
-          <div class="burrito-card-ing">Pollo asado, bacon crujiente, tomate, lechuga y salsa de queso cheddar.</div>
-          <div class="burrito-card-footer">
-            <span class="burrito-card-price">desde 7.50€</span>
-            <span class="burrito-card-tag">🧀 Cheddar</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="burrito-card reveal reveal-delay-1" data-lb-src="img/burrito-3salsas.jpg" data-lb-caption="Burrito 3 Salsas">
-        <div class="burrito-card-img">
-          <img src="img/burrito-3salsas.jpg" alt="Burrito 3 Salsas" loading="lazy">
-          <div class="burrito-zoom-icon">🔍</div>
-        </div>
-        <div class="burrito-card-body">
-          <div class="burrito-card-name">3 Salsas</div>
-          <div class="burrito-card-ing">Pollo con bacon, tomate, lechuga, salsas barbacoa, ranchera y búfalo, y queso fondue.</div>
-          <div class="burrito-card-footer">
-            <span class="burrito-card-price">desde 8€</span>
-            <span class="burrito-card-tag">🔥 Picante</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="burrito-card reveal reveal-delay-2" data-lb-src="img/burrito-gourmet.jpg" data-lb-caption="Burrito Gourmet">
-        <div class="burrito-card-img">
-          <img src="img/burrito-gourmet.jpg" alt="Burrito Gourmet" loading="lazy">
-          <div class="burrito-zoom-icon">🔍</div>
-        </div>
-        <div class="burrito-card-body">
-          <div class="burrito-card-name">Gourmet</div>
-          <div class="burrito-card-ing">Pollo asado, rulo de cabra, tomate, lechuga, salsa gourmet de frambuesa y queso fondue.</div>
-          <div class="burrito-card-footer">
-            <span class="burrito-card-price">desde 8.50€</span>
-            <span class="burrito-card-tag">👑 Gourmet</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="burrito-card reveal reveal-delay-1" data-lb-src="img/burrito-pollo.jpg" data-lb-caption="Burrito Pollo">
-        <div class="burrito-card-img">
-          <img src="img/burrito-pollo.jpg" alt="Burrito Pollo" loading="lazy">
-          <div class="burrito-zoom-icon">🔍</div>
-        </div>
-        <div class="burrito-card-body">
-          <div class="burrito-card-name">Pollo</div>
-          <div class="burrito-card-ing">Pollo con tomate, lechuga, salsa ranchera y queso.</div>
-          <div class="burrito-card-footer">
-            <span class="burrito-card-price">desde 7€</span>
-            <span class="burrito-card-tag">⭐ Clásico</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="burrito-card reveal reveal-delay-2" data-lb-src="img/burrito-kentucky.jpg" data-lb-caption="Burrito Kentucky">
-        <div class="burrito-card-img">
-          <img src="img/burrito-kentucky.jpg" alt="Burrito Kentucky" loading="lazy">
-          <div class="burrito-zoom-icon">🔍</div>
-        </div>
-        <div class="burrito-card-body">
-          <div class="burrito-card-name">Kentucky</div>
-          <div class="burrito-card-ing">Pollo kentucky con tomate, lechuga, salsa mil islas y queso fondue.</div>
-          <div class="burrito-card-footer">
-            <span class="burrito-card-price">desde 7.50€</span>
-            <span class="burrito-card-tag">🍗 Crujiente</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Postres -->
-<section class="postres" id="postres">
-  <div class="container">
-    <div style="text-align:center" class="reveal">
-      <div class="section-badge">🍰 Postres</div>
-      <h2 class="section-title">Cierra con el <span>mejor sabor</span></h2>
-      <p class="section-desc" style="margin:0 auto 3rem">Tortitas, crêpes, gofres, conos y helados artesanos. El broche dulce perfecto para tu visita a Ñam Ñam.</p>
-    </div>
-    <div class="postres-grid">
-
-      <div class="postre-card reveal">
-        <div class="postre-card-img">
-          <img src="img/postre-tortitas.jpg" alt="Tortitas Ñam Ñam" loading="lazy">
-          <span class="postre-card-badge">⭐ Favorito</span>
-        </div>
-        <div class="postre-card-body">
-          <div class="postre-card-name">Tortitas</div>
-          <div class="postre-card-desc">Tortitas esponjosas apiladas, bañadas en generosa salsa de chocolate y acompañadas de nata montada. Un clásico irresistible.</div>
-          <div class="postre-card-footer">
-            <span class="postre-card-price">desde 3€</span>
-            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="postre-card reveal reveal-delay-1">
-        <div class="postre-card-img">
-          <img src="img/postre-crepe.jpg" alt="Crêpe Ñam Ñam" loading="lazy">
-        </div>
-        <div class="postre-card-body">
-          <div class="postre-card-name">Crêpe</div>
-          <div class="postre-card-desc">Crêpe fino y dorado, relleno y cubierto con salsa de chocolate y crujientes frutos secos picados. Textura y sabor en cada bocado.</div>
-          <div class="postre-card-footer">
-            <span class="postre-card-price">desde 3€</span>
-            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="postre-card reveal reveal-delay-2">
-        <div class="postre-card-img">
-          <img src="img/postre-gofre.jpg" alt="Gofre Ñam Ñam" loading="lazy">
-        </div>
-        <div class="postre-card-body">
-          <div class="postre-card-name">Gofre</div>
-          <div class="postre-card-desc">Gofre crujiente por fuera y tierno por dentro, coronado con abundante nata montada y bañado en chocolate fundido.</div>
-          <div class="postre-card-footer">
-            <span class="postre-card-price">desde 3€</span>
-            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="postre-card reveal reveal-delay-3">
-        <div class="postre-card-img">
-          <img src="img/postre-cono.jpg" alt="Cono Ñam Ñam" loading="lazy" style="object-fit:contain;object-position:center center;background:#fff5f0">
-          <span class="postre-card-badge" style="background:#7c3aed">✨ Nuevo</span>
-        </div>
-        <div class="postre-card-body">
-          <div class="postre-card-name">Cono</div>
-          <div class="postre-card-desc">Cono de barquillo con helado suave cremoso. Ahora disponible relleno de Nutella en su interior — nuestro nuevo sabor estrella.</div>
-          <div class="postre-card-footer">
-            <span class="postre-card-price">desde 2€</span>
-            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="postre-card reveal reveal-delay-4">
-        <div class="postre-card-img">
-          <img src="img/postre-helado.jpg" alt="Helado Ñam Ñam" loading="lazy">
-        </div>
-        <div class="postre-card-body">
-          <div class="postre-card-name">Helado</div>
-          <div class="postre-card-desc">Copa de helado con capas alternas de crema y chocolate. Rematada con una generosa nube de nata montada. Refrescante y goloso.</div>
-          <div class="postre-card-footer">
-            <span class="postre-card-price">desde 2€</span>
-            <a href="tel:669876499" class="postre-card-cta">📞 Pedir</a>
-          </div>
-        </div>
-      </div>
-
+      <strong>Consulta precios y disponibilidad</strong> en tu sede más cercana. Pregunta por nuestros <strong>menús y promociones</strong> especiales de temporada.
     </div>
   </div>
 </section>
@@ -1475,7 +1031,7 @@ section{padding:6rem 2rem}
 <!-- 3D Pizza Scene -->
 <section class="pizza-scene">
   <div class="pizza-scene-inner">
-    <div class="section-badge" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)">👨‍🍳 Nuestra esencia</div>
+    <div class="section-badge" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)">Nuestra esencia</div>
     <h2 style="font-family:'Fredoka',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:.5rem">Pizza hecha con <em style="font-weight:400;color:var(--gold)">pasión</em></h2>
     <p style="opacity:.78;font-size:1.05rem">Cada pizza es una pequeña obra de arte · Mueve la pizza con el ratón</p>
     <div class="pizza-3d-container" id="pizza3d">
@@ -1491,9 +1047,9 @@ section{padding:6rem 2rem}
       </div>
     </div>
     <div class="pizza-scene-features">
-      <div class="pizza-feat reveal"><div class="pizza-feat-icon">🔥</div><h4>Horno artesanal</h4><p>Cocinada a la temperatura perfecta para una masa crujiente y esponjosa.</p></div>
-      <div class="pizza-feat reveal reveal-delay-1"><div class="pizza-feat-icon">🌿</div><h4>Ingredientes frescos</h4><p>Seleccionamos diariamente los mejores productos del mercado local.</p></div>
-      <div class="pizza-feat reveal reveal-delay-2"><div class="pizza-feat-icon">❤️</div><h4>Hecha con cariño</h4><p>Cada pizza se prepara a mano, sin prisas, con la dedicación que merece.</p></div>
+      <div class="pizza-feat reveal"><div class="pizza-feat-icon" style="font-size:1.8rem;opacity:.85">◆</div><h4>Horno artesanal</h4><p>Cocinada a la temperatura perfecta para una masa crujiente y esponjosa.</p></div>
+      <div class="pizza-feat reveal reveal-delay-1"><div class="pizza-feat-icon" style="font-size:1.8rem;opacity:.85">◆</div><h4>Ingredientes frescos</h4><p>Seleccionamos diariamente los mejores productos del mercado local.</p></div>
+      <div class="pizza-feat reveal reveal-delay-2"><div class="pizza-feat-icon" style="font-size:1.8rem;opacity:.85">◆</div><h4>Hecha con cariño</h4><p>Cada pizza se prepara a mano, sin prisas, con la dedicación que merece.</p></div>
     </div>
   </div>
 </section>
@@ -1502,7 +1058,7 @@ section{padding:6rem 2rem}
 <section class="locations" id="sedes">
   <div class="container">
     <div style="text-align:center" class="reveal">
-      <div class="section-badge">📍 Nuestras sedes</div>
+      <div class="section-badge">Nuestras sedes</div>
       <h2 class="section-title">Encuéntranos en la <span>Región de Murcia</span></h2>
       <p class="section-desc" style="margin-left:auto;margin-right:auto">Cuatro sedes para que siempre tengas una Ñam Ñam cerca. Llámanos directamente para consultar horarios y disponibilidad.</p>
     </div>
@@ -1510,28 +1066,28 @@ section{padding:6rem 2rem}
       <div>
         <div class="loc-grid">
           <div class="loc-card reveal">
-            <div class="loc-icon">🏛️</div>
+            <div class="loc-icon" style="font-size:.82rem;font-weight:700;color:var(--red)">PM</div>
             <h3 class="loc-name">Puerta de Murcia</h3>
             <p class="loc-address">C. Puertas de Murcia, 37<br>30201 Cartagena, Murcia</p>
-            <a href="tel:669876499" class="loc-phone">📞 669 87 64 99</a>
+            <a href="tel:669876499" class="loc-phone">669 87 64 99</a>
           </div>
           <div class="loc-card reveal reveal-delay-1">
-            <div class="loc-icon">🛍️</div>
+            <div class="loc-icon" style="font-size:.82rem;font-weight:700;color:var(--red)">EM</div>
             <h3 class="loc-name">Espacio Mediterráneo</h3>
             <p class="loc-address">Centro Comercial<br>Espacio Mediterráneo, Murcia</p>
-            <a href="tel:669877236" class="loc-phone">📞 669 87 72 36</a>
+            <a href="tel:669877236" class="loc-phone">669 87 72 36</a>
           </div>
           <div class="loc-card reveal reveal-delay-2">
-            <div class="loc-icon">🌳</div>
+            <div class="loc-icon" style="font-size:.82rem;font-weight:700;color:var(--red)">LR</div>
             <h3 class="loc-name">La Rambla</h3>
             <p class="loc-address">Zona de La Rambla<br>Región de Murcia</p>
-            <a href="tel:620020817" class="loc-phone">📞 620 02 08 17</a>
+            <a href="tel:620020817" class="loc-phone">620 02 08 17</a>
           </div>
           <div class="loc-card reveal reveal-delay-3">
-            <div class="loc-icon">🏬</div>
+            <div class="loc-icon" style="font-size:.82rem;font-weight:700;color:var(--red)">DM</div>
             <h3 class="loc-name">C.C. Dos Mares</h3>
             <p class="loc-address">Centro Comercial Dos Mares<br>Región de Murcia</p>
-            <a href="tel:669876499" class="loc-phone">📞 Llámanos</a>
+            <a href="tel:669876499" class="loc-phone">Llámanos</a>
           </div>
         </div>
         <div class="loc-map reveal">
@@ -1539,7 +1095,7 @@ section{padding:6rem 2rem}
         </div>
       </div>
       <div class="hours-card reveal">
-        <h3 class="hours-title">🕐 Horarios</h3>
+        <h3 class="hours-title">Horarios</h3>
         <div class="hours-row"><span class="hours-day">Lunes — Jueves</span><span class="hours-time">12:00 – 23:00</span></div>
         <div class="hours-row"><span class="hours-day">Viernes</span><span class="hours-time">12:00 – 00:00</span></div>
         <div class="hours-row"><span class="hours-day">Sábado</span><span class="hours-time">12:00 – 00:00</span></div>
@@ -1557,7 +1113,7 @@ section{padding:6rem 2rem}
 <section class="faq" id="faq">
   <div class="container">
     <div class="reveal" style="text-align:center;margin-bottom:3rem">
-      <div class="section-badge">❓ Preguntas frecuentes</div>
+      <div class="section-badge">Preguntas frecuentes</div>
       <h2 class="section-title">Todo lo que necesitas <span>saber</span></h2>
     </div>
     <div class="faq-layout">
@@ -1588,10 +1144,9 @@ section{padding:6rem 2rem}
         </div>
       </div>
       <div class="faq-visual reveal reveal-delay-2">
-        <span class="faq-visual-emoji">🍕</span>
         <h3>¿Tienes más preguntas?</h3>
         <p>No dudes en contactar directamente con cualquiera de nuestras sedes. Estaremos encantados de ayudarte.</p>
-        <a href="tel:669876499" class="btn btn-red" style="justify-content:center">📞 Llamar ahora</a>
+        <a href="tel:669876499" class="btn btn-red" style="justify-content:center">Llamar ahora</a>
       </div>
     </div>
   </div>
@@ -1603,13 +1158,13 @@ section{padding:6rem 2rem}
     <h2>¿Te apetece una <em>Ñam Ñam</em>?</h2>
     <p>Visítanos en cualquiera de nuestras sedes o llámanos. Cocina a la vista, ingredientes frescos, precios que te sorprenderán.</p>
     <div class="cta-actions hero-actions" style="justify-content:center">
-      <a href="tel:669876499" class="btn btn-white">📞 Llámanos ahora</a>
-      <a href="#sedes" class="btn btn-ghost">📍 Ver sedes</a>
+      <a href="tel:669876499" class="btn btn-white">Llámanos ahora</a>
+      <a href="#sedes" class="btn btn-ghost">Ver sedes</a>
     </div>
     <div class="cta-socials">
-      <a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Instagram">📷</a>
-      <a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Facebook">👍</a>
-      <a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" class="cta-social" title="TripAdvisor">✈️</a>
+      <a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Instagram" style="font-size:.78rem;font-weight:700;font-family:'Fredoka',sans-serif">IG</a>
+      <a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Facebook" style="font-size:.78rem;font-weight:700;font-family:'Fredoka',sans-serif">FB</a>
+      <a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" class="cta-social" title="TripAdvisor" style="font-size:.78rem;font-weight:700;font-family:'Fredoka',sans-serif">TA</a>
     </div>
   </div>
 </section>
@@ -1620,15 +1175,15 @@ section{padding:6rem 2rem}
     <div>
       <div class="footer-brand">Ñam Ñam</div>
       <p class="footer-text">Pizzería artesanal con cocina a la vista. Pizzas, bocatas, burritos, entrantes, ensaladas y postres. Los mejores precios de la Región de Murcia.</p>
-      <span class="footer-badge">⭐ 4.0 · 695+ reseñas Google</span>
+      <span class="footer-badge">★ 4.0 · 695+ reseñas Google</span>
     </div>
     <div>
       <h4>Sedes</h4>
       <ul>
-        <li><a href="tel:669876499">🏛️ Puerta de Murcia</a></li>
-        <li><a href="tel:669877236">🛍️ Espacio Mediterráneo</a></li>
-        <li><a href="tel:620020817">🌳 La Rambla</a></li>
-        <li><a href="tel:669876499">🏬 C.C. Dos Mares</a></li>
+        <li><a href="tel:669876499">Puerta de Murcia</a></li>
+        <li><a href="tel:669877236">Espacio Mediterráneo</a></li>
+        <li><a href="tel:620020817">La Rambla</a></li>
+        <li><a href="tel:669876499">C.C. Dos Mares</a></li>
       </ul>
     </div>
     <div>
@@ -1638,26 +1193,22 @@ section{padding:6rem 2rem}
       <div class="footer-hour"><span class="footer-hour-day">Domingo</span><span class="footer-hour-time">12–23h</span></div>
       <div style="margin-top:.8rem"><h4>Carta</h4></div>
       <ul>
-        <li><a href="#menu">Pizzas · Bocatas</a></li>
-        <li><a href="#entrantes">Entrantes</a></li>
-        <li><a href="#ensaladas">Ensaladas</a></li>
-        <li><a href="#burritos">Burritos</a></li>
-        <li><a href="#postres">Postres</a></li>
+        <li><a href="#menu">Ver carta completa</a></li>
       </ul>
     </div>
     <div>
       <h4>Síguenos</h4>
       <ul>
-        <li><a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener">📷 Instagram</a></li>
-        <li><a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener">👍 Facebook</a></li>
-        <li><a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener">✈️ TripAdvisor</a></li>
+        <li><a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener">TripAdvisor</a></li>
       </ul>
       <div style="margin-top:1.5rem">
         <h4>Contacto</h4>
         <ul>
-          <li><a href="tel:669876499">📞 669 87 64 99</a></li>
-          <li><a href="tel:669877236">📞 669 87 72 36</a></li>
-          <li><a href="tel:620020817">📞 620 02 08 17</a></li>
+          <li><a href="tel:669876499">669 87 64 99</a></li>
+          <li><a href="tel:669877236">669 87 72 36</a></li>
+          <li><a href="tel:620020817">620 02 08 17</a></li>
         </ul>
       </div>
     </div>
@@ -1684,14 +1235,30 @@ section{padding:6rem 2rem}
 <!-- Mobile Sticky Bar -->
 <div class="mobile-bar">
   <div class="mobile-bar-inner">
-    <a href="tel:669876499" class="mobile-bar-btn call">📞 Llamar</a>
-    <a href="https://maps.google.com/?q=C.+Puertas+de+Murcia+37+Cartagena" target="_blank" rel="noopener" class="mobile-bar-btn map">📍 Cómo llegar</a>
+    <a href="tel:669876499" class="mobile-bar-btn call">Llamar</a>
+    <a href="https://maps.google.com/?q=C.+Puertas+de+Murcia+37+Cartagena" target="_blank" rel="noopener" class="mobile-bar-btn map">Cómo llegar</a>
   </div>
 </div>
 
 <script>
 (function(){
 'use strict';
+
+/* ── PROMO BAR ── */
+function initPromo(){
+  var btn=document.getElementById('promoClose');
+  var bar=document.getElementById('promoBar');
+  if(!btn||!bar)return;
+  if(sessionStorage.getItem('nnPromo')){bar.style.display='none';return;}
+  btn.addEventListener('click',function(){
+    bar.style.overflow='hidden';
+    bar.style.transition='max-height .3s ease,padding .3s ease,opacity .25s ease';
+    bar.style.maxHeight=bar.offsetHeight+'px';
+    setTimeout(function(){bar.style.maxHeight='0';bar.style.padding='0';bar.style.opacity='0';},10);
+    setTimeout(function(){bar.style.display='none';},320);
+    sessionStorage.setItem('nnPromo','1');
+  });
+}
 
 /* ── SPLASH ── */
 function initSplash(){
@@ -1797,6 +1364,15 @@ function initNav(){
     });
   }
 }
+
+/* ── PROMO BAR ── */
+.promo-bar{background:var(--red);color:#fff;text-align:center;padding:.52rem 4rem;font-size:.83rem;font-weight:500;position:relative;z-index:1002;letter-spacing:.01em}
+.promo-bar strong{font-weight:700}
+.promo-bar a{color:rgba(255,255,255,.9);font-weight:600;text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+.promo-bar a:hover{color:#fff}
+.promo-close{position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:1.1rem;padding:.2rem .6rem;line-height:1;transition:color .2s;font-family:inherit}
+.promo-close:hover{color:#fff}
+.trust-dot{width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0}
 
 /* ── SCROLL PROGRESS ── */
 function initProgress(){
@@ -1930,10 +1506,6 @@ function initLightbox(){
     card.addEventListener('keydown',(function(g,i){return function(e){if(e.key==='Enter'||e.key===' ')openGroup(g,i);};})(group,idx));
   }
 
-  // Dedicated sections (class-based groups)
-  document.querySelectorAll('.ensalada-card[data-lb-src]').forEach(function(c){register(c,'sec-ensaladas');});
-  document.querySelectorAll('.burrito-card[data-lb-src]').forEach(function(c){register(c,'sec-burritos');});
-  document.querySelectorAll('.entrante-card[data-lb-src]').forEach(function(c){register(c,'sec-entrantes');});
   // Menu section (data-lb-group attribute)
   document.querySelectorAll('.menu-item[data-lb-src]').forEach(function(c){register(c,c.dataset.lbGroup||'menu');});
 
@@ -1979,6 +1551,7 @@ function initCookie(){
 /* ── BOOT ── */
 function safe(fn,n){try{fn()}catch(e){console.warn('Init failed:',n,e)}}
 document.addEventListener('DOMContentLoaded',function(){
+  safe(initPromo,'promo');
   safe(initSplash,'splash');
   safe(initCursor,'cursor');
   safe(initFloaters,'floaters');
