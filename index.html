@@ -406,6 +406,210 @@ section{padding:6rem 2rem}
   .trust-bar-inner{justify-content:flex-start}
   .trust-item{border-right:none;border-bottom:1px solid var(--gray-light)}
 }
+
+/* ════════════════════════════════════════
+   PREMIUM DESIGN SYSTEM — Advanced Layer
+   ════════════════════════════════════════ */
+
+/* ── CUSTOM SCROLLBAR ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--red),var(--red-dark));border-radius:3px}
+
+/* ── ANIMATED GRADIENT VARS ── */
+:root{
+  --gradient-hero:linear-gradient(135deg,#C41E1E 0%,#9B1616 40%,#6B0E0E 100%);
+  --blur-glass:blur(24px) saturate(1.6);
+  --shine-grad:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.18) 50%,transparent 60%);
+}
+
+/* ── HERO AURORA BLOBS ── */
+.hero-aurora{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.22;animation:blobFloat var(--d,18s) ease-in-out infinite alternate}
+.hero-blob-1{width:60vw;height:60vw;max-width:700px;max-height:700px;background:radial-gradient(circle,#ff3b3b 0%,#C41E1E 60%,transparent 100%);top:-20%;left:-15%;--d:16s}
+.hero-blob-2{width:50vw;height:50vw;max-width:600px;max-height:600px;background:radial-gradient(circle,#ff7043 0%,#C41E1E 50%,transparent 100%);bottom:-10%;right:-10%;--d:22s;animation-direction:alternate-reverse}
+.hero-blob-3{width:35vw;height:35vw;max-width:420px;max-height:420px;background:radial-gradient(circle,#F5C842 0%,rgba(245,200,66,.3) 60%,transparent 100%);top:35%;left:45%;--d:19s;opacity:.12}
+@keyframes blobFloat{
+  0%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(3%,-4%) scale(1.05)}
+  66%{transform:translate(-3%,3%) scale(.97)}
+  100%{transform:translate(2%,-2%) scale(1.03)}
+}
+
+/* ── HERO WORD REVEAL ── */
+.hero-word{display:inline-block;opacity:0;transform:translateY(44px) rotateX(-30deg);transform-origin:center bottom;transition:opacity .65s var(--ease),transform .65s var(--ease);will-change:transform,opacity}
+.hero-word.in{opacity:1;transform:none}
+
+/* ── MAGNETIC BUTTON ── */
+.btn{transform-origin:center;will-change:transform}
+.btn-shine{position:relative;overflow:hidden}
+.btn-shine::after{content:'';position:absolute;inset:0;background:var(--shine-grad);background-size:200% 100%;background-position:200%;transition:background-position .55s ease;pointer-events:none}
+.btn-shine:hover::after{background-position:-20%}
+
+/* ── GLASS NAV ENHANCEMENT ── */
+.nav.scrolled{background:rgba(255,255,255,.82)!important;backdrop-filter:var(--blur-glass)!important;border-bottom:1px solid rgba(255,255,255,.6)}
+
+/* ── CARD SHINE / HOLOGRAPHIC ── */
+.card-3d{transform-style:preserve-3d;transition:transform .45s var(--ease),box-shadow .45s;position:relative;overflow:hidden}
+.card-3d::before{content:'';position:absolute;inset:0;z-index:10;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.18) 0%,transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none;border-radius:inherit}
+.card-3d:hover::before{opacity:1}
+
+/* ── SECTION WAVE DIVIDERS ── */
+.wave-divider{position:absolute;bottom:-2px;left:0;width:100%;overflow:hidden;line-height:0;z-index:5}
+.wave-divider svg{display:block;width:100%}
+.wave-divider-top{position:absolute;top:-2px;left:0;width:100%;overflow:hidden;line-height:0;z-index:5;transform:rotate(180deg)}
+
+/* ── GRADIENT ANIMATED TEXT ── */
+.gradient-text{background:linear-gradient(90deg,var(--red) 0%,#ff6b35 30%,var(--gold) 60%,var(--red) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:textShimmer 4s linear infinite}
+@keyframes textShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+/* ── FLOATING DEPTH ORBS ── */
+.orb-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.07;animation:orbDrift var(--d,25s) ease-in-out infinite alternate}
+.orb-a{width:400px;height:400px;background:var(--red);top:10%;left:5%;--d:20s}
+.orb-b{width:300px;height:300px;background:var(--gold);top:50%;right:8%;--d:28s;animation-direction:alternate-reverse}
+.orb-c{width:250px;height:250px;background:#ff6b35;bottom:15%;left:40%;--d:17s}
+@keyframes orbDrift{0%{transform:translate(0,0)}50%{transform:translate(4vw,-3vh)}100%{transform:translate(-3vw,4vh)}}
+
+/* ── PREMIUM MENU ITEM HOVER ── */
+.menu-item{transform-style:preserve-3d}
+.menu-item::after{content:'';position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.12) 0%,transparent 50%);border-radius:22px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+.menu-item:hover::after{opacity:1}
+.menu-item-price{background:linear-gradient(90deg,var(--red),#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.15rem!important}
+
+/* ── SECTION REVEAL ENHANCEMENTS ── */
+.reveal{transform:translateY(40px) scale(.98);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.visible{transform:none!important}
+.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal-right.visible{opacity:1;transform:none}
+
+/* ── ABOUT SECTION ORB ── */
+.about{position:relative;overflow:hidden}
+
+/* ── MARQUEE GRADIENT FADE ── */
+.marquee{position:relative}
+.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--red-dark),transparent)}
+.marquee::after{right:0;background:linear-gradient(270deg,var(--red-dark),transparent)}
+.marquee-inner span{transition:color .3s,letter-spacing .3s}
+.marquee-inner span:hover{color:var(--gold);letter-spacing:.08em}
+
+/* ── REVIEWS SCORE PULSE ── */
+.reviews-score{animation:scoreGlow 3s ease-in-out infinite alternate}
+@keyframes scoreGlow{0%{box-shadow:0 8px 30px rgba(196,30,30,.3)}100%{box-shadow:0 8px 50px rgba(196,30,30,.55),0 0 0 8px rgba(196,30,30,.06)}}
+
+/* ── STAT NUMBER GLOW ── */
+.stat:hover .stat-num{color:var(--red);filter:drop-shadow(0 0 12px rgba(196,30,30,.45));transition:filter .3s}
+
+/* ── LOCATION CARD MAP HOVER ── */
+.loc-card:hover .loc-icon{background:var(--red);color:#fff;transition:all .3s var(--ease-back);transform:scale(1.15) rotate(-5deg)}
+
+/* ── FAQ ENHANCED ── */
+.faq-item{transition:border-color .3s,box-shadow .3s,transform .3s var(--ease)}
+.faq-item:hover{transform:translateX(4px)}
+.faq-item.open{transform:none}
+
+/* ── PIZZA SCENE GLOW ── */
+.pizza-top{box-shadow:0 0 80px rgba(244,196,98,.5),0 0 160px rgba(244,196,98,.2),inset 0 0 80px rgba(0,0,0,.12)!important}
+.pizza-scene::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(0deg,rgba(107,14,14,.8),transparent);pointer-events:none}
+
+/* ── HERO SCROLL ENHANCED ── */
+.hero-scroll{gap:.6rem}
+.hero-scroll-arrow{animation:arrowBounce 1.5s ease-in-out infinite}
+@keyframes arrowBounce{0%,100%{opacity:.4;transform:rotate(45deg) translate(0,0)}50%{opacity:.8;transform:rotate(45deg) translate(4px,4px)}}
+
+/* ── TRUST BAR ENHANCED ── */
+.trust-item{position:relative;transition:color .3s}
+.trust-item:hover strong{color:var(--red)}
+.trust-item:hover .trust-dot{transform:scale(1.5);background:var(--red);transition:all .3s var(--ease-back)}
+
+/* ── FOOTER REVEAL ── */
+.footer{position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(196,30,30,.5),transparent)}
+
+/* ── BACK TO TOP GLOW ── */
+.back-top{box-shadow:0 4px 20px rgba(196,30,30,.4),0 0 0 0 rgba(196,30,30,.3)}
+.back-top.visible{animation:topBtnPulse 3s ease-in-out infinite}
+@keyframes topBtnPulse{0%,100%{box-shadow:0 4px 20px rgba(196,30,30,.4),0 0 0 0 rgba(196,30,30,.2)}50%{box-shadow:0 4px 24px rgba(196,30,30,.5),0 0 0 10px rgba(196,30,30,.0)}}
+
+/* ── WHATSAPP ENHANCED ── */
+.whatsapp-btn{box-shadow:0 4px 20px rgba(37,211,102,.42),0 0 0 0 rgba(37,211,102,.4);animation:waPulse 2.5s ease-out infinite}
+@keyframes waPulse{0%{box-shadow:0 4px 20px rgba(37,211,102,.42),0 0 0 0 rgba(37,211,102,.4)}70%{box-shadow:0 4px 20px rgba(37,211,102,.42),0 0 0 14px rgba(37,211,102,.0)}100%{box-shadow:0 4px 20px rgba(37,211,102,.42),0 0 0 0 rgba(37,211,102,.0)}}
+
+/* ── PROMO BAR SHIMMER ── */
+.promo-bar{background:linear-gradient(90deg,var(--red-dark) 0%,var(--red) 40%,#e83a3a 60%,var(--red-dark) 100%);background-size:200% auto;animation:promoShimmer 5s linear infinite}
+@keyframes promoShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+/* ── SECTION BADGE ANIMATION ── */
+.section-badge{position:relative;overflow:hidden}
+.section-badge::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:badgeShine 3.5s ease-in-out infinite;pointer-events:none}
+@keyframes badgeShine{0%,70%{left:-100%}85%{left:150%}100%{left:150%}}
+
+/* ── MENU CATEGORY ENHANCED ── */
+.menu-cat{position:relative;overflow:hidden}
+.menu-cat::before{content:'';position:absolute;inset:0;background:var(--shine-grad);background-size:200% 100%;background-position:200%;transition:background-position .4s;border-radius:50px;pointer-events:none}
+.menu-cat:hover::before,.menu-cat.active::before{background-position:20%}
+
+/* ── SMOOTH SECTION TRANSITIONS ── */
+section{position:relative}
+.about,.reviews,.faq,.locations{background-clip:padding-box}
+
+/* ── NUMBER COUNTER STYLE ── */
+.stat-num{display:inline-block;transition:transform .3s var(--ease-back)}
+.stat:hover .stat-num{transform:scale(1.1)}
+
+/* ── GALLERY ITEM ENHANCED ── */
+.gallery-item{position:relative}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(196,30,30,.35) 0%,transparent 50%);opacity:0;transition:opacity .3s;border-radius:18px}
+.gallery-item:hover::after{opacity:1}
+
+/* ── REVIEW CARD HOVER LINE ── */
+.review-card{border-top:3px solid transparent;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+.review-card:hover{border-top-color:var(--red)}
+
+/* ── LOCATION MAP BORDER ── */
+.loc-map{position:relative}
+.loc-map::after{content:'';position:absolute;inset:0;border-radius:20px;box-shadow:inset 0 0 0 2px rgba(196,30,30,.15);pointer-events:none}
+
+/* ── HERO BADGE GLOW ── */
+.hero-badge{box-shadow:0 0 0 1px rgba(255,255,255,.12),0 4px 24px rgba(0,0,0,.2);animation:badgeGlow 4s ease-in-out infinite alternate}
+@keyframes badgeGlow{0%{box-shadow:0 0 0 1px rgba(255,255,255,.12),0 4px 24px rgba(0,0,0,.2)}100%{box-shadow:0 0 0 1px rgba(255,255,255,.22),0 4px 36px rgba(196,30,30,.18)}}
+
+/* ── SCROLL PROGRESS ENHANCED ── */
+.scroll-progress{height:3px;background:linear-gradient(90deg,var(--red),#ff6b35,var(--gold));box-shadow:0 0 12px rgba(196,30,30,.6)}
+
+/* ── MENU ITEM IMAGE DEPTH ── */
+.menu-item-img{overflow:hidden;transform-style:preserve-3d}
+.menu-item-img img{transition:transform .6s cubic-bezier(.25,.46,.45,.94),filter .6s}
+.menu-item:hover .menu-item-img img{transform:scale(1.12);filter:brightness(1.05) saturate(1.1)}
+
+/* ── CTA SECTION ORBS ── */
+.cta{isolation:isolate}
+.cta-orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:orbDrift var(--d,20s) ease-in-out infinite alternate}
+.cta-orb-1{width:350px;height:350px;background:rgba(255,255,255,.06);top:-80px;right:-60px;--d:18s}
+.cta-orb-2{width:250px;height:250px;background:rgba(245,200,66,.08);bottom:-40px;left:-40px;--d:24s;animation-direction:alternate-reverse}
+
+/* ── ABOUT FEATURES ENHANCED ── */
+.about-feature{transform-origin:left center}
+.about-feature-icon{transition:transform .4s var(--ease-back),background .3s,box-shadow .3s}
+.about-feature:hover .about-feature-icon{background:var(--red);color:#fff;box-shadow:0 4px 16px rgba(196,30,30,.35);transform:scale(1.2) rotate(-8deg)}
+
+/* ── NAV LINK HOVER GLOW ── */
+.nav.scrolled .nav-links a:hover{color:var(--red)}
+
+/* ── MOBILE PERFORMANCE ── */
+@media(max-width:900px){
+  .hero-blob,.orb{display:none}
+  .card-3d::before{display:none}
+}
+
+/* ── REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 <body>
@@ -446,6 +650,11 @@ section{padding:6rem 2rem}
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-grain"></div>
+  <div class="hero-aurora">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+  </div>
   <div class="hero-floaters" id="heroFloaters"></div>
   <div class="hero-content">
     <div class="hero-badge">
@@ -459,8 +668,8 @@ section{padding:6rem 2rem}
       <span><strong>4.0</strong> · 695+ opiniones en Google</span>
     </div>
     <div class="hero-actions">
-      <a href="#menu" class="btn btn-white">Ver la carta</a>
-      <a href="#sedes" class="btn btn-ghost">Nuestras sedes</a>
+      <a href="#menu" class="btn btn-white btn-shine">Ver la carta</a>
+      <a href="#sedes" class="btn btn-ghost btn-shine">Nuestras sedes</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -468,6 +677,13 @@ section{padding:6rem 2rem}
     <div class="hero-scroll-arrow"></div>
   </div>
 </section>
+
+<!-- Wave Divider Hero → Trust -->
+<div style="background:#fff;margin-top:-2px;position:relative;z-index:6">
+  <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:50px;transform:rotate(180deg)">
+    <path d="M0,25 C240,55 480,-5 720,25 C960,55 1200,-5 1440,25 L1440,50 L0,50 Z" fill="#160808"/>
+  </svg>
+</div>
 
 <!-- Trust Bar -->
 <div class="trust-bar">
@@ -498,7 +714,7 @@ section{padding:6rem 2rem}
   <div class="container">
     <div class="reveal">
       <div class="section-badge">Opiniones</div>
-      <h2 class="section-title">Lo que dicen <span>nuestros clientes</span></h2>
+      <h2 class="section-title">Lo que dicen <span class="gradient-text">nuestros clientes</span></h2>
     </div>
     <div class="reviews-header reveal">
       <div class="reviews-score">
@@ -548,10 +764,15 @@ section{padding:6rem 2rem}
 
 <!-- About -->
 <section class="about" id="sobre">
+  <div class="orb-field">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+  </div>
   <div class="container">
     <div class="about-grid">
-      <div class="about-visual reveal">
-        <div class="about-card">
+      <div class="about-visual reveal reveal-left">
+        <div class="about-card card-3d">
           <span class="about-card-emoji" style="font-size:2.8rem;color:var(--red);font-family:'Fredoka',sans-serif;letter-spacing:-.02em">Ñam Ñam</span>
           <h3 class="about-card-title">Cocina a la vista</h3>
           <p class="about-card-text">En Ñam Ñam, cada pizza se prepara delante de ti. Ves cómo se estira la masa, cómo se añaden los ingredientes frescos y cómo se hornea hasta quedar perfecta. Sin secretos, solo buena pizza hecha con cariño.</p>
@@ -562,9 +783,9 @@ section{padding:6rem 2rem}
           <div class="stat reveal reveal-delay-3"><div class="stat-num">4.0★</div><div class="stat-label">Valoración media</div></div>
         </div>
       </div>
-      <div class="about-text reveal">
+      <div class="about-text reveal reveal-right">
         <div class="section-badge">Sobre nosotros</div>
-        <h2 class="section-title">Más que una pizzería,<br>un <span>lugar para disfrutar</span></h2>
+        <h2 class="section-title">Más que una pizzería,<br>un <span class="gradient-text">lugar para disfrutar</span></h2>
         <p>Ñam Ñam nació con una idea sencilla: ofrecer pizzas de calidad a un precio justo, en un ambiente donde todo el mundo se sienta como en casa.</p>
         <p>Con varias sedes repartidas por la Región de Murcia, nos hemos convertido en el punto de encuentro favorito de familias, amigos y amantes de la buena pizza.</p>
         <div class="about-features">
@@ -578,12 +799,19 @@ section{padding:6rem 2rem}
   </div>
 </section>
 
+<!-- Wave divider About → Menu -->
+<div style="background:#fff;position:relative;z-index:6;margin-top:-2px">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:60px">
+    <path d="M0,0 C360,60 1080,0 1440,30 L1440,0 L0,0 Z" fill="#FFF8F5"/>
+  </svg>
+</div>
+
 <!-- Menu -->
 <section class="menu" id="menu">
   <div class="container">
     <div style="text-align:center" class="reveal">
       <div class="section-badge">Nuestra carta</div>
-      <h2 class="section-title">Un menú para <span>todos los gustos</span></h2>
+      <h2 class="section-title">Un menú para <span class="gradient-text">todos los gustos</span></h2>
       <p class="section-desc" style="margin-left:auto;margin-right:auto">Pizzas, bocatas, ensaladas, burritos, entrantes y postres. Usa los filtros para explorar nuestra carta completa con foto real de cada producto.</p>
     </div>
     <div class="menu-cats reveal">
@@ -1139,12 +1367,14 @@ section{padding:6rem 2rem}
 
 <!-- CTA -->
 <section class="cta" id="contacto">
+  <div class="cta-orb cta-orb-1"></div>
+  <div class="cta-orb cta-orb-2"></div>
   <div class="container reveal">
     <h2>¿Te apetece una <em>Ñam Ñam</em>?</h2>
     <p>Visítanos en cualquiera de nuestras sedes o llámanos. Cocina a la vista, ingredientes frescos, precios que te sorprenderán.</p>
     <div class="cta-actions hero-actions" style="justify-content:center">
-      <a href="tel:669876499" class="btn btn-white">Llámanos ahora</a>
-      <a href="#sedes" class="btn btn-ghost">Ver sedes</a>
+      <a href="tel:669876499" class="btn btn-white btn-shine">Llámanos ahora</a>
+      <a href="#sedes" class="btn btn-ghost btn-shine">Ver sedes</a>
     </div>
     <div class="cta-socials">
       <a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Instagram" style="font-size:.78rem;font-weight:700;font-family:'Fredoka',sans-serif">IG</a>
@@ -1182,7 +1412,7 @@ section{padding:6rem 2rem}
       </ul>
     </div>
     <div>
-      <h4>Síguenos</h4>
+      <h4 style="font-family:'Fredoka',sans-serif;font-weight:600;color:#fff;margin-bottom:1.1rem">Síguenos</h4>
       <ul>
         <li><a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener">Facebook</a></li>
@@ -1342,15 +1572,6 @@ function initNav(){
     });
   }
 }
-
-/* ── PROMO BAR ── */
-.promo-bar{background:var(--red);color:#fff;text-align:center;padding:.52rem 4rem;font-size:.83rem;font-weight:500;position:relative;z-index:1002;letter-spacing:.01em}
-.promo-bar strong{font-weight:700}
-.promo-bar a{color:rgba(255,255,255,.9);font-weight:600;text-decoration:underline;text-underline-offset:2px;transition:color .2s}
-.promo-bar a:hover{color:#fff}
-.promo-close{position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:1.1rem;padding:.2rem .6rem;line-height:1;transition:color .2s;font-family:inherit}
-.promo-close:hover{color:#fff}
-.trust-dot{width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0}
 
 /* ── SCROLL PROGRESS ── */
 function initProgress(){
@@ -1552,7 +1773,237 @@ document.addEventListener('DOMContentLoaded',function(){
   safe(initFAQ,'faq');
   safe(initLightbox,'lightbox');
   safe(initCookie,'cookie');
+  safe(initPremium,'premium');
 });
+})();
+
+/* ══════════════════════════════════════
+   PREMIUM INTERACTIONS ENGINE
+   ══════════════════════════════════════ */
+(function(){
+'use strict';
+
+function initPremium(){
+  initHeroWordReveal();
+  initMagneticButtons();
+  initCardShine();
+  initStaggeredReveal();
+  initScrollVelocity();
+  initSectionCounters();
+  initMenuItemHover();
+  initImageBlurUp();
+}
+
+/* ── HERO HEADLINE WORD-BY-WORD REVEAL ── */
+function initHeroWordReveal(){
+  var h1 = document.querySelector('.hero h1');
+  if(!h1) return;
+  // Split into words preserving em tags
+  var html = h1.innerHTML;
+  // Replace spaces outside tags with split markers
+  var parts = [];
+  var inTag = false;
+  var buf = '';
+  for(var i=0;i<html.length;i++){
+    var c = html[i];
+    if(c==='<') inTag=true;
+    if(inTag){ buf+=c; if(c==='>'){inTag=false;parts.push(buf);buf='';} continue; }
+    if(c===' '||c==='\n'){ if(buf){parts.push(buf);buf='';}parts.push(' ');continue; }
+    buf+=c;
+  }
+  if(buf) parts.push(buf);
+  // Rebuild: wrap non-tag, non-space parts in .hero-word spans
+  var newHtml = '';
+  for(var j=0;j<parts.length;j++){
+    var p=parts[j];
+    if(p===' '||p==='\n'){ newHtml+=' '; }
+    else if(p[0]==='<'){ newHtml+=p; }
+    else{ newHtml+='<span class="hero-word">'+p+'</span>'; }
+  }
+  h1.innerHTML = newHtml;
+  // Animate in after splash
+  setTimeout(function(){
+    var words = h1.querySelectorAll('.hero-word');
+    words.forEach(function(w,i){
+      setTimeout(function(){ w.classList.add('in'); }, 300 + i*90);
+    });
+  }, 2400);
+}
+
+/* ── MAGNETIC BUTTONS ── */
+function initMagneticButtons(){
+  if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  document.querySelectorAll('.btn,.nav-cta,.loc-phone,.menu-cat,.cta-social').forEach(function(btn){
+    btn.addEventListener('mousemove', function(e){
+      var r = btn.getBoundingClientRect();
+      var cx = r.left + r.width/2;
+      var cy = r.top + r.height/2;
+      var dx = (e.clientX - cx) * 0.28;
+      var dy = (e.clientY - cy) * 0.28;
+      btn.style.transform = 'translate('+dx+'px,'+dy+'px) scale(1.04)';
+    });
+    btn.addEventListener('mouseleave', function(){
+      btn.style.transform = '';
+      btn.style.transition = 'transform .55s var(--ease-back)';
+      setTimeout(function(){ btn.style.transition=''; }, 550);
+    });
+  });
+}
+
+/* ── CARD 3D SHINE (cursor-tracking holographic gloss) ── */
+function initCardShine(){
+  if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  document.querySelectorAll('.about-card,.review-card,.loc-card,.pizza-feat,.stat,.menu-item').forEach(function(card){
+    card.classList.add('card-3d');
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      var x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+      var y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+      card.style.setProperty('--mx', x+'%');
+      card.style.setProperty('--my', y+'%');
+      var rx = ((e.clientY - r.top)/r.height - .5) * -10;
+      var ry = ((e.clientX - r.left)/r.width - .5) * 10;
+      card.style.transform = 'perspective(800px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-4px) scale(1.01)';
+      card.style.boxShadow = '0 20px 60px rgba(196,30,30,.18), 0 8px 20px rgba(0,0,0,.08)';
+    });
+    card.addEventListener('mouseleave', function(){
+      card.style.transform = '';
+      card.style.boxShadow = '';
+    });
+  });
+}
+
+/* ── STAGGERED GRID REVEAL ── */
+function initStaggeredReveal(){
+  // Menu grid — stagger items when category changes
+  var menuGrid = document.getElementById('menuGrid');
+  if(menuGrid){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var items = menuGrid.querySelectorAll('.menu-item');
+        items.forEach(function(item, i){
+          setTimeout(function(){
+            item.style.opacity = '1';
+            item.style.transform = 'none';
+          }, i * 40);
+        });
+        obs.unobserve(menuGrid);
+      });
+    }, {threshold: 0.05});
+    obs.observe(menuGrid);
+  }
+
+  // About features stagger
+  var features = document.querySelectorAll('.about-feature');
+  if(features.length){
+    features.forEach(function(f,i){
+      f.style.opacity='0';
+      f.style.transform='translateX(-28px)';
+      f.style.transition='opacity .55s var(--ease),transform .55s var(--ease)';
+      f.style.transitionDelay=(i*0.1)+'s';
+    });
+    var obs2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        features.forEach(function(f){
+          f.style.opacity='1';
+          f.style.transform='none';
+        });
+        obs2.disconnect();
+      });
+    }, {threshold:0.2});
+    obs2.observe(features[0].closest('section')||features[0]);
+  }
+}
+
+/* ── SCROLL VELOCITY → parallax depth ── */
+function initScrollVelocity(){
+  var lastY = window.scrollY;
+  var velocity = 0;
+  var heroContent = document.querySelector('.hero-content');
+  var heroBg = document.querySelector('.hero-bg');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    velocity = y - lastY;
+    lastY = y;
+    // Hero parallax depth
+    if(heroBg && y < window.innerHeight * 1.4){
+      var depth = y * 0.32;
+      var scaleBoost = 1.06 + Math.abs(velocity) * 0.0005;
+      heroBg.style.transform = 'scale('+scaleBoost+') translateY('+depth+'px)';
+    }
+    // Hero content subtle parallax
+    if(heroContent && y < window.innerHeight){
+      heroContent.style.transform = 'translateY('+(y*0.18)+'px)';
+      heroContent.style.opacity = (1 - y/window.innerHeight*1.2).toFixed(3);
+    }
+  }, {passive:true});
+}
+
+/* ── ENHANCED NUMBER COUNTERS (spring easing) ── */
+function initSectionCounters(){
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    // Already handled by base initCounters, enhance with easing
+    var target = parseInt(el.dataset.count);
+    var done = false;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting || done) return;
+        done = true;
+        var start = 0;
+        var startTime = null;
+        var duration = 1600;
+        function easeOut(t){ return 1 - Math.pow(1-t, 4); }
+        function step(ts){
+          if(!startTime) startTime = ts;
+          var progress = Math.min((ts-startTime)/duration, 1);
+          var val = Math.floor(easeOut(progress) * target);
+          el.textContent = val + (progress < 1 ? '' : '+');
+          if(progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        obs.unobserve(el);
+      });
+    }, {threshold:0.5});
+    obs.observe(el);
+  });
+}
+
+/* ── MENU ITEM 3D HOVER ── */
+function initMenuItemHover(){
+  if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  // Intercept tilt for menu items with greater depth
+  document.querySelectorAll('.menu-item').forEach(function(item){
+    item.addEventListener('mousemove', function(e){
+      var r = item.getBoundingClientRect();
+      var x = (e.clientX - r.left)/r.width - .5;
+      var y = (e.clientY - r.top)/r.height - .5;
+      item.style.transform = 'perspective(900px) rotateX('+(-y*7)+'deg) rotateY('+(x*7)+'deg) translateY(-10px) scale(1.02)';
+      item.style.boxShadow = '0 28px 70px rgba(196,30,30,.22)';
+      item.style.zIndex = '10';
+    });
+    item.addEventListener('mouseleave', function(){
+      item.style.transform = '';
+      item.style.boxShadow = '';
+      item.style.zIndex = '';
+    });
+  });
+}
+
+/* ── IMAGE BLUR-UP (low-fi → sharp) ── */
+function initImageBlurUp(){
+  document.querySelectorAll('.menu-item-img img').forEach(function(img){
+    if(img.complete) return;
+    img.style.filter = 'blur(12px) saturate(.5)';
+    img.style.transition = 'filter .6s ease';
+    img.addEventListener('load', function(){
+      img.style.filter = '';
+    });
+  });
+}
+
+window.initPremium = initPremium;
 })();
 </script>
 </body>
