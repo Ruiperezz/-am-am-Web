@@ -217,6 +217,19 @@ section{padding:6rem 2rem}
 .loc-map{margin-top:2.5rem;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-soft);height:320px;border:1px solid var(--gray-light)}
 .loc-map iframe{width:100%;height:100%;border:0}
 
+/* ── GOOGLE BANNER ── */
+.google-banner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;background:#fff;border:1.5px solid #E8E8E8;border-radius:16px;padding:1.4rem 1.8rem;margin-bottom:2.5rem;box-shadow:0 4px 20px rgba(0,0,0,.07);flex-wrap:wrap}
+.google-banner-left{display:flex;align-items:center;gap:1.2rem}
+.google-banner-logo{flex-shrink:0}
+.google-banner-info{display:flex;flex-direction:column;gap:.15rem}
+.google-banner-label{font-size:.72rem;font-weight:600;color:#777;letter-spacing:.06em;text-transform:uppercase}
+.google-banner-score-row{display:flex;align-items:baseline;gap:.5rem}
+.google-banner-score{font-family:'Fredoka',sans-serif;font-size:2rem;font-weight:700;color:#1a1a1a;line-height:1}
+.google-banner-stars{font-size:1rem;color:#FBBC05;letter-spacing:.06em}
+.google-banner-count{font-size:.8rem;color:#555;font-weight:500}
+.google-banner-cta{display:inline-flex;align-items:center;gap:.55rem;background:#1a1a1a;color:#fff;font-size:.85rem;font-weight:700;padding:.75rem 1.4rem;border-radius:10px;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;flex-shrink:0}
+.google-banner-cta:hover{background:#333;transform:translateY(-1px)}
+
 /* ── REVIEWS ── */
 .reviews{background:#fff}
 .reviews-header{display:flex;align-items:center;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
@@ -386,6 +399,8 @@ section{padding:6rem 2rem}
   .about-grid{grid-template-columns:1fr;gap:2rem}
   .pizza-scene-features{grid-template-columns:1fr;max-width:350px;margin-left:auto;margin-right:auto}
   .reviews-header{flex-direction:column;align-items:flex-start}
+  .google-banner{flex-direction:column;align-items:flex-start;gap:1.2rem}
+  .google-banner-cta{width:100%;justify-content:center}
   .mobile-bar{display:flex}
   .back-top{bottom:6rem}
   .whatsapp-float{bottom:6rem}
@@ -1185,17 +1200,46 @@ section{position:relative}
       <div class="section-badge">Opiniones</div>
       <h2 class="section-title">Lo que dicen <span class="gradient-text">nuestros clientes</span></h2>
     </div>
+    <!-- Google Reviews Banner -->
+    <div class="google-banner reveal">
+      <div class="google-banner-left">
+        <svg class="google-banner-logo" width="40" height="40" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
+          <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 17.1 19.3 14 24 14c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 16.3 2 9.7 7.3 6.3 14.7z"/>
+          <path fill="#FBBC05" d="M24 46c5.8 0 10.8-2 14.4-5.3l-6.6-5.6C29.9 36.5 27.1 37 24 37c-6 0-10.6-3.1-11.8-8.5l-7 5.4C8 40.7 15.4 46 24 46z"/>
+          <path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 2.9-3.3 5-6.8 6.4l6.6 5.6C41.6 37.4 44.5 32.1 44.5 24c0-1.3-.2-2.7-.5-4z"/>
+        </svg>
+        <div class="google-banner-info">
+          <div class="google-banner-label">Google Reviews</div>
+          <div class="google-banner-score-row">
+            <span class="google-banner-score">4.0</span>
+            <span class="google-banner-stars">★★★★☆</span>
+          </div>
+          <div class="google-banner-count">695+ opiniones verificadas</div>
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" class="google-banner-cta">
+        <svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+          <path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
+          <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 17.1 19.3 14 24 14c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 16.3 2 9.7 7.3 6.3 14.7z"/>
+          <path fill="#FBBC05" d="M24 46c5.8 0 10.8-2 14.4-5.3l-6.6-5.6C29.9 36.5 27.1 37 24 37c-6 0-10.6-3.1-11.8-8.5l-7 5.4C8 40.7 15.4 46 24 46z"/>
+          <path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 2.9-3.3 5-6.8 6.4l6.6 5.6C41.6 37.4 44.5 32.1 44.5 24c0-1.3-.2-2.7-.5-4z"/>
+        </svg>
+        Déjanos tu reseña en Google
+      </a>
+    </div>
+
     <div class="reviews-header reveal">
       <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" class="reviews-score" style="text-decoration:none" title="Ver en Google Maps">
-        <div class="reviews-score-num">4.1</div>
+        <div class="reviews-score-num">4.0</div>
         <div class="reviews-score-stars">★★★★☆</div>
       </a>
       <div class="reviews-meta">
-        <h3>Valoración en Google Maps</h3>
-        <p>Más de 500 opiniones verificadas de clientes reales · También en TripAdvisor</p>
+        <h3>Valoración media en Google y TripAdvisor</h3>
+        <p>695+ opiniones verificadas de clientes reales en diferentes plataformas</p>
         <div style="display:flex;gap:.6rem;margin-top:.7rem;flex-wrap:wrap">
           <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid #E8E8E8;border-radius:8px;padding:.4rem .9rem;font-size:.78rem;font-weight:600;color:#1a1a1a;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.12)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="#4285F4"/></svg>
+            <svg width="14" height="14" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 17.1 19.3 14 24 14c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 16.3 2 9.7 7.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 46c5.8 0 10.8-2 14.4-5.3l-6.6-5.6C29.9 36.5 27.1 37 24 37c-6 0-10.6-3.1-11.8-8.5l-7 5.4C8 40.7 15.4 46 24 46z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 2.9-3.3 5-6.8 6.4l6.6 5.6C41.6 37.4 44.5 32.1 44.5 24c0-1.3-.2-2.7-.5-4z"/></svg>
             Ver opiniones en Google
           </a>
           <a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid #E8E8E8;border-radius:8px;padding:.4rem .9rem;font-size:.78rem;font-weight:600;color:#1a1a1a;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.12)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
@@ -1257,7 +1301,7 @@ section{position:relative}
       </div>
     </div>
     <div class="reviews-cta reveal">
-      <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener">Ver las 500+ opiniones reales en Google Maps →</a>
+      <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener">Ver las 695+ opiniones reales en Google Maps →</a>
     </div>
   </div>
 </section>
@@ -1278,9 +1322,9 @@ section{position:relative}
           <p class="about-card-text">En Ñam Ñam, cada pizza se prepara delante de ti. Ves cómo se estira la masa, cómo se añaden los ingredientes frescos y cómo se hornea hasta quedar perfecta. Sin secretos, solo buena pizza hecha con cariño.</p>
         </div>
         <div class="about-stats">
-          <div class="stat reveal reveal-delay-1"><div class="stat-num" data-count="500">0</div><div class="stat-label">Opiniones Google</div></div>
+          <div class="stat reveal reveal-delay-1"><div class="stat-num" data-count="695">0</div><div class="stat-label">Opiniones Google</div></div>
           <div class="stat reveal reveal-delay-2"><div class="stat-num">4</div><div class="stat-label">Sedes en Murcia</div></div>
-          <div class="stat reveal reveal-delay-3"><div class="stat-num">4.1★</div><div class="stat-label">Valoración media</div></div>
+          <div class="stat reveal reveal-delay-3"><div class="stat-num">4.0★</div><div class="stat-label">Valoración media</div></div>
         </div>
       </div>
       <div class="about-text reveal reveal-right">
@@ -1431,8 +1475,8 @@ section{position:relative}
   <div class="cta-orb cta-orb-1"></div>
   <div class="cta-orb cta-orb-2"></div>
   <div class="container reveal">
-    <h2>¿Te apetece una <em>Ñam Ñam</em>?</h2>
-    <p>Visítanos en cualquiera de nuestras sedes o llámanos. Cocina a la vista, ingredientes frescos, precios que te sorprenderán.</p>
+    <h2>¿Cuándo vienes a <em>probarlo</em>?</h2>
+    <p>Masa artesana, ingredientes frescos y cocina abierta a la vista. Cuatro sedes para que siempre tengas una Ñam Ñam cerca — desde 7€.</p>
     <div class="cta-actions hero-actions" style="justify-content:center">
       <a href="tel:669876499" class="btn btn-white btn-shine">Llámanos ahora</a>
       <a href="#sedes" class="btn btn-ghost btn-shine">Ver sedes</a>
@@ -1451,7 +1495,7 @@ section{position:relative}
     <div>
       <div class="footer-brand">Ñam Ñam</div>
       <p class="footer-text">Pizzería artesanal con cocina a la vista. Pizzas, burritos, entrantes, ensaladas y postres. Los mejores precios de la Región de Murcia.</p>
-      <span class="footer-badge">★ 4.1 · 500+ reseñas Google</span>
+      <span class="footer-badge">★ 4.0 · 695+ reseñas Google</span>
     </div>
     <div>
       <h4>Sedes</h4>
