@@ -31,15 +31,6 @@ ul{list-style:none}
   --ease-back:cubic-bezier(.34,1.56,.64,1);
 }
 
-/* ── SPLASH ── */
-.splash{position:fixed;inset:0;z-index:10000;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .7s ease,visibility .7s ease}
-.splash.hide{opacity:0;visibility:hidden;pointer-events:none}
-.splash-pizza{font-size:5rem;animation:splashSpin 2s ease-in-out infinite alternate,splashFloat 1.5s ease-in-out infinite alternate;filter:drop-shadow(0 8px 24px rgba(0,0,0,.3))}
-.splash-text{color:#fff;font-family:'Fredoka',sans-serif;font-size:2.2rem;font-weight:700;margin-top:1.5rem;animation:pulse 1.2s ease-in-out infinite alternate}
-.splash-sub{color:rgba(255,255,255,.6);font-size:.88rem;margin-top:.5rem;font-weight:300;letter-spacing:.05em}
-@keyframes splashSpin{0%{transform:rotate(-8deg)}100%{transform:rotate(8deg)}}
-@keyframes splashFloat{0%{transform:translateY(0)}100%{transform:translateY(-14px)}}
-@keyframes pulse{0%{opacity:.6;transform:scale(.96)}100%{opacity:1;transform:scale(1.03)}}
 
 /* ── CUSTOM CURSOR + TRAIL ── */
 .nn-dot{position:fixed;pointer-events:none;border-radius:50%;z-index:999999;width:12px;height:12px;background:#C41E1E;box-shadow:0 0 14px rgba(196,30,30,.75),0 0 30px rgba(196,30,30,.3);transform:translate(-50%,-50%);transition:width .18s,height .18s,opacity .18s,background .18s;will-change:left,top}
@@ -431,12 +422,6 @@ section{padding:6rem 2rem}
   </div>
 </div>
 
-<!-- Splash -->
-<div class="splash" id="splash">
-  <div class="splash-pizza">🍕</div>
-  <div class="splash-text">Ñam Ñam</div>
-  <div class="splash-sub">Pizzería Artesanal · Región de Murcia</div>
-</div>
 
 <!-- Promo Bar -->
 <div class="promo-bar" id="promoBar">
@@ -1260,25 +1245,6 @@ function initPromo(){
   });
 }
 
-/* ── SPLASH ── */
-function initSplash(){
-  var s=document.getElementById('splash');
-  if(!s)return;
-  setTimeout(function(){
-    s.style.opacity='0';
-    s.style.pointerEvents='none';
-    setTimeout(function(){s.style.display='none';},700);
-  },2000);
-}
-;(function(){
-  var s=document.getElementById('splash');
-  if(!s)return;
-  setTimeout(function(){
-    s.style.opacity='0';
-    s.style.pointerEvents='none';
-    setTimeout(function(){s.style.display='none';},700);
-  },2000);
-})();
 
 /* ── CURSOR + TRAIL ── */
 function initCursor(){
@@ -1572,7 +1538,6 @@ function initCookie(){
 function safe(fn,n){try{fn()}catch(e){console.warn('Init failed:',n,e)}}
 document.addEventListener('DOMContentLoaded',function(){
   safe(initPromo,'promo');
-  safe(initSplash,'splash');
   safe(initCursor,'cursor');
   safe(initFloaters,'floaters');
   safe(initNav,'nav');
