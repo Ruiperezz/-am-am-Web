@@ -391,21 +391,37 @@ section{padding:6rem 2rem}
   .whatsapp-float{bottom:6rem}
   .trust-item{padding:.5rem 1.2rem;font-size:.82rem}
 }
+@media(max-width:900px){
+  .nav{padding:.9rem 1.4rem}
+  .nav.scrolled{padding:.7rem 1.4rem}
+}
 @media(max-width:600px){
-  section{padding:4rem 1.2rem}
-  .hero h1{font-size:2.5rem}
+  section{padding:3.5rem 1.1rem}
+  .hero{min-height:100svh}
+  .hero h1{font-size:clamp(2.1rem,9vw,2.8rem);line-height:1.08}
+  .hero-sub{font-size:.97rem;padding:0 .3rem}
+  .hero-badge{font-size:.76rem;padding:.4rem 1rem;flex-wrap:wrap;justify-content:center;gap:.3rem}
   .hero-actions{flex-direction:column;align-items:center}
+  .hero-actions .btn{width:100%;max-width:280px;justify-content:center}
+  .promo-bar{padding:.5rem 2.8rem .5rem 1rem;font-size:.78rem;text-align:left;line-height:1.4}
   .about-stats{gap:.7rem}
   .stat{padding:1rem .7rem}
   .stat-num{font-size:1.5rem}
   .menu-grid{grid-template-columns:1fr}
+  .menu-cats{gap:.5rem}
+  .menu-cat{padding:.55rem 1.1rem;font-size:.82rem}
   .loc-grid{grid-template-columns:1fr}
+  .loc-phone{min-height:44px;padding:.65rem 1.2rem}
   .reviews-grid{grid-template-columns:1fr}
+  .reviews-score{width:80px;height:80px}
+  .reviews-score-num{font-size:2rem}
   .footer-grid{grid-template-columns:1fr}
   .pizza-3d-container{width:220px;height:220px}
-  .cookie-bar{padding:.8rem 1.2rem}
+  .cookie-bar{padding:.8rem 1.2rem;flex-direction:column;align-items:flex-start}
   .trust-bar-inner{justify-content:flex-start}
   .trust-item{border-right:none;border-bottom:1px solid var(--gray-light)}
+  .mobile-bar-btn{min-height:48px}
+  .btn{padding:.85rem 1.8rem}
 }
 
 /* ════════════════════════════════════════
@@ -681,13 +697,13 @@ section{position:relative}
   <div class="hero-content">
     <div class="hero-badge">
       <span class="dot"></span>
-      Abierto ahora · Hasta las 00:00
+      695+ opiniones · 4.0 ★ en Google
     </div>
-    <h1>Pizzas artesanas con alma <em>mediterránea</em></h1>
-    <p class="hero-sub">Cocina a la vista, ingredientes frescos y los mejores precios de la Región de Murcia. Desde siempre, para todos.</p>
+    <h1>La pizza que te<br>hace <em>repetir</em></h1>
+    <p class="hero-sub">Ingredientes frescos, masa artesana y cocina abierta a la vista. 4 sedes en la Región de Murcia — desde 7€.</p>
     <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" class="hero-rating" style="text-decoration:none;cursor:pointer" title="Ver opiniones en Google Maps">
       <span class="hero-stars">★★★★☆</span>
-      <span><strong>4.1</strong> · 500+ opiniones en Google</span>
+      <span><strong>4.0</strong> · 695+ opiniones en Google</span>
     </a>
     <div class="hero-actions">
       <a href="#menu" class="btn btn-white btn-shine">Ver la carta</a>
@@ -710,12 +726,12 @@ section{position:relative}
 <!-- Trust Bar -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" class="trust-item" style="text-decoration:none"><span class="trust-icon trust-stars">★★★★☆</span> <span><strong>4.1</strong> en Google</span></a>
-    <div class="trust-item"><span class="trust-dot"></span><span><strong>500+</strong> reseñas reales</span></div>
+    <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" class="trust-item" style="text-decoration:none"><span class="trust-icon trust-stars">★★★★☆</span> <span><strong>4.0</strong> en Google</span></a>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>695+</strong> opiniones reales</span></div>
     <div class="trust-item"><span class="trust-dot"></span><span><strong>4 sedes</strong> en Murcia</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>Desde 7€</strong> por pizza</span></div>
     <div class="trust-item"><span class="trust-dot"></span><span><strong>Cocina</strong> a la vista</span></div>
-    <div class="trust-item"><span class="trust-dot"></span><span><strong>Precios</strong> imbatibles</span></div>
-    <div class="trust-item"><span class="trust-dot"></span><span><strong>Ambiente</strong> familiar</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>Masa</strong> artesana propia</span></div>
   </div>
 </div>
 
@@ -1358,7 +1374,7 @@ section{position:relative}
         <div class="hours-row"><span class="hours-day">Viernes</span><span class="hours-time">12:00 – 00:00</span></div>
         <div class="hours-row"><span class="hours-day">Sábado</span><span class="hours-time">12:00 – 00:00</span></div>
         <div class="hours-row"><span class="hours-day">Domingo</span><span class="hours-time">12:00 – 23:00</span></div>
-        <div><span class="hours-status"><span class="hours-dot"></span>Abierto ahora</span></div>
+        <div id="hoursStatus"></div>
         <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--gray-light)">
           <p style="font-size:.8rem;color:var(--gray);line-height:1.6">Los horarios pueden variar según sede y festividades. Llama antes para confirmar.</p>
         </div>
@@ -1800,6 +1816,18 @@ function initCookie(){
   });
 }
 
+/* ── HOURS STATUS ── */
+function initHoursStatus(){
+  var el=document.getElementById('hoursStatus');
+  if(!el)return;
+  var d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;
+  var close=(day===5||day===6)?24:23;
+  var open=h>=12&&h<close;
+  el.innerHTML=open
+    ?'<span class="hours-status"><span class="hours-dot"></span>Abierto ahora</span>'
+    :'<span class="hours-status" style="background:#fff4f4;color:#c41e1e;border-color:#fca5a5"><span class="hours-dot" style="background:#c41e1e"></span>Cerrado ahora</span>';
+}
+
 /* ── BOOT ── */
 function safe(fn,n){try{fn()}catch(e){console.warn('Init failed:',n,e)}}
 document.addEventListener('DOMContentLoaded',function(){
@@ -1819,6 +1847,7 @@ document.addEventListener('DOMContentLoaded',function(){
   safe(initLightbox,'lightbox');
   safe(initCookie,'cookie');
   safe(initPremium,'premium');
+  safe(initHoursStatus,'hours');
 });
 })();
 
