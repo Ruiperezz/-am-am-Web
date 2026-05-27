@@ -63,7 +63,8 @@ ul{list-style:none}
 
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#160808;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e3/4d/66/pizza-nam-nam.jpg?w=1200&h=800&s=1');background-size:cover;background-position:center;filter:brightness(.38) saturate(1.2);transform:scale(1.06);animation:heroBgZoom 22s ease-in-out infinite alternate}
+/* HERO BG: replace img/local-exterior.jpg with your real restaurant exterior photo */
+.hero-bg{position:absolute;inset:0;z-index:0;background-image:url('img/local-exterior.jpg'),url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e3/4d/66/pizza-nam-nam.jpg?w=1200&h=800&s=1');background-size:cover;background-position:center 30%;filter:brightness(.42) saturate(1.15);transform:scale(1.06);animation:heroBgZoom 22s ease-in-out infinite alternate}
 @keyframes heroBgZoom{0%{transform:scale(1.06)}50%{transform:scale(1.13) translate(-1%,-1%)}100%{transform:scale(1.09) translate(.5%,0)}}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,5,5,.35) 0%,rgba(15,3,3,.78) 55%,rgba(196,30,30,.3) 100%)}
 .hero-grain{position:absolute;inset:0;z-index:2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");opacity:.3;pointer-events:none}
@@ -610,6 +611,27 @@ section{position:relative}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 
+/* ── GALLERY SECTION ── */
+.gallery{padding:7rem 0;background:var(--off-white);overflow:hidden}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 220px;gap:16px;margin-top:3.5rem}
+.gallery-item{position:relative;overflow:hidden;border-radius:20px;cursor:pointer}
+.gallery-item:first-child{grid-column:1/3;grid-row:1/2}
+.gallery-item:nth-child(2){grid-column:3/4;grid-row:1/2}
+.gallery-item:nth-child(3){grid-column:1/2;grid-row:2/3}
+.gallery-item:nth-child(4){grid-column:2/4;grid-row:2/3}
+.gallery-img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease),filter .7s var(--ease);filter:saturate(1.05)}
+.gallery-item:hover .gallery-img{transform:scale(1.08);filter:saturate(1.2) brightness(1.05)}
+.gallery-caption{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(20,5,5,.7) 100%);display:flex;align-items:flex-end;padding:1.4rem 1.6rem;opacity:0;transition:opacity .4s var(--ease)}
+.gallery-item:hover .gallery-caption{opacity:1}
+.gallery-caption span{color:#fff;font-weight:600;font-size:.9rem;letter-spacing:.02em}
+@media(max-width:768px){
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 180px;gap:10px}
+  .gallery-item:first-child{grid-column:1/3;grid-row:1/2}
+  .gallery-item:nth-child(2){grid-column:1/2;grid-row:2/3}
+  .gallery-item:nth-child(3){grid-column:2/3;grid-row:2/3}
+  .gallery-item:nth-child(4){grid-column:1/3;grid-row:3/4}
+}
+
 </style>
 </head>
 <body>
@@ -619,7 +641,7 @@ section{position:relative}
 
 <!-- Cookie Bar -->
 <div class="cookie-bar" id="cookieBar">
-  <p class="cookie-text">Usamos cookies propias para mejorar tu experiencia. Al continuar navegando aceptas nuestra <a href="#">política de cookies</a>.</p>
+  <p class="cookie-text">Usamos cookies propias para mejorar tu experiencia. Al continuar navegando aceptas nuestra <a href="/cookies.html">política de cookies</a>.</p>
   <div class="cookie-btns">
     <button class="cookie-btn accept" id="cookieAccept">Aceptar</button>
     <button class="cookie-btn decline" id="cookieDecline">Rechazar</button>
@@ -635,7 +657,7 @@ section{position:relative}
 
 <!-- Nav -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav-logo">Ñam Ñam</a>
+  <a href="/" class="nav-logo">Ñam Ñam</a>
   <div class="nav-links" id="navLinks">
     <a href="#menu">Menú</a>
     <a href="#sedes">Sedes</a>
@@ -661,12 +683,12 @@ section{position:relative}
       <span class="dot"></span>
       Abierto ahora · Hasta las 00:00
     </div>
-    <h1>Pizzas artesanas<br>con alma <em>mediterránea</em></h1>
+    <h1>Pizzas artesanas con alma <em>mediterránea</em></h1>
     <p class="hero-sub">Cocina a la vista, ingredientes frescos y los mejores precios de la Región de Murcia. Desde siempre, para todos.</p>
-    <div class="hero-rating">
+    <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" class="hero-rating" style="text-decoration:none;cursor:pointer" title="Ver opiniones en Google Maps">
       <span class="hero-stars">★★★★☆</span>
-      <span><strong>4.0</strong> · 695+ opiniones en Google</span>
-    </div>
+      <span><strong>4.1</strong> · 500+ opiniones en Google</span>
+    </a>
     <div class="hero-actions">
       <a href="#menu" class="btn btn-white btn-shine">Ver la carta</a>
       <a href="#sedes" class="btn btn-ghost btn-shine">Nuestras sedes</a>
@@ -688,8 +710,8 @@ section{position:relative}
 <!-- Trust Bar -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="trust-item"><span class="trust-icon trust-stars">★★★★☆</span> <span><strong>4.0</strong> en Google</span></div>
-    <div class="trust-item"><span class="trust-dot"></span><span><strong>695+</strong> reseñas reales</span></div>
+    <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" class="trust-item" style="text-decoration:none"><span class="trust-icon trust-stars">★★★★☆</span> <span><strong>4.1</strong> en Google</span></a>
+    <div class="trust-item"><span class="trust-dot"></span><span><strong>500+</strong> reseñas reales</span></div>
     <div class="trust-item"><span class="trust-dot"></span><span><strong>4 sedes</strong> en Murcia</span></div>
     <div class="trust-item"><span class="trust-dot"></span><span><strong>Cocina</strong> a la vista</span></div>
     <div class="trust-item"><span class="trust-dot"></span><span><strong>Precios</strong> imbatibles</span></div>
@@ -700,110 +722,13 @@ section{position:relative}
 <!-- Marquee -->
 <div class="marquee">
   <div class="marquee-inner" id="marquee">
-    <span>PIZZAS ARTESANAS</span><span>BOCATAS</span><span>ENSALADAS FRESCAS</span>
-    <span>BURRITOS</span><span>ENTRANTES</span><span>POSTRES ARTESANOS</span>
-    <span>COCINA A LA VISTA</span><span>PRECIOS IMBATIBLES</span><span>4 SEDES EN MURCIA</span>
-    <span>PIZZAS ARTESANAS</span><span>BOCATAS</span><span>ENSALADAS FRESCAS</span>
-    <span>BURRITOS</span><span>ENTRANTES</span><span>POSTRES ARTESANOS</span>
-    <span>COCINA A LA VISTA</span><span>PRECIOS IMBATIBLES</span><span>4 SEDES EN MURCIA</span>
+    <span>PIZZAS ARTESANAS</span><span>ENSALADAS FRESCAS</span><span>BURRITOS</span>
+    <span>ENTRANTES</span><span>POSTRES ARTESANOS</span><span>COCINA A LA VISTA</span>
+    <span>PRECIOS IMBATIBLES</span><span>4 SEDES EN MURCIA</span><span>INGREDIENTES FRESCOS</span>
+    <span>PIZZAS ARTESANAS</span><span>ENSALADAS FRESCAS</span><span>BURRITOS</span>
+    <span>ENTRANTES</span><span>POSTRES ARTESANOS</span><span>COCINA A LA VISTA</span>
+    <span>PRECIOS IMBATIBLES</span><span>4 SEDES EN MURCIA</span><span>INGREDIENTES FRESCOS</span>
   </div>
-</div>
-
-<!-- Reviews -->
-<section class="reviews" id="opiniones">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-badge">Opiniones</div>
-      <h2 class="section-title">Lo que dicen <span class="gradient-text">nuestros clientes</span></h2>
-    </div>
-    <div class="reviews-header reveal">
-      <div class="reviews-score">
-        <div class="reviews-score-num">4.0</div>
-        <div class="reviews-score-stars">★★★★☆</div>
-      </div>
-      <div class="reviews-meta">
-        <h3>Excelente valoración en Google</h3>
-        <p>Más de 695 opiniones de clientes reales · 3.300+ seguidores en Facebook</p>
-      </div>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-top">
-          <div class="review-avatar">A</div>
-          <div><div class="review-name">Ana García</div><div class="review-date">hace 2 semanas</div><div class="review-stars">★★★★★</div></div>
-        </div>
-        <p class="review-text">"Las mejores pizzas de Cartagena a precio imbatible. El ambiente es genial y poder ver cómo hacen tu pizza es un plus que encanta a los niños."</p>
-      </div>
-      <div class="review-card reveal reveal-delay-1">
-        <div class="review-top">
-          <div class="review-avatar">M</div>
-          <div><div class="review-name">Miguel Rodríguez</div><div class="review-date">hace 1 mes</div><div class="review-stars">★★★★★</div></div>
-        </div>
-        <p class="review-text">"Siempre repetimos. La relación calidad-precio es espectacular. Perfecto para ir en familia o con amigos, nunca falla."</p>
-      </div>
-      <div class="review-card reveal reveal-delay-2">
-        <div class="review-top">
-          <div class="review-avatar">L</div>
-          <div><div class="review-name">Laura Martínez</div><div class="review-date">hace 3 semanas</div><div class="review-stars">★★★★☆</div></div>
-        </div>
-        <p class="review-text">"Gran ambiente y terraza amplia. Las pizzas están muy buenas y la variedad del menú nos encanta. Es nuestro sitio favorito para cenar fuera."</p>
-      </div>
-      <div class="review-card reveal reveal-delay-3">
-        <div class="review-top">
-          <div class="review-avatar">J</div>
-          <div><div class="review-name">José Sánchez</div><div class="review-date">hace 1 mes</div><div class="review-stars">★★★★★</div></div>
-        </div>
-        <p class="review-text">"Fuimos con los niños y quedaron encantados viendo cómo preparaban la pizza. La masa es espectacular, crujiente por fuera y esponjosa por dentro."</p>
-      </div>
-    </div>
-    <div class="reviews-cta reveal">
-      <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena" target="_blank" rel="noopener">Ver todas las opiniones en Google →</a>
-    </div>
-  </div>
-</section>
-
-<!-- About -->
-<section class="about" id="sobre">
-  <div class="orb-field">
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-    <div class="orb orb-c"></div>
-  </div>
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-visual reveal reveal-left">
-        <div class="about-card card-3d">
-          <span class="about-card-emoji" style="font-size:2.8rem;color:var(--red);font-family:'Fredoka',sans-serif;letter-spacing:-.02em">Ñam Ñam</span>
-          <h3 class="about-card-title">Cocina a la vista</h3>
-          <p class="about-card-text">En Ñam Ñam, cada pizza se prepara delante de ti. Ves cómo se estira la masa, cómo se añaden los ingredientes frescos y cómo se hornea hasta quedar perfecta. Sin secretos, solo buena pizza hecha con cariño.</p>
-        </div>
-        <div class="about-stats">
-          <div class="stat reveal reveal-delay-1"><div class="stat-num" data-count="695">0</div><div class="stat-label">Opiniones Google</div></div>
-          <div class="stat reveal reveal-delay-2"><div class="stat-num">4+</div><div class="stat-label">Sedes</div></div>
-          <div class="stat reveal reveal-delay-3"><div class="stat-num">4.0★</div><div class="stat-label">Valoración media</div></div>
-        </div>
-      </div>
-      <div class="about-text reveal reveal-right">
-        <div class="section-badge">Sobre nosotros</div>
-        <h2 class="section-title">Más que una pizzería,<br>un <span class="gradient-text">lugar para disfrutar</span></h2>
-        <p>Ñam Ñam nació con una idea sencilla: ofrecer pizzas de calidad a un precio justo, en un ambiente donde todo el mundo se sienta como en casa.</p>
-        <p>Con varias sedes repartidas por la Región de Murcia, nos hemos convertido en el punto de encuentro favorito de familias, amigos y amantes de la buena pizza.</p>
-        <div class="about-features">
-          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Horno a la vista — Transparencia total</span></div>
-          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Ingredientes frescos cada día</span></div>
-          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Los mejores precios de la zona</span></div>
-          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Ambiente familiar y cercano</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Wave divider About → Menu -->
-<div style="background:#fff;position:relative;z-index:6;margin-top:-2px">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:60px">
-    <path d="M0,0 C360,60 1080,0 1440,30 L1440,0 L0,0 Z" fill="#FFF8F5"/>
-  </svg>
 </div>
 
 <!-- Menu -->
@@ -812,12 +737,11 @@ section{position:relative}
     <div style="text-align:center" class="reveal">
       <div class="section-badge">Nuestra carta</div>
       <h2 class="section-title">Un menú para <span class="gradient-text">todos los gustos</span></h2>
-      <p class="section-desc" style="margin-left:auto;margin-right:auto">Pizzas, bocatas, ensaladas, burritos, entrantes y postres. Usa los filtros para explorar nuestra carta completa con foto real de cada producto.</p>
+      <p class="section-desc" style="margin-left:auto;margin-right:auto">Pizzas artesanas, ensaladas frescas, burritos, entrantes y postres. Usa los filtros para explorar nuestra carta completa con foto real de cada producto.</p>
     </div>
     <div class="menu-cats reveal">
       <button class="menu-cat active" data-cat="all">Todos</button>
       <button class="menu-cat" data-cat="pizza">Pizzas</button>
-      <button class="menu-cat" data-cat="bocata">Bocatas</button>
       <button class="menu-cat" data-cat="ensalada">Ensaladas</button>
       <button class="menu-cat" data-cat="burrito">Burritos</button>
       <button class="menu-cat" data-cat="entrante">Entrantes</button>
@@ -942,16 +866,6 @@ section{position:relative}
           <div class="menu-item-footer"><span class="menu-item-price">desde 5€</span></div>
         </div>
         <span class="menu-item-tag">Pequeña</span>
-      </div>
-
-      <!-- BOCATAS -->
-      <div class="menu-item reveal" data-cat="bocata">
-        <div class="menu-item-img bg-bocata" style="font-family:'Fredoka',sans-serif;font-size:1.6rem;color:#c47a22;font-weight:600;letter-spacing:.02em">Bocatas</div>
-        <div class="menu-item-body">
-          <div class="menu-item-name">Bocatas variados</div>
-          <div class="menu-item-desc">Gran variedad de bocadillos con ingredientes frescos y pan crujiente.</div>
-          <div class="menu-item-footer"><span class="menu-item-price">desde 4€</span></div>
-        </div>
       </div>
 
       <!-- ENSALADAS -->
@@ -1241,28 +1155,159 @@ section{position:relative}
   <button class="lb-next" id="lbNext" aria-label="Siguiente">›</button>
 </div>
 
-<!-- 3D Pizza Scene -->
-<section class="pizza-scene">
-  <div class="pizza-scene-inner">
-    <div class="section-badge" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)">Nuestra esencia</div>
-    <h2 style="font-family:'Fredoka',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:.5rem">Pizza hecha con <em style="font-weight:400;color:var(--gold)">pasión</em></h2>
-    <p style="opacity:.78;font-size:1.05rem">Cada pizza es una pequeña obra de arte · Mueve la pizza con el ratón</p>
-    <div class="pizza-3d-container" id="pizza3d">
-      <div class="pizza-3d">
-        <div class="pizza-disc pizza-bottom"></div>
-        <div class="pizza-edge"></div>
-        <div class="pizza-disc pizza-top"></div>
-        <div class="pizza-toppings">
-          <span class="pizza-topping">🫒</span><span class="pizza-topping">🍅</span><span class="pizza-topping">🧀</span>
-          <span class="pizza-topping">🌿</span><span class="pizza-topping">🫑</span><span class="pizza-topping">🍄</span>
-          <span class="pizza-topping">🧅</span><span class="pizza-topping">🌶️</span><span class="pizza-topping">🫒</span>
+<!-- Wave divider Menu → Reviews -->
+<div style="background:#fff;position:relative;z-index:6;margin-top:-2px">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:60px">
+    <path d="M0,60 C360,0 1080,60 1440,30 L1440,60 L0,60 Z" fill="#fff"/>
+  </svg>
+</div>
+
+<!-- Reviews -->
+<section class="reviews" id="opiniones">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-badge">Opiniones</div>
+      <h2 class="section-title">Lo que dicen <span class="gradient-text">nuestros clientes</span></h2>
+    </div>
+    <div class="reviews-header reveal">
+      <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" class="reviews-score" style="text-decoration:none" title="Ver en Google Maps">
+        <div class="reviews-score-num">4.1</div>
+        <div class="reviews-score-stars">★★★★☆</div>
+      </a>
+      <div class="reviews-meta">
+        <h3>Valoración en Google Maps</h3>
+        <p>Más de 500 opiniones verificadas de clientes reales · También en TripAdvisor</p>
+        <div style="display:flex;gap:.6rem;margin-top:.7rem;flex-wrap:wrap">
+          <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid #E8E8E8;border-radius:8px;padding:.4rem .9rem;font-size:.78rem;font-weight:600;color:#1a1a1a;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.12)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="#4285F4"/></svg>
+            Ver opiniones en Google
+          </a>
+          <a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid #E8E8E8;border-radius:8px;padding:.4rem .9rem;font-size:.78rem;font-weight:600;color:#1a1a1a;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.12)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#34E0A1"/><text x="12" y="16" font-size="10" text-anchor="middle" fill="#000" font-weight="bold">T</text></svg>
+            Ver en TripAdvisor
+          </a>
         </div>
       </div>
     </div>
-    <div class="pizza-scene-features">
-      <div class="pizza-feat reveal"><div class="pizza-feat-icon" style="font-size:1.8rem;opacity:.85">◆</div><h4>Horno artesanal</h4><p>Cocinada a la temperatura perfecta para una masa crujiente y esponjosa.</p></div>
-      <div class="pizza-feat reveal reveal-delay-1"><div class="pizza-feat-icon" style="font-size:1.8rem;opacity:.85">◆</div><h4>Ingredientes frescos</h4><p>Seleccionamos diariamente los mejores productos del mercado local.</p></div>
-      <div class="pizza-feat reveal reveal-delay-2"><div class="pizza-feat-icon" style="font-size:1.8rem;opacity:.85">◆</div><h4>Hecha con cariño</h4><p>Cada pizza se prepara a mano, sin prisas, con la dedicación que merece.</p></div>
+    <div class="reviews-grid">
+      <!-- Reseñas reales verificadas en TripAdvisor -->
+      <div class="review-card reveal">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#4285F4,#34A853)">S</div>
+          <div>
+            <div class="review-name">Stuart M.</div>
+            <div class="review-date">TripAdvisor · Verificado</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">"Mi parada de pizza favorita en el centro de Cartagena. La masa se hace en el momento y la pizza es ligera. Ideal para un almuerzo rápido. Precios geniales, puedes comer dentro o fuera."</p>
+        <a href="https://www.tripadvisor.com/ShowUserReviews-g187517-d10108729-r418469408-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;color:var(--red);font-size:.75rem;font-weight:600;margin-top:.8rem;opacity:.8;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">Leer reseña completa →</a>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#EA4335,#FBBC04)">C</div>
+          <div>
+            <div class="review-name">Chris B.</div>
+            <div class="review-date">TripAdvisor · Verificado</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">"¡Fuimos un miércoles y las porciones de pizza eran a 1€! Las pizzas son muy sabrosas y bastante generosas. Tienen oferta cada miércoles. Muy recomendable."</p>
+        <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g187517-d10108729-r439980377-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;color:var(--red);font-size:.75rem;font-weight:600;margin-top:.8rem;opacity:.8;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">Leer reseña completa →</a>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#34A853,#4285F4)">P</div>
+          <div>
+            <div class="review-name">Peter R.</div>
+            <div class="review-date">TripAdvisor · Verificado</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">"Nos pasamos por Ñam Ñam durante nuestra visita a Cartagena. Una cerveza y una pizza, y todo excelente. La comida y las bebidas estaban muy buenas y a un precio increíble."</p>
+        <a href="https://www.tripadvisor.com/ShowUserReviews-g187517-d10108729-r633832098-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;color:var(--red);font-size:.75rem;font-weight:600;margin-top:.8rem;opacity:.8;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">Leer reseña completa →</a>
+      </div>
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#C41E1E,#9B1616)">M</div>
+          <div>
+            <div class="review-name">María J.</div>
+            <div class="review-date">Google Maps · Verificado</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">"Trato amable y correcto. Los trabajadores educados y simpáticos. Todo muy limpio. No sabría qué comida elegir porque todo está muy bueno y a buen precio."</p>
+        <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;color:var(--red);font-size:.75rem;font-weight:600;margin-top:.8rem;opacity:.8;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">Ver en Google Maps →</a>
+      </div>
+    </div>
+    <div class="reviews-cta reveal">
+      <a href="https://www.google.com/maps/search/Ñam+Ñam+Pizzería+Cartagena+Murcia" target="_blank" rel="noopener">Ver las 500+ opiniones reales en Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="sobre">
+  <div class="orb-field">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+  </div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal reveal-left">
+        <div class="about-card card-3d">
+          <span class="about-card-emoji" style="font-size:2.8rem;color:var(--red);font-family:'Fredoka',sans-serif;letter-spacing:-.02em">Ñam Ñam</span>
+          <h3 class="about-card-title">Cocina a la vista</h3>
+          <p class="about-card-text">En Ñam Ñam, cada pizza se prepara delante de ti. Ves cómo se estira la masa, cómo se añaden los ingredientes frescos y cómo se hornea hasta quedar perfecta. Sin secretos, solo buena pizza hecha con cariño.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat reveal reveal-delay-1"><div class="stat-num" data-count="500">0</div><div class="stat-label">Opiniones Google</div></div>
+          <div class="stat reveal reveal-delay-2"><div class="stat-num">4</div><div class="stat-label">Sedes en Murcia</div></div>
+          <div class="stat reveal reveal-delay-3"><div class="stat-num">4.1★</div><div class="stat-label">Valoración media</div></div>
+        </div>
+      </div>
+      <div class="about-text reveal reveal-right">
+        <div class="section-badge">Sobre nosotros</div>
+        <h2 class="section-title">Más que una pizzería,<br>un <span class="gradient-text">lugar para disfrutar</span></h2>
+        <p>Ñam Ñam nació con una idea sencilla: ofrecer pizzas de calidad a un precio justo, en un ambiente donde todo el mundo se sienta como en casa.</p>
+        <p>Con varias sedes repartidas por la Región de Murcia, nos hemos convertido en el punto de encuentro favorito de familias, amigos y amantes de la buena pizza.</p>
+        <div class="about-features">
+          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Horno a la vista — Transparencia total</span></div>
+          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Ingredientes frescos cada día</span></div>
+          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Los mejores precios de la zona</span></div>
+          <div class="about-feature"><div class="about-feature-icon" style="color:var(--red);font-weight:700;font-size:1rem">✦</div><span class="about-feature-text">Ambiente familiar y cercano</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <div class="section-badge">Nuestro local</div>
+      <h2 class="section-title">El ambiente que te <span class="gradient-text">espera</span></h2>
+      <p class="section-desc" style="max-width:520px;margin-left:auto;margin-right:auto">Cocina abierta, ambiente familiar y el aroma de la pizza recién horneada. Ven y compruébalo tú mismo.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img class="gallery-img" src="img/local-exterior.jpg" alt="Exterior del local Ñam Ñam" loading="lazy" onerror="this.src='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e3/4d/66/pizza-nam-nam.jpg?w=800&h=500&s=1'">
+        <div class="gallery-caption"><span>Nuestro local — Cartagena</span></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img class="gallery-img" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e3/4d/66/pizza-nam-nam.jpg?w=600&h=600&s=1" alt="Pizza artesana Ñam Ñam" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#C41E1E,#9B1616)'">
+        <div class="gallery-caption"><span>Pizza artesana recién horneada</span></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <img class="gallery-img" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/c9/27/9a/nam-nam.jpg?w=600&h=400&s=1" alt="Interior Ñam Ñam" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#F5C842,#e8b800)'">
+        <div class="gallery-caption"><span>Ambiente acogedor</span></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-3">
+        <img class="gallery-img" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e3/4d/60/pizza-nam-nam.jpg?w=800&h=400&s=1" alt="Carta Ñam Ñam" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1a1a1a,#333)'">
+        <div class="gallery-caption"><span>Ingredientes frescos cada día</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1389,8 +1434,8 @@ section{position:relative}
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Ñam Ñam</div>
-      <p class="footer-text">Pizzería artesanal con cocina a la vista. Pizzas, bocatas, burritos, entrantes, ensaladas y postres. Los mejores precios de la Región de Murcia.</p>
-      <span class="footer-badge">★ 4.0 · 695+ reseñas Google</span>
+      <p class="footer-text">Pizzería artesanal con cocina a la vista. Pizzas, burritos, entrantes, ensaladas y postres. Los mejores precios de la Región de Murcia.</p>
+      <span class="footer-badge">★ 4.1 · 500+ reseñas Google</span>
     </div>
     <div>
       <h4>Sedes</h4>
@@ -1431,9 +1476,9 @@ section{position:relative}
   <div class="footer-bottom">
     <p>© 2026 Ñam Ñam Pizzería · Todos los derechos reservados · Región de Murcia, España</p>
     <div style="display:flex;gap:1.5rem">
-      <a href="#">Aviso legal</a>
-      <a href="#">Privacidad</a>
-      <a href="#">Cookies</a>
+      <a href="/aviso-legal.html">Aviso legal</a>
+      <a href="/privacidad.html">Privacidad</a>
+      <a href="/cookies.html">Cookies</a>
     </div>
   </div>
 </footer>
