@@ -418,8 +418,11 @@ section{padding:6rem 2rem}
 .cta p{font-size:1.05rem;opacity:.85;margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto;position:relative;z-index:1;line-height:1.65}
 .cta-actions{position:relative;z-index:1}
 .cta-socials{display:flex;gap:1rem;justify-content:center;margin-top:2.5rem;position:relative;z-index:1}
-.cta-social{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:all .3s var(--ease-back)}
-.cta-social:hover{background:#fff;color:var(--red);transform:translateY(-5px) scale(1.12);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.cta-social{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .3s,color .3s,transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.cta-social:hover{transform:translateY(-5px) scale(1.12);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.cta-social[title="Instagram"]:hover{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:transparent;color:#fff}
+.cta-social[title="Facebook"]:hover{background:#1877F2;border-color:transparent;color:#fff}
+.cta-social[title="TripAdvisor"]:hover{background:#34E0A1;border-color:transparent;color:#000}
 
 /* ── FOOTER ── */
 .footer{background:#111;color:rgba(255,255,255,.58);padding:4.5rem 2rem 2rem}
@@ -1702,9 +1705,23 @@ section{position:relative}
       <a href="#sedes" class="btn btn-ghost btn-shine">Ver sedes</a>
     </div>
     <div class="cta-socials">
-      <a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Instagram" style="font-size:.78rem;font-weight:700;font-family:'Fredoka',sans-serif">IG</a>
-      <a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Facebook" style="font-size:.78rem;font-weight:700;font-family:'Fredoka',sans-serif">FB</a>
-      <a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" class="cta-social" title="TripAdvisor" style="font-size:.78rem;font-weight:700;font-family:'Fredoka',sans-serif">TA</a>
+      <a href="https://www.instagram.com/namnampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Instagram" aria-label="Instagram de Ñam Ñam">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/NamNampizzeria/" target="_blank" rel="noopener" class="cta-social" title="Facebook" aria-label="Facebook de Ñam Ñam">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+        </svg>
+      </a>
+      <a href="https://www.tripadvisor.es/Restaurant_Review-g187517-d10108729-Reviews-Pizza_Nam_Nam-Cartagena_Municipality_of_Cartagena.html" target="_blank" rel="noopener" class="cta-social" title="TripAdvisor" aria-label="Ñam Ñam en TripAdvisor">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C6.478 2 2 6.478 2 12s4.478 10 10 10 10-4.478 10-10S17.522 2 12 2zm0 2.5c1.16 0 2.27.22 3.29.62L13.5 7.5H10.5L8.71 5.12A7.49 7.49 0 0112 4.5zM6.5 12a2 2 0 110-4 2 2 0 010 4zm1.62 1.5L12 8.5l3.88 5H8.12zm9.38-1.5a2 2 0 110-4 2 2 0 010 4zM12 18.5c-3.59 0-6.5-2.91-6.5-6.5 0-.36.03-.71.08-1.06A3.49 3.49 0 017 11.5a3.5 3.5 0 003.24-2.18l1.76 2.42 1.76-2.42A3.5 3.5 0 0017 11.5c.5 0 .97-.1 1.41-.28.05.35.09.7.09 1.07 0 3.59-2.91 6.5-6.5 6.5-.01-.01-.01-.01 0-.01v.01h-.5.5z"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
