@@ -889,7 +889,7 @@ section{position:relative}
   </div>
   <div class="hero-floaters" id="heroFloaters"></div>
   <div class="hero-content">
-    <div class="hero-badge">
+    <div class="hero-badge" id="heroBadge">
       <span class="dot"></span>
       695+ opiniones · 4.0 ★ en Google
     </div>
@@ -2101,14 +2101,29 @@ function initCookie(){
 
 /* ── HOURS STATUS ── */
 function initHoursStatus(){
-  var el=document.getElementById('hoursStatus');
-  if(!el)return;
   var d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;
-  var close=(day===5||day===6)?24:23;
-  var open=h>=12&&h<close;
-  el.innerHTML=open
-    ?'<span class="hours-status"><span class="hours-dot"></span>Abierto ahora</span>'
-    :'<span class="hours-status" style="background:#fff4f4;color:#c41e1e;border-color:#fca5a5"><span class="hours-dot" style="background:#c41e1e"></span>Cerrado ahora</span>';
+  var isFriSat=(day===5||day===6);
+  var closeHour=isFriSat?24:23;
+  var isOpen=h>=12&&h<closeHour;
+  var closeStr=isFriSat?'00:00':'23:00';
+
+  // Hours card widget
+  var el=document.getElementById('hoursStatus');
+  if(el){
+    el.innerHTML=isOpen
+      ?'<span class="hours-status"><span class="hours-dot"></span>Abierto ahora</span>'
+      :'<span class="hours-status" style="background:#fff4f4;color:#c41e1e;border-color:#fca5a5"><span class="hours-dot" style="background:#c41e1e"></span>Cerrado ahora</span>';
+  }
+
+  // Hero badge
+  var badge=document.getElementById('heroBadge');
+  if(badge){
+    if(isOpen){
+      badge.innerHTML='<span class="dot"></span>Abierto ahora · cierra a las '+closeStr;
+    } else {
+      badge.innerHTML='<span class="dot" style="background:#c41e1e;box-shadow:0 0 8px rgba(196,30,30,.8)"></span>Cerrado ahora · abrimos a las 12:00';
+    }
+  }
 }
 
 /* ── BOOT ── */
